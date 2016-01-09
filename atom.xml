@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[欢迎来到linghutf的博客!]]></title>
+  <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://linghutf.github.io/"/>
+  <updated>2016-01-08T15:19:05.696Z</updated>
+  <id>http://linghutf.github.io/</id>
+  
+  <author>
+    <name><![CDATA[linghutf]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[我的个人博客终于搭建成功啦!]]></title>
+    <link href="http://linghutf.github.io/2016/01/08/first_20160108/"/>
+    <id>http://linghutf.github.io/2016/01/08/first_20160108/</id>
+    <published>2016-01-08T14:56:16.000Z</published>
+    <updated>2016-01-08T15:19:05.696Z</updated>
+    <content type="html"><![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a href="https://github.com/linghutf" target="_blank" rel="external">github</a><br>也比较活跃，因此就想着弄一个个人博客，这样以后可以记下一些东西，而不是像现在这样，桌面或者文件夹里有很多记事的md文件了。</p>
+<h1 id="u76F8_u5173_u6280_u672F"><a href="#u76F8_u5173_u6280_u672F" class="headerlink" title="相关技术"></a>相关技术</h1><p>   最近在用golang写web程序，本来计划是自己搭建动态博客然后解析上传的md文件的，但是将近放假事情很很多，很久没有在blog项目上<br>写一行代码了，然后就想着做一个静态博客放在github上好了，今天看到别人推荐的hexo,马上在云上下载安装了。配置几步没想到就轻松地<br>成功了，看来真的是<em>Technology makes life easier</em>!就这样先跑着吧，反正云也是免费的。</p>
+<h1 id="u540E_u7EED_u5B8C_u5584"><a href="#u540E_u7EED_u5B8C_u5584" class="headerlink" title="后续完善"></a>后续完善</h1><ul>
+<li>首先页面的布局和一些细节还得完善，毕竟要好看才行。天天面对着它要是不好看我都会关了。。。</li>
+<li>国内的托管服务也得注册一个以防github访问不了。</li>
+<li>关键点是我还是比较懒的，写博客打这么多字好累，就看坚持了。</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a h]]>
+    </summary>
+    
+      <category term="todo-list" scheme="http://linghutf.github.io/tags/todo-list/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[latex使用小结]]></title>
+    <link href="http://linghutf.github.io/2016/01/08/latex-20160109/"/>
+    <id>http://linghutf.github.io/2016/01/08/latex-20160109/</id>
+    <published>2016-01-08T14:56:16.000Z</published>
+    <updated>2016-01-09T03:54:36.017Z</updated>
+    <content type="html"><![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex"><a href="#u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex" class="headerlink" title="为什么选择高冷的Latex"></a>为什么选择高冷的Latex</h1><p>最近要写报告，老师指定要用Latex生成，从本科起就看过王垠推荐过用Latex做这种报告类型<br>的东西，既简洁又好看，但是也有语法，还要熟悉宏，因此一直没有使用。Word里面的格式比<br>较繁琐，排版又容易出现问题，也只有将就用了。</p>
+
+<h1 id="Latex_u7684_u4F18_u52BF"><a href="#Latex_u7684_u4F18_u52BF" class="headerlink" title="Latex的优势"></a>Latex的优势</h1><ul>
+<li>有丰富的模板可选，有模板直接填进内容即可生成格式完全一致的文档，使用迅速。</li>
+<li>Latex说起来很Markdown有点类似，都是标记类型，但远比Markdown强大。</li>
+<li>它针对的是学术性的文章写作，公式写出来都很漂亮，不会出现Word那样不见了的尴尬。</li>
+<li>自己用标记控制排版对IT人士来说也是很不错的。</li>
+<li>文件都是可读的文本文件，什么编辑器都可以编辑，不像doc那样先要装一个字处理软件。</li>
+</ul>
+<h1 id="Latex_u7684_u5B89_u88C5"><a href="#Latex_u7684_u5B89_u88C5" class="headerlink" title="Latex的安装"></a>Latex的安装</h1><p>Mac下可以安装MacTex,windows下有CTex和TexLive可选，之前用的是Ctex,打开模板时经常乱码，<br>外国人发明这东西是肯定只要支持ANSI就可以了，就和早期的C语言一样，英语世界的人自己用，<br>没有想得那么长远。因此中文字库点阵需要自己添加设置，还要在文档上标记为utf-8类型才能正常<br>编辑，但是这样生成的PDF也是乱码的，总之是很繁琐。</p>
+
+<p>之后了解到latex有进化到了xelatex，中文语言已经可以处理而不需要声明包含CJK这些东西，类似<br>Next操作了，实验之后就抛弃了CTex,转而使用TextLive。来看看我写报告的效率吧!</p>
+
+<h1 id="u6587_u6863_u7684_u5236_u4F5C_u4E0E_u751F_u6210"><a href="#u6587_u6863_u7684_u5236_u4F5C_u4E0E_u751F_u6210" class="headerlink" title="文档的制作与生成"></a>文档的制作与生成</h1><ol>
+<li>TextLive自带编辑器打开模板tex文件，将标题、作者、内容等按照范例填到对应区域。</li>
+<li>使用xelatex 编译对应的tex文件，目录下即生成了同名的pdf。</li>
+</ol>
+<p>就是这么简单!对于需要插入引用和参考文献:</p><br>3. 在google学术上找到文献的bibtex引用，复制进bib文件中。<br>4. 在需要引用的文档中添加<code>\citep{bib文件中相应文献的标题}</code>。<br>5. 在tex文档应该写参考文献的部分添加<code>\bibliography{bib文件名}</code>。<br><br><p>然后重新编译tex文件一次，再使用bibtex编译一次，最后使用xelatex编译文件两次，<br>带引用的PDF文档就完成了。引用部分自动排好了引用标注。</p>
+
+<p>总的来说，就是三步:<strong>填写内容;添加引用;编译文档</strong>。也没有想象中的那种像写天书<br>语言一样的困难嘛，很多时候都是吓自己了。</p>
+
+<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>由于很多人都对标记语言有畏难情绪，认为这种东西是计算机爱好者才会有耐心去弄的东西，<br>其实一件新鲜的事情出现没有尝试我们就有了先入为主的偏见。静下心来，看一下范例，自然<br>就会了，不断地使用，我们就掌握了80%,基本可以日常使用，提高了自己的工作效率。</p><br><p>我的初步计划是放假期间熟练latex的标记，能够自己定义模板，到下半年写毕业论文就使用<br>Latex来写。Latex的图表，公式部分我都没有用到，交完作业是该好好熟悉了，比起本科时后期<br>按照学校文档规范来改的经历来说，效率要高得多，一天足够完成这些，还不会出现疏忽格式而<br>被打回修改的意外。</p>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex"><a href="#u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex" class="headerl]]>
+    </summary>
+    
+      <category term="tools" scheme="http://linghutf.github.io/tags/tools/"/>
+    
+  </entry>
+  
+</feed>

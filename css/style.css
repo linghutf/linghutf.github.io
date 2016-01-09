@@ -1090,8 +1090,6 @@ color
 .article {
   margin: 30px;
   position: relative;
-  border: 1px solid #ddd;
-  background: #fff;
   -webkit-transition: all 0.2s ease-in;
 }
 .article.show {
@@ -1158,7 +1156,7 @@ color
   color: #c8c8c8;
 }
 .article-title {
-  color: #696969;
+  color: #999;
   margin-left: 0px;
   font-weight: 300;
   line-height: 35px;
@@ -1173,14 +1171,20 @@ color
   transition: color 0.3s;
 }
 .article-title:hover {
-  color: #b0a0aa;
+  color: #fff;
 }
 .article-inner {
   position: relative;
+  border: 1px solid #2f2f2f;
   margin-bottom: 20px;
+  padding-bottom: 20px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
+  box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
 }
 .article-header {
-  border-left: 5px solid;
+  border-left: rgba(63,63,63,0) 5px solid;
   padding: 15px 0px 15px 25px;
 }
 .article-info.info-on-right {
@@ -1188,9 +1192,7 @@ color
   float: right;
 }
 .article-info-index.article-info {
-  padding-top: 20px;
   margin: 30px 30px 0 30px;
-  border-top: 1px solid #ddd;
 }
 .article-info-post.article-info {
   padding: 0;
@@ -1214,14 +1216,6 @@ color
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   word-wrap: break-word;
   font-size: 14px;
-}
-.article-entry blockquote {
-  background: #ddd;
-  border-left: 5px solid #ccc;
-  padding: 15px 20px;
-  margin-top: 10px;
-  border-left: 5px solid #657b83;
-  background: #f6f6f6;
 }
 .article-entry blockquote p {
   margin-top: 0;
@@ -1255,26 +1249,6 @@ color
 .article-entry li ol li:before {
   content: "";
   background: #dedede;
-}
-.article-entry h1 {
-  margin-top: 30px;
-}
-.article-entry h2 {
-  margin-top: 20px;
-  font-weight: 300;
-  color: #574c4c;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ddd;
-}
-.article-entry h3,
-.article-entry h4,
-.article-entry h5,
-.article-entry h6 {
-  margin-top: 20px;
-  font-weight: 300;
-  color: #574c4c;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ddd;
 }
 .article-entry video {
   max-width: 100%;
@@ -1342,7 +1316,6 @@ color
 }
 .article-meta {
   width: 150px;
-  font-size: 14;
   text-align: right;
   position: absolute;
   right: 0;
@@ -1364,7 +1337,7 @@ color
   text-align: right;
 }
 .article-more-link a {
-  background: #4d4d4d;
+  background: #258fb8;
   color: #fff;
   font-size: 12px;
   padding: 2px 8px 4px;
@@ -1379,7 +1352,7 @@ color
   transition: background 0.3s;
 }
 .article-more-link a:hover {
-  background: #3c3c3c;
+  background: #3f3f3f;
 }
 .article-more-link a.hidden {
   visibility: hidden;
@@ -1396,14 +1369,14 @@ color
 #article-nav .article-nav-link-wrap .article-nav-title {
   display: inline-block;
   font-size: 12px;
-  color: #aaa;
+  color: #999;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
   transition: color 0.3s;
 }
 #article-nav .article-nav-link-wrap strong {
-  background: #ddd;
+  background: #999;
   color: #fff;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -1417,10 +1390,10 @@ color
   transition: background 0.3s;
 }
 #article-nav .article-nav-link-wrap:hover strong {
-  background: #4d4d4d;
+  background: #fff;
 }
 #article-nav .article-nav-link-wrap:hover .article-nav-title {
-  color: #4d4d4d;
+  color: #fff;
 }
 #article-nav #article-nav-older {
   float: right;
@@ -1518,24 +1491,24 @@ color
   max-width: 45em;
   margin: 0 auto;
   padding: 0.5em 1.8em;
-  border: 1px solid #d3d3d3;
+  border: 1px solid #2f2f2f;
   font-size: 0.93em;
   line-height: 1.6em;
   word-break: break-word;
-  background: rgba(255,255,255,0.4);
+  background: #414141;
+  -webkit-box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
+  box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
 }
 .copyright span {
   margin-right: 1em;
-  color: #b5b5b5;
+  color: #d5d5d5;
   font-weight: bold;
-}
-.copyright a {
-  color: #808080;
 }
 .copyright a:hover {
   font-weight: bold;
-  color: #a3d2a3;
-  text-decoration: underline;
+  color: #fff;
 }
 .copyright:hover p .copy-path::after {
   content: "复制";
@@ -1549,26 +1522,6 @@ color
 .copyright .copy-path:hover {
   color: #808080;
   cursor: pointer;
-}
-.bdshare-button-style2-24 {
-  width: 330px;
-  margin: auto;
-}
-.bdshare-button-style2-24 .fx {
-  color: #999;
-  padding: 0;
-  margin: 6px;
-  height: 54px;
-  display: inline-block;
-  font: normal normal normal 36px/1 FontAwesome;
-  background: none;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.bdshare-button-style2-24 .fx:hover {
-  color: #fff;
-  opacity: 1;
 }
 @-moz-keyframes cd-bounce-1 {
   0% {

@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="欢迎来到linghutf的博客!">
 <meta property="og:description" content="为什么做静态文件服务器　　这几天博客搭建起来后，美化和主题也设置得差不多了，就是在写作时，有时候需要插入图片，图片使用的相对地址会在hexo生成博客时失效，总不可能插入一个图片就在它生成后去相应的html里改引用地址吧，再说上传的时候Hexo可能默认不会上传。　　所以这种情况下，就需要一个文件服务器去为我们生成的博客传输图片。
 现有的解决方法1.七牛服务　　七牛的静态文件服务听说性能很高，也是用我">
-<meta property="og:updated_time" content="2016-01-10T14:42:38.752Z">
+<meta property="og:updated_time" content="2016-01-10T14:50:31.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="静态文件服务">
 <meta name="twitter:description" content="为什么做静态文件服务器　　这几天博客搭建起来后，美化和主题也设置得差不多了，就是在写作时，有时候需要插入图片，图片使用的相对地址会在hexo生成博客时失效，总不可能插入一个图片就在它生成后去相应的html里改引用地址吧，再说上传的时候Hexo可能默认不会上传。　　所以这种情况下，就需要一个文件服务器去为我们生成的博客传输图片。
@@ -269,6 +269,7 @@ var _hmt = _hmt || [];
 <p>　　然后将这段代码发在云上运行，并将博客里要插入的图片放在rootPath下，更新<br>博客后，再访问服务端果然出现了request ok的信息，gitcafe和github上的博客在浏<br>览时，也成功加载了图片。说明我的想法是正确的。</p>
 <h1 id="u540E_u7EED"><a href="#u540E_u7EED" class="headerlink" title="后续"></a>后续</h1><p>服务器写的还是很简陋的，总的来说有以下需要改进:</p>
 <ol>
+<li>将服务器地址写到配置文件中，而不是每次都写域名，更新域名更方便。</li>
 <li>既没有对请求进行判断，不能防范攻击。</li>
 <li>多个人浏览时是否依旧能流畅加载图片没有测试。</li>
 <li>javascript的异步模式应该多个请求怎么处理没有弄清。<br>　　<br>所以，接下来针对这几点，可以一边用一边改，这就是未完的工作了。不过好歹可以用了，<br>也不用去注册一个服务，自己又得到了锻炼。说不定发展到最后可以提供多个服务。一个<br>web框架大概也是这样一点一点地加起来的。</li>
@@ -284,7 +285,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2016/01/10/staticfileserv/">静态文件服务</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 linghutf 个人博客">linghutf</a></p>
         <p><span>发布时间:</span>2016年01月10日 - 13时44分</p>
-        <p><span>最后更新:</span>2016年01月10日 - 14时42分</p>
+        <p><span>最后更新:</span>2016年01月10日 - 14时50分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/10/staticfileserv/" title="静态文件服务">http://linghutf.github.io/2016/01/10/staticfileserv/</a>
             <span class="copy-path" data-clipboard-text="原文: http://linghutf.github.io/2016/01/10/staticfileserv/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

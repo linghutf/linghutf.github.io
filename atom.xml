@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.github.io/"/>
-  <updated>2016-01-10T14:42:38.752Z</updated>
+  <updated>2016-01-10T14:50:31.904Z</updated>
   <id>http://linghutf.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://linghutf.github.io/2016/01/10/staticfileserv/"/>
     <id>http://linghutf.github.io/2016/01/10/staticfileserv/</id>
     <published>2016-01-10T13:44:38.000Z</published>
-    <updated>2016-01-10T14:42:38.752Z</updated>
+    <updated>2016-01-10T14:50:31.904Z</updated>
     <content type="html"><![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668"><a href="#u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668" class="headerlink" title="为什么做静态文件服务器"></a>为什么做静态文件服务器</h1><p>　　这几天博客搭建起来后，美化和主题也设置得差不多了，就是在写作时，<br>有时候需要插入图片，图片使用的相对地址会在hexo生成博客时失效，总不<br>可能插入一个图片就在它生成后去相应的html里改引用地址吧，再说上传的时<br>候Hexo可能默认不会上传。<br>　　所以这种情况下，就需要一个文件服务器去为我们生成的博客传输图片。</p>
 <h1 id="u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="现有的解决方法"></a>现有的解决方法</h1><h2 id="1-_u4E03_u725B_u670D_u52A1"><a href="#1-_u4E03_u725B_u670D_u52A1" class="headerlink" title="1.七牛服务"></a>1.七牛服务</h2><p>　　七牛的静态文件服务听说性能很高，也是用我最近学习的golang写的。不少<br>人都是推荐这种服务，所以我就去七牛官网看了一下，有免费试用版，每个月<br>请求一万次到十万次，对我来说够用了。想注册的时候有以下两点要求我比较介意:</p>
 <ul>
@@ -38,6 +38,7 @@
 <p>　　然后将这段代码发在云上运行，并将博客里要插入的图片放在rootPath下，更新<br>博客后，再访问服务端果然出现了request ok的信息，gitcafe和github上的博客在浏<br>览时，也成功加载了图片。说明我的想法是正确的。</p>
 <h1 id="u540E_u7EED"><a href="#u540E_u7EED" class="headerlink" title="后续"></a>后续</h1><p>服务器写的还是很简陋的，总的来说有以下需要改进:</p>
 <ol>
+<li>将服务器地址写到配置文件中，而不是每次都写域名，更新域名更方便。</li>
 <li>既没有对请求进行判断，不能防范攻击。</li>
 <li>多个人浏览时是否依旧能流畅加载图片没有测试。</li>
 <li>javascript的异步模式应该多个请求怎么处理没有弄清。<br>　　<br>所以，接下来针对这几点，可以一边用一边改，这就是未完的工作了。不过好歹可以用了，<br>也不用去注册一个服务，自己又得到了锻炼。说不定发展到最后可以提供多个服务。一个<br>web框架大概也是这样一点一点地加起来的。</li>

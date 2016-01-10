@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.github.io/"/>
-  <updated>2016-01-10T14:41:04.407Z</updated>
+  <updated>2016-01-10T14:42:38.752Z</updated>
   <id>http://linghutf.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://linghutf.github.io/2016/01/10/staticfileserv/"/>
     <id>http://linghutf.github.io/2016/01/10/staticfileserv/</id>
     <published>2016-01-10T13:44:38.000Z</published>
-    <updated>2016-01-10T14:41:04.407Z</updated>
+    <updated>2016-01-10T14:42:38.752Z</updated>
     <content type="html"><![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668"><a href="#u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668" class="headerlink" title="为什么做静态文件服务器"></a>为什么做静态文件服务器</h1><p>　　这几天博客搭建起来后，美化和主题也设置得差不多了，就是在写作时，<br>有时候需要插入图片，图片使用的相对地址会在hexo生成博客时失效，总不<br>可能插入一个图片就在它生成后去相应的html里改引用地址吧，再说上传的时<br>候Hexo可能默认不会上传。<br>　　所以这种情况下，就需要一个文件服务器去为我们生成的博客传输图片。</p>
 <h1 id="u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="现有的解决方法"></a>现有的解决方法</h1><h2 id="1-_u4E03_u725B_u670D_u52A1"><a href="#1-_u4E03_u725B_u670D_u52A1" class="headerlink" title="1.七牛服务"></a>1.七牛服务</h2><p>　　七牛的静态文件服务听说性能很高，也是用我最近学习的golang写的。不少<br>人都是推荐这种服务，所以我就去七牛官网看了一下，有免费试用版，每个月<br>请求一万次到十万次，对我来说够用了。想注册的时候有以下两点要求我比较介意:</p>
 <ul>
@@ -47,7 +47,13 @@
     <![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668"><a href="#u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u]]>
     </summary>
     
-      <category term="program nodejs http server" scheme="http://linghutf.github.io/tags/program-nodejs-http-server/"/>
+      <category term="http" scheme="http://linghutf.github.io/tags/http/"/>
+    
+      <category term="nodejs" scheme="http://linghutf.github.io/tags/nodejs/"/>
+    
+      <category term="program" scheme="http://linghutf.github.io/tags/program/"/>
+    
+      <category term="server" scheme="http://linghutf.github.io/tags/server/"/>
     
   </entry>
   

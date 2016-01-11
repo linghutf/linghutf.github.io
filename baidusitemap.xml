@@ -4,6 +4,103 @@
 
     
   <url>
+    <loc>http://linghutf.github.io/2016/01/11/golangserv/</loc>
+    <lastmod>2016-01-11T14:14:30.976Z</lastmod>
+    <data>
+        <display>
+        <title>图片服务器的Nodejs和Go版本性能测试</title>
+        <pubTime>2016-01-11T12:12:08.000Z</pubTime>
+        
+        <tag>ab</tag>
+         
+        <tag>go</tag>
+         
+        <tag>nodejs</tag>
+         
+        <tag>webbench</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linghutf.github.io/2016/01/09/languages/</loc>
+    <lastmod>2016-01-11T14:06:48.119Z</lastmod>
+    <data>
+        <display>
+        <title>关于合适语言的一点看法</title>
+        <pubTime>2016-01-09T08:31:03.000Z</pubTime>
+        
+        <tag>program language</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linghutf.github.io/2016/01/08/first_20160108/</loc>
+    <lastmod>2016-01-11T12:21:09.344Z</lastmod>
+    <data>
+        <display>
+        <title>我的个人博客终于搭建成功啦!</title>
+        <pubTime>2016-01-08T14:56:16.000Z</pubTime>
+        
+        <tag>todo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linghutf.github.io/2016/01/09/factor/</loc>
+    <lastmod>2016-01-11T12:21:02.868Z</lastmod>
+    <data>
+        <display>
+        <title>大数阶乘截断</title>
+        <pubTime>2016-01-09T05:12:36.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>go</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linghutf.github.io/2016/01/10/schedule/</loc>
+    <lastmod>2016-01-11T12:18:35.936Z</lastmod>
+    <data>
+        <display>
+        <title>最近及假期之间的个人计划</title>
+        <pubTime>2016-01-10T04:52:30.000Z</pubTime>
+        
+        <tag>program schedule</tag>
+         
+        <tag>todo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://linghutf.github.io/2016/01/10/staticfileserv/</loc>
     <lastmod>2016-01-10T14:50:31.904Z</lastmod>
     <data>
@@ -18,23 +115,6 @@
         <tag>program</tag>
          
         <tag>server</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://linghutf.github.io/2016/01/09/factor/</loc>
-    <lastmod>2016-01-10T13:41:36.154Z</lastmod>
-    <data>
-        <display>
-        <title>大数阶乘截断</title>
-        <pubTime>2016-01-09T05:12:36.000Z</pubTime>
-        
-        <tag>algorithm</tag>
          
          
            
@@ -60,43 +140,7 @@
     </url>
 
     
-  <url>
-    <loc>http://linghutf.github.io/2016/01/10/schedule/</loc>
-    <lastmod>2016-01-10T07:13:29.125Z</lastmod>
-    <data>
-        <display>
-        <title>最近及假期之间的个人计划</title>
-        <pubTime>2016-01-10T04:52:30.000Z</pubTime>
-        
-        <tag>program schedule</tag>
-         
-        <tag>todo-list</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
-    
-    
-  <url>
-    <loc>http://linghutf.github.io/2016/01/09/languages/</loc>
-    <lastmod>2016-01-09T09:32:12.515Z</lastmod>
-    <data>
-        <display>
-        <title>关于合适语言的一点看法</title>
-        <pubTime>2016-01-09T08:31:03.000Z</pubTime>
-        
-        <tag>program language</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://linghutf.github.io/2016/01/08/latex-20160109/</loc>
@@ -107,23 +151,6 @@
         <pubTime>2016-01-08T14:56:16.000Z</pubTime>
         
         <tag>tools</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://linghutf.github.io/2016/01/08/first_20160108/</loc>
-    <lastmod>2016-01-08T15:19:05.696Z</lastmod>
-    <data>
-        <display>
-        <title>我的个人博客终于搭建成功啦!</title>
-        <pubTime>2016-01-08T14:56:16.000Z</pubTime>
-        
-        <tag>todo-list</tag>
          
          
            

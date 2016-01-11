@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>图片服务器的Nodejs和Go版本性能测试 | 欢迎来到linghutf的博客!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于上一版本　　昨天完成了nodejs版本的图片服务器staticserv之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，首先考虑的是Go版本的服务器，只不过自己没有弄清go的资源地址都是相对于项目的GOPATH的地址，还是使用老方法\a\b\c.txt去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了path/filepa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片服务器的Nodejs和Go版本性能测试">
+<meta property="og:url" content="http://linghutf.github.io/2016/01/11/golangserv/index.html">
+<meta property="og:site_name" content="欢迎来到linghutf的博客!">
+<meta property="og:description" content="关于上一版本　　昨天完成了nodejs版本的图片服务器staticserv之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，首先考虑的是Go版本的服务器，只不过自己没有弄清go的资源地址都是相对于项目的GOPATH的地址，还是使用老方法\a\b\c.txt去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了path/filepa">
+<meta property="og:updated_time" content="2016-01-11T14:14:30.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图片服务器的Nodejs和Go版本性能测试">
+<meta name="twitter:description" content="关于上一版本　　昨天完成了nodejs版本的图片服务器staticserv之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，首先考虑的是Go版本的服务器，只不过自己没有弄清go的资源地址都是相对于项目的GOPATH的地址，还是使用老方法\a\b\c.txt去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了path/filepa">
+  
+  
+    <link rel="icon" href="/img/favicon.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">linghutf</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">林花谢了春红，太匆匆!</p>
+		
+<input type="text" class="st-default-search-input" id="search" placeholder=" Search...">
+		
+			<div id="switch-btn" class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div id="switch-area" class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">历史</a></li>
+				        
+							<li><a href="/categories">分类</a></li>
+				        
+							<li><a href="/tags">碎笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="fl weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
+					        
+								<a class="fl github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
+					        
+								<a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
+					        
+								<a class="fl mail" target="_blank" href="/751350255@qq.com" title="mail">mail</a>
+					        
+								<a class="fl v2ex" target="_blank" href="https://v2ex.com/member/linghutf" title="v2ex">v2ex</a>
+					        
+								<a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="fl segmentfult" target="_blank" href="http://segmentfault.com/u/linghutf" title="segmentfult">segmentfult</a>
+					        
+								<a class="fl douban" target="_blank" href="http://www.douban.com/people/47914461/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 10px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">喜欢历史，代码，数学和安静的美。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">linghutf</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/head.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">linghutf</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">林花谢了春红，太匆匆!</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">历史</a></li>
+		        
+					<li><a href="/categories">分类</a></li>
+		        
+					<li><a href="/tags">碎笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
+			        
+						<a class="github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/751350255@qq.com" title="mail">mail</a>
+			        
+						<a class="v2ex" target="_blank" href="https://v2ex.com/member/linghutf" title="v2ex">v2ex</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="segmentfult" target="_blank" href="http://segmentfault.com/u/linghutf" title="segmentfult">segmentfult</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/47914461/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-golangserv" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/11/golangserv/" class="article-date">
+  	<time datetime="2016-01-11T12:12:08.000Z" itemprop="datePublished">2016-01-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      图片服务器的Nodejs和Go版本性能测试
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ab/">ab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webbench/">webbench</a></li></ul>
+	</div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/" target="_blank" rel="external">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD"><a href="#Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD" class="headerlink" title="Go版本的主要功能"></a>Go版本的主要功能</h1><ol>
+<li>自定义资源文件位置<br>主要是通过<code>flag</code>模块解析src参数来实现，比如<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/serv -src /</span>tmp</span><br><span class="line">请求<span class="string">URL:</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//<span class="label">xxx/123.jpg</span></span></span><br><span class="line">最终服务器查找的文件地址:</span><br><span class="line"><span class="regexp">/tmp/</span><span class="number">123.</span>jpg</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>测试中对于”//“这种错误也能兼容，因为它使用的是Join转化路径，而不是拼接字符串。<br>关键代码如下:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">relativePath := req.URL.Path</span><br><span class="line">filename, err := filepath.Abs(filepath.Join(*curDir, relativePath))</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>判断请求类型<br>这部分主要有忽略”favicon.ico”请求、判断路径是否正确和文件是否存在<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//忽略favicon请求:</span></span><br><span class="line"><span class="keyword">if</span> relativePath == <span class="string">"/favicon.ico"</span> &#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>路径是否正确直接判断上文中的err就好了，这里就不表述。实验时发现请求的是目录，服务<br>器立马输出错误，然后退出了。这怎么行，一点都不健壮，所以要判断是不是文件:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fileinfo, e := os.Stat(filename)</span><br><span class="line"><span class="comment">//文件不存在</span></span><br><span class="line"><span class="keyword">if</span> os.IsNotExist(e) &#123;</span><br><span class="line">	log.Println(filename, <span class="string">" is not exists."</span>)</span><br><span class="line">	res.WriteHeader(<span class="number">404</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不是文件，返回500错误</span></span><br><span class="line"><span class="keyword">if</span> fileinfo.IsDir() &#123;</span><br><span class="line">	res.WriteHeader(<span class="number">500</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>判断文件类型并读取、发送文据<br>判断文件类型主要是为了响应时的<code>content-type</code>,对于不是图片的请求，直接返回了<code>text/plain</code>:<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extname := filepath.Ext(reqfile)</span><br><span class="line"><span class="keyword">switch</span> extname &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">".jpg"</span>, <span class="string">".jpeg"</span>, <span class="string">".jpe"</span>, <span class="string">".jfif"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/jpeg"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".png"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/png"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".ico"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/x-icon"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".gif"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/gif"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".tif"</span>, <span class="string">".tiff"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/jiff"</span></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"text/plain"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>发送数据就比较简单了，为了不在传递参数时拷贝，我用了拷贝指针的办法:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data []<span class="typename">byte</span></span><br><span class="line"><span class="comment">//读取文件</span></span><br><span class="line">ReadFileFromPath(&amp;data, filename)</span><br><span class="line">res.WriteHeader(<span class="number">200</span>)</span><br><span class="line">res.Write(data)</span><br></pre></td></tr></table></figure></p>
+<h1 id="u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4"><a href="#u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4" class="headerlink" title="与上一版本的性能测试对比"></a>与上一版本的性能测试对比</h1><p>这里主要用到了apache的ab工具，以及开源软件webbench。<br>两者都在同一环境下，均没有做优化。</p>
+<ol>
+<li>ab测试,并发请求200，总请求数4000:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -c <span class="number">200</span> -n <span class="number">4000</span> httpL<span class="comment">//localhost:8080/fact10000.png</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>测试结果如下:</p>
+<p>go 版本:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Document Path:          /img/fact10000.png</span><br><span class="line">Document Length:        <span class="number">27488</span> <span class="keyword">bytes</span></span><br><span class="line"></span><br><span class="line">Concurrency Level:      <span class="number">200</span></span><br><span class="line">Time taken <span class="keyword">for</span> tests:   <span class="number">2.493</span> <span class="built_in">seconds</span></span><br><span class="line">Complete requests:      <span class="number">4000</span></span><br><span class="line">Failed requests:        <span class="number">0</span></span><br><span class="line">Total transferred:      <span class="number">110276000</span> <span class="keyword">bytes</span></span><br><span class="line">HTML transferred:       <span class="number">109952000</span> <span class="keyword">bytes</span></span><br><span class="line">Requests per <span class="keyword">second</span>:    <span class="number">1604.80</span> [<span class="comment">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">124.626</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.623</span> [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          <span class="number">43205.78</span> [Kbytes/<span class="built_in">sec</span>] received <span class="comment"> //网络传输速度，排除网路问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*网络上消耗的时间的分解*/</span></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              <span class="built_in">min</span>  mean[+/-sd] <span class="built_in">median</span>   <span class="built_in">max</span></span><br><span class="line">Connect:        <span class="number">0</span>    <span class="number">4</span>  <span class="number">39.6</span>      <span class="number">0</span>    <span class="number">1003</span></span><br><span class="line">Processing:     <span class="number">3</span>  <span class="number">117</span> <span class="number">143.3</span>     <span class="number">56</span>    <span class="number">1184</span></span><br><span class="line">Waiting:        <span class="number">2</span>   <span class="number">65</span>  <span class="number">41.9</span>     <span class="number">50</span>     <span class="number">173</span></span><br><span class="line">Total:          <span class="number">4</span>  <span class="number">121</span> <span class="number">147.3</span>     <span class="number">57</span>    <span class="number">1184</span></span><br><span class="line"></span><br><span class="line">*下面的内容为整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间，</span><br><span class="line">其中 <span class="number">50</span>％ 的用户响应时间小于 <span class="number">57</span> 毫秒，<span class="number">66</span> ％ 的用户响应时间小于 <span class="number">100</span> 毫秒，</span><br><span class="line">最大的响应时间小于 <span class="number">1184</span> 毫秒*/</span><br><span class="line"></span><br><span class="line">Percentage <span class="operator">of</span> <span class="operator">the</span> requests served <span class="operator">within</span> <span class="operator">a</span> certain <span class="built_in">time</span> (ms)</span><br><span class="line">  <span class="number">50</span>%     <span class="number">57</span></span><br><span class="line">  <span class="number">66</span>%    <span class="number">109</span></span><br><span class="line">  <span class="number">75</span>%    <span class="number">150</span></span><br><span class="line">  <span class="number">80</span>%    <span class="number">157</span></span><br><span class="line">  <span class="number">90</span>%    <span class="number">290</span></span><br><span class="line">  <span class="number">95</span>%    <span class="number">406</span></span><br><span class="line">  <span class="number">98</span>%    <span class="number">583</span></span><br><span class="line">  <span class="number">99</span>%    <span class="number">739</span></span><br><span class="line"> <span class="number">100</span>%   <span class="number">1184</span> (longest request)</span><br></pre></td></tr></table></figure></p>
+<p>nodejs版本:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Concurrency Level:      <span class="number">200</span></span><br><span class="line">Time taken <span class="keyword">for</span> tests:   <span class="number">3.019</span> <span class="built_in">seconds</span></span><br><span class="line">Complete requests:      <span class="number">4000</span></span><br><span class="line">Failed requests:        <span class="number">0</span></span><br><span class="line">Total transferred:      <span class="number">110352000</span> <span class="keyword">bytes</span></span><br><span class="line">HTML transferred:       <span class="number">109952000</span> <span class="keyword">bytes</span></span><br><span class="line">Requests per <span class="keyword">second</span>:    <span class="number">1325.07</span> [<span class="comment">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">150.935</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.755</span> [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          <span class="number">35699.34</span> [Kbytes/<span class="built_in">sec</span>] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              <span class="built_in">min</span>  mean[+/-sd] <span class="built_in">median</span>   <span class="built_in">max</span></span><br><span class="line">Connect:        <span class="number">0</span>   <span class="number">24</span> <span class="number">150.8</span>      <span class="number">0</span>    <span class="number">1003</span></span><br><span class="line">Processing:    <span class="number">67</span>  <span class="number">119</span>  <span class="number">50.4</span>    <span class="number">103</span>     <span class="number">420</span></span><br><span class="line">Waiting:       <span class="number">67</span>  <span class="number">118</span>  <span class="number">50.3</span>    <span class="number">103</span>     <span class="number">420</span></span><br><span class="line">Total:         <span class="number">71</span>  <span class="number">143</span> <span class="number">156.3</span>    <span class="number">105</span>    <span class="number">1116</span></span><br><span class="line"></span><br><span class="line">Percentage <span class="operator">of</span> <span class="operator">the</span> requests served <span class="operator">within</span> <span class="operator">a</span> certain <span class="built_in">time</span> (ms)</span><br><span class="line">  <span class="number">50</span>%    <span class="number">105</span></span><br><span class="line">  <span class="number">66</span>%    <span class="number">125</span></span><br><span class="line">  <span class="number">75</span>%    <span class="number">141</span></span><br><span class="line">  <span class="number">80</span>%    <span class="number">145</span></span><br><span class="line">  <span class="number">90</span>%    <span class="number">160</span></span><br><span class="line">  <span class="number">95</span>%    <span class="number">303</span></span><br><span class="line">  <span class="number">98</span>%   <span class="number">1093</span></span><br><span class="line">  <span class="number">99</span>%   <span class="number">1099</span></span><br><span class="line"> <span class="number">100</span>%   <span class="number">1116</span> (longest request)</span><br></pre></td></tr></table></figure></p>
+<p>二者情况是差不多的，go略微好于nodejs。</p>
+<ol>
+<li>连续3次请求测试平均值,选取用户最关心的三项参数<br>go:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Requests per second:    <span class="number">1604.80</span> [<span class="preprocessor">#/sec] (mean)    <span class="comment">//吞吐率</span></span></span><br><span class="line">Time per request:       <span class="number">124.626</span> [ms] (mean)      <span class="comment">//用户平均请求等待时间</span></span><br><span class="line">Time per request:       <span class="number">0.623</span> [ms] (mean, across all concurrent requests) <span class="comment">//服务器平均请求等待时间</span></span><br><span class="line"></span><br><span class="line">Requests per second:    <span class="number">1627.66</span> [<span class="preprocessor">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">122.876</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.614</span> [ms] (mean, across all concurrent requests)</span><br><span class="line"></span><br><span class="line">Requests per second:    <span class="number">1747.35</span> [<span class="preprocessor">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">114.459</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.572</span> [ms] (mean, across all concurrent requests)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>nodejs:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1325<span class="class">.07</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)      </span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       150<span class="class">.935</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)         </span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.755</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)  </span><br><span class="line"></span><br><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1156<span class="class">.69</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       172<span class="class">.908</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.865</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)</span><br><span class="line"></span><br><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1231<span class="class">.65</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       162<span class="class">.383</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.812</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)</span><br></pre></td></tr></table></figure></p>
+<p>可以看出二者在吞吐率上,Go好于nodejs,平均等待时间上二者相差无几。</p>
+<ol>
+<li>webbench 压力测试<br>压力测试30秒内，并发请求数200,连续测试3次<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webbench -t <span class="number">30</span> -c <span class="number">200</span> http:<span class="comment">//127.0.0.1:8080/img/fact10000.png</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>go的表现:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Speed=<span class="number">111574</span> pages/min, <span class="number">51317124</span> bytes/sec. <span class="comment">//速度，111574页/每分钟，51317124字节/秒</span></span><br><span class="line">Speed=<span class="number">100538</span> pages/min, <span class="number">46228920</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">103186</span> pages/min, <span class="number">47440784</span> bytes/sec.</span><br><span class="line"></span><br><span class="line">资源占用:</span><br><span class="line">VIRT    RES     SHR     CPU   MEM   TIME</span><br><span class="line"><span class="number">364756</span>  <span class="number">26252</span>   <span class="number">4336</span> S  <span class="number">61.9</span>  <span class="number">0.0</span>   <span class="number">0</span>:<span class="number">15.26</span> serv </span><br><span class="line"><span class="number">364884</span>  <span class="number">25960</span>   <span class="number">4044</span> S  <span class="number">58.7</span>  <span class="number">0.0</span></span><br><span class="line"><span class="number">364884</span>  <span class="number">25960</span>   <span class="number">4044</span> R  <span class="number">57.9</span>  <span class="number">0.0</span></span><br></pre></td></tr></table></figure></p>
+<p>nodejs的表现:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Speed=<span class="number">78864</span> pages/min, <span class="number">36259112</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">42868</span> pages/min, <span class="number">19710708</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">36340</span> pages/min, <span class="number">16708262</span> bytes/sec.</span><br><span class="line"></span><br><span class="line">资源占用:</span><br><span class="line">VIRT    RES     SHR     CPU   MEM   TIME</span><br><span class="line"><span class="number">955320</span>  <span class="number">74196</span>  <span class="number">14252</span> R  <span class="number">73.6</span>  <span class="number">0.1</span>   <span class="number">0</span>:<span class="number">10.49</span> node</span><br><span class="line"><span class="number">960768</span>  <span class="number">79408</span>  <span class="number">14252</span> R  <span class="number">33.2</span>  <span class="number">0.1</span></span><br><span class="line"><span class="number">961604</span>  <span class="number">79256</span>  <span class="number">14252</span> R  <span class="number">34.7</span>  <span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
+<p>二者都是0错误,可以看出nodejs在速度和资源占用率都比Go表现的差，<br>速度大概只有go的一半不到，内存占用率却是go的3倍左右，CPU使用率<br>稍好于go。</p>
+<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>   从测试里可以看到，Go的http性能是好于nodejs的，不过对于这么<br>简单的应用，可能无法完全反应Go和nodejs的http性能高低吧，但是go的<br>http的模块我觉得很好用，写代码也是同步方式，不像nodejs我写到逻辑越来<br>越复杂的时候就有点越发要好好学一学异步编程的思想，这种思维转换一时还<br>无法适应，所以我往往选择javascript先完成一部分功能，打开思路后使用Go<br>去实现。<br>　另外今天的收获就是学会了做网络测试了，这对我来说又增长了能力。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></p>
+        <p><span>文章作者:</span><a href="/" title="请访问 linghutf 个人博客">linghutf</a></p>
+        <p><span>发布时间:</span>2016年01月11日 - 12时12分</p>
+        <p><span>最后更新:</span>2016年01月11日 - 14时14分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/11/golangserv/" title="图片服务器的Nodejs和Go版本性能测试">http://linghutf.github.io/2016/01/11/golangserv/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://linghutf.github.io/2016/01/11/golangserv/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/10/staticfileserv/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">静态文件服务</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><span class="toc-number">1.</span> <span class="toc-text">关于上一版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD"><span class="toc-number">2.</span> <span class="toc-text">Go版本的主要功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4"><span class="toc-number">3.</span> <span class="toc-text">与上一版本的性能测试对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var toc_button = document.getElementById("tocButton");
+    var toc_div = document.getElementById("toc");
+    toc_button.onclick=function() {
+        if (toc_div.style.display == "none") {
+            toc_div.style.display = "block";
+            toc_button.value = "隐藏目录";
+            document.getElementById("switch-btn").style.display = "none";
+            document.getElementById("switch-area").style.display = "none";
+        }
+        else {
+            toc_div.style.display = "none";
+            toc_button.value = "显示目录";
+            document.getElementById("switch-btn").style.display = "block";
+            document.getElementById("switch-area").style.display = "block";
+        }
+    }
+
+    if ($(".toc").length < 1) {
+        $("#toc").css("display","none");
+        $("#tocButton").css("display","none");
+        $(".switch-btn").css("display","block");
+        $(".switch-area").css("display","block");
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/01/11/golangserv/" data-title="图片服务器的Nodejs和Go版本性能测试" data-url="http://linghutf.github.io/2016/01/11/golangserv/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"linghutf"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/10/staticfileserv/" title="下一篇: 静态文件服务">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200);
+            }
+            else {
+                $(".switch-btn, .switch-area").toggle(200);
+            }
+        })
+    </script>
+
+
+
+
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: false,
+            isPost: true,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 linghutf
+            </div>
+            <!--div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a>
+            </div-->
+        </div>
+        <div class="visit">
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <span id="site-visit" >本站到访数: 
+                    <span id="busuanzi_value_site_uv"></span>
+                </span>
+            </span>
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">, 本页阅读量: 
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            </span>
+        </div>
+    </div>
+    <script async src="/js/busuanzi.pure.mini.js"></script>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var spfkConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+</script>
+  </div>
+</body>
+</html>

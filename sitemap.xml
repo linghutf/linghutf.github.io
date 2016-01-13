@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linghutf.github.io/resume/index.html</loc>
+    <lastmod>2016-01-13T07:23:03.318Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://linghutf.github.io/2016/01/11/golangserv/</loc>
-    <lastmod>2016-01-11T14:14:30.976Z</lastmod>
+    <lastmod>2016-01-12T07:57:30.272Z</lastmod>
   </url>
   
   <url>

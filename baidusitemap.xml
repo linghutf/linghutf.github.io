@@ -3,9 +3,10 @@
 
 
     
+    
   <url>
     <loc>http://linghutf.github.io/2016/01/11/golangserv/</loc>
-    <lastmod>2016-01-11T14:14:30.976Z</lastmod>
+    <lastmod>2016-01-12T07:57:30.272Z</lastmod>
     <data>
         <display>
         <title>图片服务器的Nodejs和Go版本性能测试</title>

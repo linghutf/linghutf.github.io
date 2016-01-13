@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.github.io/"/>
-  <updated>2016-01-11T14:14:30.976Z</updated>
+  <updated>2016-01-12T07:57:30.272Z</updated>
   <id>http://linghutf.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://linghutf.github.io/2016/01/11/golangserv/"/>
     <id>http://linghutf.github.io/2016/01/11/golangserv/</id>
     <published>2016-01-11T12:12:08.000Z</published>
-    <updated>2016-01-11T14:14:30.976Z</updated>
+    <updated>2016-01-12T07:57:30.272Z</updated>
     <content type="html"><![CDATA[<h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/" target="_blank" rel="external">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
 <h1 id="Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD"><a href="#Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD" class="headerlink" title="Go版本的主要功能"></a>Go版本的主要功能</h1><ol>
 <li>自定义资源文件位置<br>主要是通过<code>flag</code>模块解析src参数来实现，比如<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/serv -src /</span>tmp</span><br><span class="line">请求<span class="string">URL:</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//<span class="label">xxx/123.jpg</span></span></span><br><span class="line">最终服务器查找的文件地址:</span><br><span class="line"><span class="regexp">/tmp/</span><span class="number">123.</span>jpg</span><br></pre></td></tr></table></figure>
@@ -38,7 +38,7 @@
 <p>发送数据就比较简单了，为了不在传递参数时拷贝，我用了拷贝指针的办法:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data []<span class="typename">byte</span></span><br><span class="line"><span class="comment">//读取文件</span></span><br><span class="line">ReadFileFromPath(&amp;data, filename)</span><br><span class="line">res.WriteHeader(<span class="number">200</span>)</span><br><span class="line">res.Write(data)</span><br></pre></td></tr></table></figure></p>
 <h1 id="u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4"><a href="#u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4" class="headerlink" title="与上一版本的性能测试对比"></a>与上一版本的性能测试对比</h1><p>这里主要用到了apache的ab工具，以及开源软件webbench。<br>两者都在同一环境下，均没有做优化。</p>
 <ol>
-<li>ab测试,并发请求200，总请求数4000:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -c <span class="number">200</span> -n <span class="number">4000</span> httpL<span class="comment">//localhost:8080/fact10000.png</span></span><br></pre></td></tr></table></figure>
+<li>ab测试,并发请求200，总请求数4000:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -c <span class="number">200</span> -n <span class="number">4000</span> http:<span class="comment">//localhost:8080/fact10000.png</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>测试结果如下:</p>

@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://linghutf.github.io/2016/01/11/golangserv/index.html">
 <meta property="og:site_name" content="欢迎来到linghutf的博客!">
 <meta property="og:description" content="关于上一版本　　昨天完成了nodejs版本的图片服务器staticserv之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，首先考虑的是Go版本的服务器，只不过自己没有弄清go的资源地址都是相对于项目的GOPATH的地址，还是使用老方法\a\b\c.txt去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了path/filepa">
-<meta property="og:updated_time" content="2016-01-11T14:14:30.976Z">
+<meta property="og:updated_time" content="2016-01-12T07:57:30.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片服务器的Nodejs和Go版本性能测试">
 <meta name="twitter:description" content="关于上一版本　　昨天完成了nodejs版本的图片服务器staticserv之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，首先考虑的是Go版本的服务器，只不过自己没有弄清go的资源地址都是相对于项目的GOPATH的地址，还是使用老方法\a\b\c.txt去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了path/filepa">
@@ -36,6 +36,7 @@ var _hmt = _hmt || [];
 
 </head>
 <body>
+  
   <div id="container">
     <div class="left-col">
     <div class="overlay"></div>
@@ -104,6 +105,8 @@ var _hmt = _hmt || [];
 				        
 							<li><a href="/tags">碎笔</a></li>
 				        
+							<li><a href="/resume">简历</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -143,7 +146,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part3">
 				
-					<div id="js-aboutme">喜欢历史，代码，数学和安静的美。</div>
+					<div id="js-aboutme">喜欢历史、文学、代码、数学以及安静的美。</div>
 				</section>
 				
 			</div>
@@ -181,6 +184,8 @@ var _hmt = _hmt || [];
 					<li><a href="/categories">分类</a></li>
 		        
 					<li><a href="/tags">碎笔</a></li>
+		        
+					<li><a href="/resume">简历</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -266,7 +271,7 @@ var _hmt = _hmt || [];
 <p>发送数据就比较简单了，为了不在传递参数时拷贝，我用了拷贝指针的办法:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data []<span class="typename">byte</span></span><br><span class="line"><span class="comment">//读取文件</span></span><br><span class="line">ReadFileFromPath(&amp;data, filename)</span><br><span class="line">res.WriteHeader(<span class="number">200</span>)</span><br><span class="line">res.Write(data)</span><br></pre></td></tr></table></figure></p>
 <h1 id="u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4"><a href="#u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4" class="headerlink" title="与上一版本的性能测试对比"></a>与上一版本的性能测试对比</h1><p>这里主要用到了apache的ab工具，以及开源软件webbench。<br>两者都在同一环境下，均没有做优化。</p>
 <ol>
-<li>ab测试,并发请求200，总请求数4000:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -c <span class="number">200</span> -n <span class="number">4000</span> httpL<span class="comment">//localhost:8080/fact10000.png</span></span><br></pre></td></tr></table></figure>
+<li>ab测试,并发请求200，总请求数4000:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -c <span class="number">200</span> -n <span class="number">4000</span> http:<span class="comment">//localhost:8080/fact10000.png</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>测试结果如下:</p>
@@ -298,7 +303,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 linghutf 个人博客">linghutf</a></p>
         <p><span>发布时间:</span>2016年01月11日 - 12时12分</p>
-        <p><span>最后更新:</span>2016年01月11日 - 14时14分</p>
+        <p><span>最后更新:</span>2016年01月12日 - 07时57分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/11/golangserv/" title="图片服务器的Nodejs和Go版本性能测试">http://linghutf.github.io/2016/01/11/golangserv/</a>
             <span class="copy-path" data-clipboard-text="原文: http://linghutf.github.io/2016/01/11/golangserv/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -460,6 +465,7 @@ var _hmt = _hmt || [];
         </script>
         
 </div>
+      
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">

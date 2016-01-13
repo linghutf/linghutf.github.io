@@ -310,23 +310,20 @@ a {
     display: block;
   }
   #container .article-header {
-    border-left: none;
-    padding: 0;
-    border-bottom: 1px dotted #ddd;
+    padding: 5px 20px;
   }
   #container .article-header h1 {
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
   #container .header-subtitle {
     padding: 0 24px;
   }
   #container .article-info-index.article-info {
     padding-top: 10px;
-    margin: 0;
-    border-top: 1px solid #ddd;
+    margin: 0 20px;
   }
   #container .article-info-post.article-info {
-    margin: 0;
+    margin: 0 20px;
     padding-top: 10px;
     border: none;
   }
@@ -337,25 +334,23 @@ a {
     font-size: 14px;
   }
   #container .article {
-    padding: 10px;
     margin: 10px;
     font-size: 14px;
   }
   #container .article .article-entry {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 10px;
+    padding: 0 20px 0 20px;
   }
   #container .article .article-title {
     font-size: 18px;
-    max-width: 185px;
+    max-width: 65%;
     display: block;
     margin: 0;
   }
   #container .article .article-meta {
     width: auto;
     height: 30px;
-    margin-top: -5px;
+    margin-top: -8px;
+    padding-right: 10px;
     position: ralative;
   }
   #container .article .article-meta .article-date {
@@ -538,7 +533,7 @@ a {
     bottom: 0;
   }
   #container .scroll a {
-    background-color: #3f3f3f;
+    background-color: rgba(63,63,63,0);
   }
   #container .hide-labels {
     position: fixed;
@@ -668,9 +663,9 @@ a {
 }
 #header .header-menu li a:hover {
   color: #fff;
-  background: #4d4d4d;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  background: #258fb8;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
   padding: 3px;
   margin: 2px;
 }
@@ -1794,7 +1789,7 @@ color
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #272822;
+  background: #002b36;
   margin: 10px 0;
   padding: 10px 10px;
   overflow: auto;
@@ -1803,11 +1798,18 @@ color
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
-  color: #666;
+  color: #999;
 }
 .article-entry pre,
 .article-entry code {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+}
+.article-entry blockquote {
+  background-color: #555;
+  padding: 10px 15px;
+  word-break: break-word;
+  border-left: 5px solid #2f2f2f;
+  margin: 10px 0px 0px;
 }
 .article-entry code {
   background: #eee;
@@ -1822,6 +1824,22 @@ color
   text-shadow: none;
   padding: 0;
   color: #fff;
+}
+.article-entry h1 {
+  margin-top: 30px;
+}
+.article-entry h2 {
+  margin-top: 20px;
+  font-weight: 300;
+  padding-bottom: 5px;
+}
+.article-entry h3,
+.article-entry h4,
+.article-entry h5,
+.article-entry h6 {
+  margin-top: 20px;
+  font-weight: 300;
+  padding-bottom: 5px;
 }
 .article-entry .highlight {
   -webkit-border-radius: 4px;
@@ -1873,7 +1891,7 @@ color
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #272822;
+  background: #002b36;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -1899,7 +1917,7 @@ color
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #272822;
+  background: #002b36;
   color: highlight-comment;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
@@ -1914,46 +1932,65 @@ color
 .article-entry .gist .gist-file .gist-meta a:hover {
   text-decoration: underline;
 }
+pre .doctype {
+  color: #586e75;
+}
+pre .tag {
+  color: #839496;
+}
+pre .title {
+  color: #66d9ef;
+}
+pre .strings {
+  color: #2aa198;
+}
+pre .attribute {
+  color: #b58900;
+}
+pre .cpp,
+pre .annotation,
+pre .command {
+  color: #258fb8;
+}
 pre .comment {
   color: #75715e;
 }
-pre .keyword,
-pre .function .keyword,
+pre .keyword {
+  color: #66d9ef;
+}
+pre .function,
 pre .class .params {
   color: #66d9ef;
 }
-pre .tag,
-pre .doctype,
 pre .params,
 pre .function,
 pre .css .value {
   color: #fff;
 }
 pre .css ~ * .tag,
-pre .title,
 pre .at_rule,
-pre .at_rule .keyword,
-pre .preprocessor,
-pre .preprocessor .keyword {
+pre .preprocessor {
   color: #f92672;
 }
-pre .attribute,
 pre .built_in,
 pre .class,
 pre .css ~ * .class,
-pre .function .title {
+pre .function {
   color: #a6e22e;
 }
 pre .value,
-pre .string {
-  color: #e6db74;
-}
 pre .number {
   color: #7163d7;
 }
 pre .id,
 pre .css ~ * .id {
   color: #fd971f;
+}
+pre .link_label,
+pre .code,
+pre .operator,
+pre .link_url {
+  color: #258fb8;
 }
 #footer {
   font-size: 12px;
@@ -2454,7 +2491,7 @@ pre .css ~ * .id {
 .article-tag:before {
   float: left;
   color: #999;
-  content: "\f06c";
+  content: "\f02e";
   font: 16px FontAwesome;
   float: left;
   margin-right: 10px;
@@ -2636,6 +2673,9 @@ pre .css ~ * .id {
   height: 100%;
   overflow: hidden;
 }
+.inner1 {
+  margin: 0 40px;
+}
 #plugin-list-header {
   margin: 40px 0;
 }
@@ -2648,14 +2688,15 @@ pre .css ~ * .id {
   clear: both;
 }
 #plugin-list-title {
-  font-family: font-title;
-  font-size: 36px;
+  font-family: "华文新魏";
+  font-size: 40px;
   font-weight: 300;
   line-height: 1;
+  color: #fff;
   float: left;
 }
 #plugin-list-count {
-  color: color-gray;
+  color: #fff;
   padding-top: 1em;
   text-align: right;
 }
@@ -2684,33 +2725,17 @@ pre .css ~ * .id {
   }
 }
 #plugin-list {
-  margin: 40px -20px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -webkit-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
-}
-@media screen and (min-width: 480px) and (max-width: 767px) {
-  #plugin-list {
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-box-lines: multiple;
-    -moz-box-lines: multiple;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-  }
+  overflow: hidden;
 }
 .plugin {
   display: none;
-  padding: 20px;
+  padding: 30px 16px;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 33.333333333333336%;
+  -ms-flex: 0 0 33.333333333333336%;
+  flex: 0 0 33.333333333333336%;
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .plugin {
@@ -2722,32 +2747,31 @@ pre .css ~ * .id {
     flex: 0 0 50%;
   }
 }
-@media screen and (min-width: 768px) {
-  .plugin {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    -webkit-flex: 0 0 33.333333333333336%;
-    -ms-flex: 0 0 33.333333333333336%;
-    flex: 0 0 33.333333333333336%;
-  }
-}
 .plugin.on {
   display: block;
+  width: 290px;
+  max-height: 309px;
+  float: left;
 }
 .plugin-name {
   font-family: font-title;
   font-weight: bold;
-  color: #258fb8;
+  color: #fff;
   font-size: 20px;
   text-decoration: none;
   line-height: 1;
 }
 .plugin-name:hover {
-  color: color-link-hover;
+  color: #999;
+}
+.plugin-name:before {
+  content: "\f019";
+  font: 16px FontAwesome;
+  margin-right: 4px;
 }
 .plugin-desc {
   line-height: 1.6em;
+  color: #999;
   margin: 1em 0;
 }
 .plugin-tag-list {
@@ -2762,17 +2786,19 @@ pre .css ~ * .id {
   clear: both;
 }
 .plugin-tag {
-  color: color-gray;
+  color: #fff;
   font-size: 0.9em;
   text-decoration: none;
   float: left;
   margin-right: 10px;
 }
 .plugin-tag:hover {
-  color: color-link-hover;
+  color: #999;
 }
 .plugin-tag:before {
-  content: "#";
+  content: "\f02b";
+  font: 16px FontAwesome;
+  margin-right: 4px;
 }
 .plugin-screenshot {
   margin-bottom: 15px;

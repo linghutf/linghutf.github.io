@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-3.png">
 <meta property="og:image" content="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-4.png">
 <meta property="og:image" content="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-5.png">
-<meta property="og:updated_time" content="2016-01-21T15:01:26.330Z">
+<meta property="og:updated_time" content="2016-01-21T15:04:43.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode-319的算法思考">
 <meta name="twitter:description" content="题目There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning of">
@@ -276,8 +276,10 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bulbswitcher</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">//c99支持的关键字_Bool,ansi不支持,leetcode测试通过</span></span><br><span class="line">    <span class="keyword">_Bool</span> *p=(<span class="keyword">_Bool</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//全为false,避免求反时未定义</span></span><br><span class="line">    <span class="built_in">memset</span>(p,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;++j)&#123;           <span class="comment">//step 1-&gt;n</span></span><br><span class="line">        <span class="keyword">for</span>(i=j;i&lt;n;i+=j+<span class="number">1</span>)&#123;    <span class="comment">//对应的开关,每次跳跃的间隔j+1</span></span><br><span class="line">            *(p+i)=!(*(p+i));   <span class="comment">//不知道编译器是否会优化，所以采用这种直接寻址方式</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//统计为true的开关,如果有c++的accumulate更好</span></span><br><span class="line">    sum(p,n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上传到leetcode jude,不一会儿出现了Limit except，发现它的测试数是10000000,<br>总用时1+s,这么大数字居然超时了.我自己在线下测试的结果：</p>
 <ul>
-<li>普通编译:<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-1.png" alt="leetcode-1"></li>
-<li>开启-O2 优化<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-2.png" alt="leetcode-2"></li>
+<li><p>普通编译:<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-1.png" alt="leetcode-1"></p>
+</li>
+<li><p>开启-O2 优化<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-2.png" alt="leetcode-2"></p>
+</li>
 </ul>
 <p>可以发现这种算法复杂度O(n^2),数字一大性能就不行了。普通编译结果也是超过1s,看来leetcode没有做优化,并且超时时间设置1s,<br>如此只能再想其他解法.</p>
 <hr>
@@ -308,7 +310,7 @@
         <p><span>本文标题:</span><a href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 linghutf 个人博客">linghutf</a></p>
         <p><span>发布时间:</span>2016年01月21日 - 14时49分</p>
-        <p><span>最后更新:</span>2016年01月21日 - 15时01分</p>
+        <p><span>最后更新:</span>2016年01月21日 - 15时04分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/21/leetcode319/" title="leetcode-319的算法思考">http://linghutf.github.io/2016/01/21/leetcode319/</a>
             <span class="copy-path" data-clipboard-text="原文: http://linghutf.github.io/2016/01/21/leetcode319/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -326,7 +328,7 @@
   
   
     <a href="/2016/01/21/firstsnow/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">firstsnow</div>
+      <div class="article-nav-title">2016年第一场雪想到的</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -383,13 +385,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/21/firstsnow/" title="下一篇: firstsnow">
+            <a href="/2016/01/21/firstsnow/" title="下一篇: 2016年第一场雪想到的">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/firstsnow/">firstsnow</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/firstsnow/">2016年第一场雪想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

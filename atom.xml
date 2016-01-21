@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.github.io/"/>
-  <updated>2016-01-21T15:01:26.330Z</updated>
+  <updated>2016-01-21T15:04:43.098Z</updated>
   <id>http://linghutf.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://linghutf.github.io/2016/01/21/leetcode319/"/>
     <id>http://linghutf.github.io/2016/01/21/leetcode319/</id>
     <published>2016-01-21T14:49:47.000Z</published>
-    <updated>2016-01-21T15:01:26.330Z</updated>
+    <updated>2016-01-21T15:04:43.098Z</updated>
     <content type="html"><![CDATA[<h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
 <p>Example:</p>
 <p>Given n = 3. </p>
@@ -39,8 +39,10 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bulbswitcher</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">//c99支持的关键字_Bool,ansi不支持,leetcode测试通过</span></span><br><span class="line">    <span class="keyword">_Bool</span> *p=(<span class="keyword">_Bool</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//全为false,避免求反时未定义</span></span><br><span class="line">    <span class="built_in">memset</span>(p,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;++j)&#123;           <span class="comment">//step 1-&gt;n</span></span><br><span class="line">        <span class="keyword">for</span>(i=j;i&lt;n;i+=j+<span class="number">1</span>)&#123;    <span class="comment">//对应的开关,每次跳跃的间隔j+1</span></span><br><span class="line">            *(p+i)=!(*(p+i));   <span class="comment">//不知道编译器是否会优化，所以采用这种直接寻址方式</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//统计为true的开关,如果有c++的accumulate更好</span></span><br><span class="line">    sum(p,n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上传到leetcode jude,不一会儿出现了Limit except，发现它的测试数是10000000,<br>总用时1+s,这么大数字居然超时了.我自己在线下测试的结果：</p>
 <ul>
-<li>普通编译:<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-1.png" alt="leetcode-1"></li>
-<li>开启-O2 优化<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-2.png" alt="leetcode-2"></li>
+<li><p>普通编译:<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-1.png" alt="leetcode-1"></p>
+</li>
+<li><p>开启-O2 优化<br><img src="https://hub-linghutf.c9users.io:8080/img/leetcode319/leetcode319-2.png" alt="leetcode-2"></p>
+</li>
 </ul>
 <p>可以发现这种算法复杂度O(n^2),数字一大性能就不行了。普通编译结果也是超过1s,看来leetcode没有做优化,并且超时时间设置1s,<br>如此只能再想其他解法.</p>
 <hr>
@@ -72,11 +74,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[firstsnow]]></title>
+    <title><![CDATA[2016年第一场雪想到的]]></title>
     <link href="http://linghutf.github.io/2016/01/21/firstsnow/"/>
     <id>http://linghutf.github.io/2016/01/21/firstsnow/</id>
     <published>2016-01-21T02:08:28.000Z</published>
-    <updated>2016-01-21T14:49:12.889Z</updated>
+    <updated>2016-01-21T15:03:17.566Z</updated>
     <content type="html"><![CDATA[<p>早上一如既往的起床洗漱然后出门，走到楼道口才发现今天居然下雪了，</p>
 ]]></content>
     <summary type="html">

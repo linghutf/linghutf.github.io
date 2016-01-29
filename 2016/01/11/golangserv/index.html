@@ -8,7 +8,7 @@
   <meta name="description" content="关于上一版本　　昨天完成了nodejs版本的图片服务器staticserv之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，首先考虑的是Go版本的服务器，只不过自己没有弄清go的资源地址都是相对于项目的GOPATH的地址，还是使用老方法\a\b\c.txt去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了path/filepa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片服务器的Nodejs和Go版本性能测试">
-<meta property="og:url" content="http://linghutf.github.io/2016/01/11/golangserv/index.html">
+<meta property="og:url" content="http://linghutf.gitcafe.io/2016/01/11/golangserv/index.html">
 <meta property="og:site_name" content="欢迎来到linghutf的博客!">
 <meta property="og:description" content="关于上一版本　　昨天完成了nodejs版本的图片服务器staticserv之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，首先考虑的是Go版本的服务器，只不过自己没有弄清go的资源地址都是相对于项目的GOPATH的地址，还是使用老方法\a\b\c.txt去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了path/filepa">
 <meta property="og:updated_time" content="2016-01-12T07:57:30.272Z">
@@ -134,7 +134,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 10px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a>
+						<a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 10px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a>
 					</div>
 				</section>
 				
@@ -218,7 +218,7 @@
   
     <div class="article-meta">
       <a href="/2016/01/11/golangserv/" class="article-date">
-  	<time datetime="2016-01-11T12:12:08.000Z" itemprop="datePublished">2016-01-11</time>
+  	<time datetime="2016-01-11T04:12:08.000Z" itemprop="datePublished">2016-01-11</time>
 </a>
     </div>
   
@@ -252,7 +252,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/" target="_blank" rel="external">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
+        <h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
 <h1 id="Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD"><a href="#Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD" class="headerlink" title="Go版本的主要功能"></a>Go版本的主要功能</h1><ol>
 <li>自定义资源文件位置<br>主要是通过<code>flag</code>模块解析src参数来实现，比如<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/serv -src /</span>tmp</span><br><span class="line">请求<span class="string">URL:</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//<span class="label">xxx/123.jpg</span></span></span><br><span class="line">最终服务器查找的文件地址:</span><br><span class="line"><span class="regexp">/tmp/</span><span class="number">123.</span>jpg</span><br></pre></td></tr></table></figure>
 </li>
@@ -304,8 +304,8 @@
         <p><span>发布时间:</span>2016年01月11日 - 12时12分</p>
         <p><span>最后更新:</span>2016年01月12日 - 07时57分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/11/golangserv/" title="图片服务器的Nodejs和Go版本性能测试">http://linghutf.github.io/2016/01/11/golangserv/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://linghutf.github.io/2016/01/11/golangserv/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/11/golangserv/" title="图片服务器的Nodejs和Go版本性能测试">http://linghutf.gitcafe.io/2016/01/11/golangserv/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://linghutf.gitcafe.io/2016/01/11/golangserv/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -318,7 +318,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/01/21/firstsnow/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/20/firstsnow/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
@@ -355,7 +355,7 @@
 
     <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/11/golangserv/" data-title="图片服务器的Nodejs和Go版本性能测试" data-url="http://linghutf.github.io/2016/01/11/golangserv/"></div>
+    <div class="ds-thread" data-thread-key="2016/01/11/golangserv/" data-title="图片服务器的Nodejs和Go版本性能测试" data-url="http://linghutf.gitcafe.io/2016/01/11/golangserv/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -380,7 +380,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/21/firstsnow/" title="上一篇: 2016年第一场雪想到的">
+            <a href="/2016/01/20/firstsnow/" title="上一篇: 2016年第一场雪想到的">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -394,7 +394,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/firstsnow/">2016年第一场雪想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/winter-vacation/">写在放假之前</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/firstsnow/">2016年第一场雪想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

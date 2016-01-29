@@ -3,9 +3,9 @@
   <title><![CDATA[欢迎来到linghutf的博客!]]></title>
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://linghutf.github.io/"/>
-  <updated>2016-01-21T15:04:43.098Z</updated>
-  <id>http://linghutf.github.io/</id>
+  <link href="http://linghutf.gitcafe.io/"/>
+  <updated>2016-01-29T14:41:52.884Z</updated>
+  <id>http://linghutf.gitcafe.io/</id>
   
   <author>
     <name><![CDATA[linghutf]]></name>
@@ -15,11 +15,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[写在放假之前]]></title>
+    <link href="http://linghutf.gitcafe.io/2016/01/29/winter-vacation/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/29/winter-vacation/</id>
+    <published>2016-01-29T06:28:09.000Z</published>
+    <updated>2016-01-29T14:41:52.884Z</updated>
+    <content type="html"><![CDATA[<h1 id="u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4"><a href="#u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4" class="headerlink" title="匆忙与无所适从之间"></a>匆忙与无所适从之间</h1><p>　快到猴年春节了，这一年过得很累，发生了太多的事，压力也大了起来，未来的工作，现在<br>的生活…都交织在我的脑海里。很想回去舒服地躺在床上看看书，或者就是发一下午呆。可<br>惜时间不等人，两周里还有很多要完成的事。<br>　不过，能过第一个想回家吃妈妈做的菜的春节，我的心情还是有些愉快迫切的、
+　</p>
+<h1 id="u5047_u671F_u7684_u9050_u60F3"><a href="#u5047_u671F_u7684_u9050_u60F3" class="headerlink" title="假期的遐想"></a>假期的遐想</h1><p>　最近的两周老板也没怎么来，我手头的事情也比较棘手，有些像刺猬无从下嘴的感觉。检讨<br>一下工作就是零星做了些面试算法题，leetcode英文题对于目前浮躁的我来说有些难，DP、背包<br>也没有看，回家需要复习一下算法了。文件系统，加密模块,也需要做个雏形出来。<br>　很想潇潇洒洒地在家里四处游荡，和朋友去爬山，然后静静坐在山峰最高处，静静地注视着芸<br>芸众生、人间烟火，做着无边无际的梦。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4"><a href="#u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4" class="heade]]>
+    </summary>
+    
+      <category term="diary" scheme="http://linghutf.gitcafe.io/tags/diary/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[leetcode-319的算法思考]]></title>
-    <link href="http://linghutf.github.io/2016/01/21/leetcode319/"/>
-    <id>http://linghutf.github.io/2016/01/21/leetcode319/</id>
-    <published>2016-01-21T14:49:47.000Z</published>
-    <updated>2016-01-21T15:04:43.098Z</updated>
+    <link href="http://linghutf.gitcafe.io/2016/01/21/leetcode319/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/21/leetcode319/</id>
+    <published>2016-01-21T06:49:47.000Z</published>
+    <updated>2016-01-29T14:28:38.215Z</updated>
     <content type="html"><![CDATA[<h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
 <p>Example:</p>
 <p>Given n = 3. </p>
@@ -67,17 +85,17 @@
     <![CDATA[<h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first ]]>
     </summary>
     
-      <category term="algorithm" scheme="http://linghutf.github.io/tags/algorithm/"/>
+      <category term="algorithm" scheme="http://linghutf.gitcafe.io/tags/algorithm/"/>
     
-      <category term="leetcode" scheme="http://linghutf.github.io/tags/leetcode/"/>
+      <category term="leetcode" scheme="http://linghutf.gitcafe.io/tags/leetcode/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2016年第一场雪想到的]]></title>
-    <link href="http://linghutf.github.io/2016/01/21/firstsnow/"/>
-    <id>http://linghutf.github.io/2016/01/21/firstsnow/</id>
-    <published>2016-01-21T02:08:28.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/20/firstsnow/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/20/firstsnow/</id>
+    <published>2016-01-20T18:08:28.000Z</published>
     <updated>2016-01-21T15:03:17.566Z</updated>
     <content type="html"><![CDATA[<p>早上一如既往的起床洗漱然后出门，走到楼道口才发现今天居然下雪了，</p>
 ]]></content>
@@ -86,17 +104,17 @@
 ]]>
     </summary>
     
-      <category term="diary" scheme="http://linghutf.github.io/tags/diary/"/>
+      <category term="diary" scheme="http://linghutf.gitcafe.io/tags/diary/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[图片服务器的Nodejs和Go版本性能测试]]></title>
-    <link href="http://linghutf.github.io/2016/01/11/golangserv/"/>
-    <id>http://linghutf.github.io/2016/01/11/golangserv/</id>
-    <published>2016-01-11T12:12:08.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/11/golangserv/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/11/golangserv/</id>
+    <published>2016-01-11T04:12:08.000Z</published>
     <updated>2016-01-12T07:57:30.272Z</updated>
-    <content type="html"><![CDATA[<h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/" target="_blank" rel="external">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
 <h1 id="Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD"><a href="#Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD" class="headerlink" title="Go版本的主要功能"></a>Go版本的主要功能</h1><ol>
 <li>自定义资源文件位置<br>主要是通过<code>flag</code>模块解析src参数来实现，比如<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/serv -src /</span>tmp</span><br><span class="line">请求<span class="string">URL:</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//<span class="label">xxx/123.jpg</span></span></span><br><span class="line">最终服务器查找的文件地址:</span><br><span class="line"><span class="regexp">/tmp/</span><span class="number">123.</span>jpg</span><br></pre></td></tr></table></figure>
 </li>
@@ -140,21 +158,21 @@
     <![CDATA[<h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1]]>
     </summary>
     
-      <category term="ab" scheme="http://linghutf.github.io/tags/ab/"/>
+      <category term="ab" scheme="http://linghutf.gitcafe.io/tags/ab/"/>
     
-      <category term="go" scheme="http://linghutf.github.io/tags/go/"/>
+      <category term="go" scheme="http://linghutf.gitcafe.io/tags/go/"/>
     
-      <category term="nodejs" scheme="http://linghutf.github.io/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://linghutf.gitcafe.io/tags/nodejs/"/>
     
-      <category term="webbench" scheme="http://linghutf.github.io/tags/webbench/"/>
+      <category term="webbench" scheme="http://linghutf.gitcafe.io/tags/webbench/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[静态文件服务]]></title>
-    <link href="http://linghutf.github.io/2016/01/10/staticfileserv/"/>
-    <id>http://linghutf.github.io/2016/01/10/staticfileserv/</id>
-    <published>2016-01-10T13:44:38.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/10/staticfileserv/</id>
+    <published>2016-01-10T05:44:38.000Z</published>
     <updated>2016-01-10T14:50:31.904Z</updated>
     <content type="html"><![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668"><a href="#u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668" class="headerlink" title="为什么做静态文件服务器"></a>为什么做静态文件服务器</h1><p>　　这几天博客搭建起来后，美化和主题也设置得差不多了，就是在写作时，<br>有时候需要插入图片，图片使用的相对地址会在hexo生成博客时失效，总不<br>可能插入一个图片就在它生成后去相应的html里改引用地址吧，再说上传的时<br>候Hexo可能默认不会上传。<br>　　所以这种情况下，就需要一个文件服务器去为我们生成的博客传输图片。</p>
 <h1 id="u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="现有的解决方法"></a>现有的解决方法</h1><h2 id="1-_u4E03_u725B_u670D_u52A1"><a href="#1-_u4E03_u725B_u670D_u52A1" class="headerlink" title="1.七牛服务"></a>1.七牛服务</h2><p>　　七牛的静态文件服务听说性能很高，也是用我最近学习的golang写的。不少<br>人都是推荐这种服务，所以我就去七牛官网看了一下，有免费试用版，每个月<br>请求一万次到十万次，对我来说够用了。想注册的时候有以下两点要求我比较介意:</p>
@@ -184,21 +202,21 @@
     <![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668"><a href="#u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u]]>
     </summary>
     
-      <category term="http" scheme="http://linghutf.github.io/tags/http/"/>
+      <category term="http" scheme="http://linghutf.gitcafe.io/tags/http/"/>
     
-      <category term="nodejs" scheme="http://linghutf.github.io/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://linghutf.gitcafe.io/tags/nodejs/"/>
     
-      <category term="program" scheme="http://linghutf.github.io/tags/program/"/>
+      <category term="program" scheme="http://linghutf.gitcafe.io/tags/program/"/>
     
-      <category term="server" scheme="http://linghutf.github.io/tags/server/"/>
+      <category term="server" scheme="http://linghutf.gitcafe.io/tags/server/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[最近及假期之间的个人计划]]></title>
-    <link href="http://linghutf.github.io/2016/01/10/schedule/"/>
-    <id>http://linghutf.github.io/2016/01/10/schedule/</id>
-    <published>2016-01-10T04:52:30.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/09/schedule/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/09/schedule/</id>
+    <published>2016-01-09T20:52:30.000Z</published>
     <updated>2016-01-11T12:18:35.936Z</updated>
     <content type="html"><![CDATA[<h1 id="u6700_u8FD1_u7684_u72B6_u51B5"><a href="#u6700_u8FD1_u7684_u72B6_u51B5" class="headerlink" title="最近的状况"></a>最近的状况</h1><p>　　学校的报告一个接一个，等一个个忙完想休息一下，结果导师说我之前给他的报告不行，<br>不是要搜集论文，而是要找美国的存储实验室。1个月10到20个，还要有介绍，这就必须<br>要搜到实验室之后仔细看别人的实验室情况，有点大海捞针的意思。每天一来实验室面对<br>这些，春节过后还要找实习，必须要复习一些东西，另外之前的计划工作也需要完成，心态<br>就越发变得急躁了。<br>　　从15年12月初开始就忙碌了起来，当时要考数学和英语，另外还有学院的一个项目，写报告，<br>复习，确定每天的工作计划，感觉事情就像流水线一样过来，必须要确定轻重缓急，看过很多书籍<br>和电影说<strong>把每天的工作列成一个清单，按重要程度分为20%和80%,完成那20%重要的事情。</strong>这样<br>才是有效率，不会忙了一天还不知道忙的什么。当时就觉得这个方案很有必要，开始每天在桌面上<br>写清单了，做完一个标记完成。可是时间一长，桌面图标多得惨不忍睹，也不知道具体一项任务写到<br>哪里去了，还是有点乱糟糟的。所以萌生了统一写博客里，还能不随时携带就可以查阅。</p>
 <h1 id="u4E4B_u524D_u7684_u6E05_u5355"><a href="#u4E4B_u524D_u7684_u6E05_u5355" class="headerlink" title="之前的清单"></a>之前的清单</h1><ul>
@@ -246,17 +264,17 @@
     <![CDATA[<h1 id="u6700_u8FD1_u7684_u72B6_u51B5"><a href="#u6700_u8FD1_u7684_u72B6_u51B5" class="headerlink" title="最近的状况"></a>最近的状况</h1><p>　　学校的报告一个接]]>
     </summary>
     
-      <category term="program schedule" scheme="http://linghutf.github.io/tags/program-schedule/"/>
+      <category term="program schedule" scheme="http://linghutf.gitcafe.io/tags/program-schedule/"/>
     
-      <category term="todo" scheme="http://linghutf.github.io/tags/todo/"/>
+      <category term="todo" scheme="http://linghutf.gitcafe.io/tags/todo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexo静态博客建立指南]]></title>
-    <link href="http://linghutf.github.io/2016/01/09/bloghelp/"/>
-    <id>http://linghutf.github.io/2016/01/09/bloghelp/</id>
-    <published>2016-01-09T10:56:27.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/09/bloghelp/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/09/bloghelp/</id>
+    <published>2016-01-09T02:56:27.000Z</published>
     <updated>2016-01-10T07:25:51.558Z</updated>
     <content type="html"><![CDATA[<h1 id="u9759_u6001_u535A_u5BA2_u642D_u5EFA"><a href="#u9759_u6001_u535A_u5BA2_u642D_u5EFA" class="headerlink" title="静态博客搭建"></a>静态博客搭建</h1><ul>
 <li>主要针对新版hexo(&gt;=3.0),之前的也就是同时发布的修改方法不同</li>
@@ -322,21 +340,21 @@
 <p>修改本地layour下的<em>/themes/<your-them>/_config.xml</your-them></em>，添加:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">tag</span><span class="variable">s:</span> /&lt;your <span class="keyword">tag</span> name&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="u6539_u53D8_u65B0_u5EFA_u535A_u5BA2_u7684_u6A21_u677F"><a href="#u6539_u53D8_u65B0_u5EFA_u535A_u5BA2_u7684_u6A21_u677F" class="headerlink" title="改变新建博客的模板"></a>改变新建博客的模板</h3><p>修改<em><your site="">/scaffolds/</your></em>下相应的文件即可:<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">post.md  =<span class="function">=&gt;</span>  对应hexo <span class="keyword">new</span> 生成的md模板</span><br><span class="line">page.md  =<span class="function">=&gt;</span>  对应hexo <span class="keyword">new</span> page生成的categories模板</span><br></pre></td></tr></table></figure></p>
 <p>可以在其中加上<code>categories:</code>模板，这样就不用每次手动添加了。<br>例如:<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">title:</span> <span class="expansion">&#123;&#123; title &#125;&#125;</span></span><br><span class="line"><span class="symbol">author:</span> <span class="expansion">&#123;&#123; your-name &#125;&#125;</span>  /<span class="regexp">/添加的模板</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="u6700_u540E"><a href="#u6700_u540E" class="headerlink" title="最后"></a>最后</h1><p>　　今天通过这种方法，我在<a href="https://linghutf.github.io/">github</a>和<a href="http://linghutf.gitcafe.com" target="_blank" rel="external">gitcafe</a>上的博客<br>都正常运行了，也是经经历一番排错和查找问题的经历。<br>　　其实有些东西自己摸索出来还是很有成就感的，印象也更深，即使是别人早已知道的。<br>希望给想建立自己博客的人一点帮助。后续遇到的一些问题都会在博客上更新，<br>欢迎关注<a href="https:://linghutf.gitcafe.com/" target="_blank" rel="external">我</a>!</p>
+<h1 id="u6700_u540E"><a href="#u6700_u540E" class="headerlink" title="最后"></a>最后</h1><p>　　今天通过这种方法，我在<a href="https://linghutf.github.io/" target="_blank" rel="external">github</a>和<a href="http://linghutf.gitcafe.com" target="_blank" rel="external">gitcafe</a>上的博客<br>都正常运行了，也是经经历一番排错和查找问题的经历。<br>　　其实有些东西自己摸索出来还是很有成就感的，印象也更深，即使是别人早已知道的。<br>希望给想建立自己博客的人一点帮助。后续遇到的一些问题都会在博客上更新，<br>欢迎关注<a href="https:://linghutf.gitcafe.com/" target="_blank" rel="external">我</a>!</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="u9759_u6001_u535A_u5BA2_u642D_u5EFA"><a href="#u9759_u6001_u535A_u5BA2_u642D_u5EFA" class="headerlink" title="静态博客搭建"></a>静态博客搭建</h1]]>
     </summary>
     
-      <category term="tools" scheme="http://linghutf.github.io/tags/tools/"/>
+      <category term="tools" scheme="http://linghutf.gitcafe.io/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[关于合适语言的一点看法]]></title>
-    <link href="http://linghutf.github.io/2016/01/09/languages/"/>
-    <id>http://linghutf.github.io/2016/01/09/languages/</id>
-    <published>2016-01-09T08:31:03.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/09/languages/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/09/languages/</id>
+    <published>2016-01-09T00:31:03.000Z</published>
     <updated>2016-01-11T14:06:48.119Z</updated>
     <content type="html"><![CDATA[<h1 id="u8BED_u8A00_u4E4B_u4E89"><a href="#u8BED_u8A00_u4E4B_u4E89" class="headerlink" title="语言之争"></a>语言之争</h1><p>每当一种语言诞生，世界上的争吵就多了一种声音。经常可见这样的讨论:<br><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"xxx就不错，yyy是垃圾，这都不支持!"</span></span><br><span class="line"><span class="string">"xxx太复杂了，不适合如今的应用模式。"</span></span><br><span class="line"><span class="string">"xxx是最好的语言。"</span></span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
 <p>我大学期间也自学很多语言，主要是想做个东西出来，看别人推荐什么语言，有什么现成的库，<br>就开始了入坑之旅。</p>
@@ -374,15 +392,15 @@
     <![CDATA[<h1 id="u8BED_u8A00_u4E4B_u4E89"><a href="#u8BED_u8A00_u4E4B_u4E89" class="headerlink" title="语言之争"></a>语言之争</h1><p>每当一种语言诞生，世界上的争吵就多了一种声音。经]]>
     </summary>
     
-      <category term="program language" scheme="http://linghutf.github.io/tags/program-language/"/>
+      <category term="program language" scheme="http://linghutf.gitcafe.io/tags/program-language/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[大数阶乘截断]]></title>
-    <link href="http://linghutf.github.io/2016/01/09/factor/"/>
-    <id>http://linghutf.github.io/2016/01/09/factor/</id>
-    <published>2016-01-09T05:12:36.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/08/factor/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/08/factor/</id>
+    <published>2016-01-08T21:12:36.000Z</published>
     <updated>2016-01-11T12:21:02.868Z</updated>
     <content type="html"><![CDATA[<h1 id="u9898_u76EE_u6765_u6E90"><a href="#u9898_u76EE_u6765_u6E90" class="headerlink" title="题目来源"></a>题目来源</h1><p>这是日本一个编程网站上的题，当时看别人介绍的时候，说每通过一道题，就可以给<br>动漫女性角色换一件衣服或装饰，这道题是比较难的，也是”奖励”最重的一道，做完基本<br>就通关了。话说这种方式还比较新颖，对那些死宅的程序员来说，诱惑很大。<br>若有兴趣，可以移步<a href="https://paiza.jp/poh/ando" target="_blank" rel="external">Get a girl friend in programing</a>。</p>
 <h2 id="u91CC_u9762_u90FD_u662F_u65E5_u6587_uFF0C_u6211_u90FD_u662F_u8FDE_u8499_u5E26_u731C_u624D_u6210_u529F_u505A_u5230_u6700_u540E_u4E00_u9898_u3002"><a href="#u91CC_u9762_u90FD_u662F_u65E5_u6587_uFF0C_u6211_u90FD_u662F_u8FDE_u8499_u5E26_u731C_u624D_u6210_u529F_u505A_u5230_u6700_u540E_u4E00_u9898_u3002" class="headerlink" title="里面都是日文，我都是连蒙带猜才成功做到最后一题。"></a>里面都是日文，我都是连蒙带猜才成功做到最后一题。</h2><h1 id="u9898_u76EE_u63CF_u8FF0"><a href="#u9898_u76EE_u63CF_u8FF0" class="headerlink" title="题目描述"></a>题目描述</h1><p><strong>0&lt;=n&lt;=1000000,求n!去除末尾所有0之后的后9位数字，其中9位数字中若以0开头,则去掉0,剩下的数字即为结果</strong>。<br>例如:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span>!=<span class="number">3628800</span> =&gt; 去掉末尾<span class="number">0</span>，变成<span class="number">36288</span></span><br><span class="line"><span class="number">38</span>!=<span class="number">523022617466601111760007224100074291200000000</span> </span><br><span class="line">=&gt; 去掉<span class="number">0</span>,取<span class="number">9</span>位数字，得到<span class="number">000742912</span>，</span><br><span class="line">=&gt; 去掉开头的<span class="number">0</span>,得到最后结果<span class="number">742912</span></span><br></pre></td></tr></table></figure></p>
@@ -421,19 +439,41 @@
     <![CDATA[<h1 id="u9898_u76EE_u6765_u6E90"><a href="#u9898_u76EE_u6765_u6E90" class="headerlink" title="题目来源"></a>题目来源</h1><p>这是日本一个编程网站上的题，当时看别人介绍的时候]]>
     </summary>
     
-      <category term="algorithm" scheme="http://linghutf.github.io/tags/algorithm/"/>
+      <category term="algorithm" scheme="http://linghutf.gitcafe.io/tags/algorithm/"/>
     
-      <category term="go" scheme="http://linghutf.github.io/tags/go/"/>
+      <category term="go" scheme="http://linghutf.gitcafe.io/tags/go/"/>
     
-      <category term="python" scheme="http://linghutf.github.io/tags/python/"/>
+      <category term="python" scheme="http://linghutf.gitcafe.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[我的个人博客终于搭建成功啦!]]></title>
+    <link href="http://linghutf.gitcafe.io/2016/01/08/first_20160108/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/08/first_20160108/</id>
+    <published>2016-01-08T06:56:16.000Z</published>
+    <updated>2016-01-11T12:21:09.344Z</updated>
+    <content type="html"><![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a href="https://github.com/linghutf" target="_blank" rel="external">github</a><br>也比较活跃，因此就想着弄一个个人博客，这样以后可以记下一些东西，而不是像现在这样，桌面或者文件夹里有很多记事的md文件了。</p>
+<h1 id="u76F8_u5173_u6280_u672F"><a href="#u76F8_u5173_u6280_u672F" class="headerlink" title="相关技术"></a>相关技术</h1><p>   最近在用golang写web程序，本来计划是自己搭建动态博客然后解析上传的md文件的，但是将近放假事情很很多，很久没有在blog项目上<br>写一行代码了，然后就想着做一个静态博客放在github上好了，今天看到别人推荐的hexo,马上在云上下载安装了。配置几步没想到就轻松地<br>成功了，看来真的是<em>Technology makes life easier</em>!就这样先跑着吧，反正云也是免费的。</p>
+<h1 id="u540E_u7EED_u5B8C_u5584"><a href="#u540E_u7EED_u5B8C_u5584" class="headerlink" title="后续完善"></a>后续完善</h1><ul>
+<li>首先页面的布局和一些细节还得完善，毕竟要好看才行。天天面对着它要是不好看我都会关了。。。</li>
+<li>国内的托管服务也得注册一个以防github访问不了。</li>
+<li>关键点是我还是比较懒的，写博客打这么多字好累，就看坚持了。</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a h]]>
+    </summary>
+    
+      <category term="todo" scheme="http://linghutf.gitcafe.io/tags/todo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[latex使用小结]]></title>
-    <link href="http://linghutf.github.io/2016/01/08/latex-20160109/"/>
-    <id>http://linghutf.github.io/2016/01/08/latex-20160109/</id>
-    <published>2016-01-08T14:56:16.000Z</published>
+    <link href="http://linghutf.gitcafe.io/2016/01/08/latex-20160109/"/>
+    <id>http://linghutf.gitcafe.io/2016/01/08/latex-20160109/</id>
+    <published>2016-01-08T06:56:16.000Z</published>
     <updated>2016-01-09T03:54:36.017Z</updated>
     <content type="html"><![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex"><a href="#u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex" class="headerlink" title="为什么选择高冷的Latex"></a>为什么选择高冷的Latex</h1><p>最近要写报告，老师指定要用Latex生成，从本科起就看过王垠推荐过用Latex做这种报告类型<br>的东西，既简洁又好看，但是也有语法，还要熟悉宏，因此一直没有使用。Word里面的格式比<br>较繁琐，排版又容易出现问题，也只有将就用了。</p>
 
@@ -461,29 +501,7 @@
     <![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex"><a href="#u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex" class="headerl]]>
     </summary>
     
-      <category term="tools" scheme="http://linghutf.github.io/tags/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[我的个人博客终于搭建成功啦!]]></title>
-    <link href="http://linghutf.github.io/2016/01/08/first_20160108/"/>
-    <id>http://linghutf.github.io/2016/01/08/first_20160108/</id>
-    <published>2016-01-08T14:56:16.000Z</published>
-    <updated>2016-01-11T12:21:09.344Z</updated>
-    <content type="html"><![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a href="https://github.com/linghutf" target="_blank" rel="external">github</a><br>也比较活跃，因此就想着弄一个个人博客，这样以后可以记下一些东西，而不是像现在这样，桌面或者文件夹里有很多记事的md文件了。</p>
-<h1 id="u76F8_u5173_u6280_u672F"><a href="#u76F8_u5173_u6280_u672F" class="headerlink" title="相关技术"></a>相关技术</h1><p>   最近在用golang写web程序，本来计划是自己搭建动态博客然后解析上传的md文件的，但是将近放假事情很很多，很久没有在blog项目上<br>写一行代码了，然后就想着做一个静态博客放在github上好了，今天看到别人推荐的hexo,马上在云上下载安装了。配置几步没想到就轻松地<br>成功了，看来真的是<em>Technology makes life easier</em>!就这样先跑着吧，反正云也是免费的。</p>
-<h1 id="u540E_u7EED_u5B8C_u5584"><a href="#u540E_u7EED_u5B8C_u5584" class="headerlink" title="后续完善"></a>后续完善</h1><ul>
-<li>首先页面的布局和一些细节还得完善，毕竟要好看才行。天天面对着它要是不好看我都会关了。。。</li>
-<li>国内的托管服务也得注册一个以防github访问不了。</li>
-<li>关键点是我还是比较懒的，写博客打这么多字好累，就看坚持了。</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a h]]>
-    </summary>
-    
-      <category term="todo" scheme="http://linghutf.github.io/tags/todo/"/>
+      <category term="tools" scheme="http://linghutf.gitcafe.io/tags/tools/"/>
     
   </entry>
   

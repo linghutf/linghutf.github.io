@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: program | 欢迎来到linghutf的博客!</title>
+  <title>欢迎来到linghutf的博客!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="欢迎来到linghutf的博客!">
-<meta property="og:url" content="http://linghutf.gitcafe.io/tags/program/index.html">
+<meta property="og:url" content="http://linghutf.gitcafe.io/page/3/index.html">
 <meta property="og:site_name" content="欢迎来到linghutf的博客!">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
   
   
 	<script>
@@ -215,52 +218,107 @@
 
       <div class="body-wrap">
   
+    <article id="post-latex-20160109" class="article article-type-post" itemscope itemprop="blogPost">
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/10/staticfileserv/" class="archive-article-date">
-  	<time datetime="2016-01-10T05:44:38.000Z" itemprop="datePublished">Jan 10</time>
+    <div class="article-meta">
+      <a href="/2016/01/08/latex-20160109/" class="article-date">
+  	<time datetime="2016-01-08T06:56:16.000Z" itemprop="datePublished">2016-01-08</time>
 </a>
-        </div>
-    	 
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/10/staticfileserv/">静态文件服务</a>
+      <a class="article-title" href="/2016/01/08/latex-20160109/">latex使用小结</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <h1 id="u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex"><a href="#u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex" class="headerlink" title="为什么选择高冷的Latex"></a>为什么选择高冷的Latex</h1><p>最近要写报告，老师指定要用Latex生成，从本科起就看过王垠推荐过用Latex做这种报告类型<br>的东西，既简洁又好看，但是也有语法，还要熟悉宏，因此一直没有使用。Word里面的格式比<br>较繁琐，排版又容易出现问题，也只有将就用了。</p>
+
+<h1 id="Latex_u7684_u4F18_u52BF"><a href="#Latex_u7684_u4F18_u52BF" class="headerlink" title="Latex的优势"></a>Latex的优势</h1><ul>
+<li>有丰富的模板可选，有模板直接填进内容即可生成格式完全一致的文档，使用迅速。</li>
+<li>Latex说起来很Markdown有点类似，都是标记类型，但远比Markdown强大。</li>
+<li>它针对的是学术性的文章写作，公式写出来都很漂亮，不会出现Word那样不见了的尴尬。</li>
+<li>自己用标记控制排版对IT人士来说也是很不错的。</li>
+<li>文件都是可读的文本文件，什么编辑器都可以编辑，不像doc那样先要装一个字处理软件。</li>
+</ul>
+<h1 id="Latex_u7684_u5B89_u88C5"><a href="#Latex_u7684_u5B89_u88C5" class="headerlink" title="Latex的安装"></a>Latex的安装</h1><p>Mac下可以安装MacTex,windows下有CTex和TexLive可选，之前用的是Ctex,打开模板时经常乱码，<br>外国人发明这东西是肯定只要支持ANSI就可以了，就和早期的C语言一样，英语世界的人自己用，<br>没有想得那么长远。因此中文字库点阵需要自己添加设置，还要在文档上标记为utf-8类型才能正常<br>编辑，但是这样生成的PDF也是乱码的，总之是很繁琐。</p>
+
+<p>之后了解到latex有进化到了xelatex，中文语言已经可以处理而不需要声明包含CJK这些东西，类似<br>Next操作了，实验之后就抛弃了CTex,转而使用TextLive。来看看我写报告的效率吧!</p>
+
+<h1 id="u6587_u6863_u7684_u5236_u4F5C_u4E0E_u751F_u6210"><a href="#u6587_u6863_u7684_u5236_u4F5C_u4E0E_u751F_u6210" class="headerlink" title="文档的制作与生成"></a>文档的制作与生成</h1><ol>
+<li>TextLive自带编辑器打开模板tex文件，将标题、作者、内容等按照范例填到对应区域。</li>
+<li>使用xelatex 编译对应的tex文件，目录下即生成了同名的pdf。</li>
+</ol>
+<p>就是这么简单!对于需要插入引用和参考文献:</p><br>3. 在google学术上找到文献的bibtex引用，复制进bib文件中。<br>4. 在需要引用的文档中添加<code>\citep{bib文件中相应文献的标题}</code>。<br>5. 在tex文档应该写参考文献的部分添加<code>\bibliography{bib文件名}</code>。<br><br><p>然后重新编译tex文件一次，再使用bibtex编译一次，最后使用xelatex编译文件两次，<br>带引用的PDF文档就完成了。引用部分自动排好了引用标注。</p>
+
+<p>总的来说，就是三步:<strong>填写内容;添加引用;编译文档</strong>。也没有想象中的那种像写天书<br>语言一样的困难嘛，很多时候都是吓自己了。</p>
+
+<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>由于很多人都对标记语言有畏难情绪，认为这种东西是计算机爱好者才会有耐心去弄的东西，<br>其实一件新鲜的事情出现没有尝试我们就有了先入为主的偏见。静下心来，看一下范例，自然<br>就会了，不断地使用，我们就掌握了80%,基本可以日常使用，提高了自己的工作效率。</p><br><p>我的初步计划是放假期间熟练latex的标记，能够自己定义模板，到下半年写毕业论文就使用<br>Latex来写。Latex的图表，公式部分我都没有用到，交完作业是该好好熟悉了，比起本科时后期<br>按照学校文档规范来改的经历来说，效率要高得多，一天足够完成这些，还不会出现疏忽格式而<br>被打回修改的意外。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/program/">program</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server/">server</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+
+
+
+
+
+
+
 
     
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">
@@ -297,10 +355,10 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: false,
+		isHome: true,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

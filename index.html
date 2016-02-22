@@ -15,8 +15,13 @@
 <meta name="twitter:title" content="欢迎来到linghutf的博客!">
 <meta name="twitter:description">
   
+    <link rel="alternative" href="/atom.xml" title="欢迎来到linghutf的博客!" type="application/atom+xml">
   
-    <link rel="icon" href="/img/favicon.jpg">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -26,203 +31,351 @@
     
   
   
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
 <body>
   <div id="container">
     <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="/img/head.jpg" class="js-avatar">
-			
-		</a>
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">linghutf</a></h1>
-		</hgroup>
+        <hgroup>
+          <h1 class="header-author"><a href="/">linghutf</a></h1>
+        </hgroup>
 
-		
-		<p class="header-subtitle">林花谢了春红，太匆匆!</p>
-		
-<input type="text" class="st-default-search-input" id="search" placeholder=" Search...">
-		
-			<div id="switch-btn" class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						
-						<li>关于我</li>
-						
-					</ul>
-				</div>
-			</div>
-		
+        
+        <p class="header-subtitle">林花谢了春红，太匆匆!</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-		<div id="switch-area" class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">历史</a></li>
-				        
-							<li><a href="/categories">分类</a></li>
-				        
-							<li><a href="/tags">标签</a></li>
-				        
-							<li><a href="/about">简历</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="fl weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
-					        
-								<a class="fl github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
-					        
-								<a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
-					        
-								<a class="fl mail" target="_blank" href="/751350255@qq.com" title="mail">mail</a>
-					        
-								<a class="fl v2ex" target="_blank" href="https://v2ex.com/member/linghutf" title="v2ex">v2ex</a>
-					        
-								<a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
-								<a class="fl segmentfault" target="_blank" href="http://segmentfault.com/u/linghutf" title="segmentfault">segmentfault</a>
-					        
-								<a class="fl douban" target="_blank" href="http://www.douban.com/people/47914461/" title="douban">douban</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 10px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a>
-					</div>
-				</section>
-				
-				
-				
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 15px;">go</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 15px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin技术宅</a>
+                    
+                    </div>
+                </section>
+                
 
-				
-				
-				<section class="switch-part switch-part3">
-				
-					<div id="js-aboutme">喜欢历史、文学、代码、数学以及安静的美。</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
 </div>
-
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">linghutf</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="/img/head.jpg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">linghutf</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">林花谢了春红，太匆匆!</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">历史</a></li>
-		        
-					<li><a href="/categories">分类</a></li>
-		        
-					<li><a href="/tags">标签</a></li>
-		        
-					<li><a href="/about">简历</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
-			        
-						<a class="github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
-			        
-						<a class="mail" target="_blank" href="/751350255@qq.com" title="mail">mail</a>
-			        
-						<a class="v2ex" target="_blank" href="https://v2ex.com/member/linghutf" title="v2ex">v2ex</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
-						<a class="segmentfault" target="_blank" href="http://segmentfault.com/u/linghutf" title="segmentfault">segmentfault</a>
-			        
-						<a class="douban" target="_blank" href="http://www.douban.com/people/47914461/" title="douban">douban</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">linghutf</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">linghutf</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">林花谢了春红，太匆匆!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
 </nav>
-
       <div class="body-wrap">
+  
+    <article id="post-20160222" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/22/20160222/" class="article-date">
+      <time datetime="2016-02-22T08:31:53.000Z" itemprop="datePublished">2016-02-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/22/20160222/">在外的元宵节</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　春节假期转眼就过去了，感觉是过得最快的一个春节。马上又面临新的挑战，正处在一个学习<br>和工作的过渡期，莫名的烦心事和压力随之而来。开学时间很早，之前所有相聚的年轻人一股脑儿<br>全离开了，为了明年的春节聚首又回到城市奋斗，看得让人心慌，想到未来我在哪里，是否也像他<br>们一般匆匆来去?现在的娱乐方式多不胜数，但是人的情绪来源越来越少，仿佛只有通往金钱的道路<br>才能让人心旷神怡，只有人人羡慕的生活才是成功的人生。在这种环境下，假期像是一场鸵鸟的避风<br>动作，暂时没有烦恼，心却没有安宁下来。于是，剩下的日子，终于像风一样迅速消失在心灵的沙漠<br>中。<br>　　元宵节之前的几天，我就已经来到了实验室，开始了日复一日的工作，和同年人继续没有交流却<br>保持默契地竞争。突然发现，原来节日本为人带来欢乐的意义就是这样丢失的。你还有很多工作，前方<br>还有许多美好的憧憬在你到达之后才能实现，于是你忽略了路边的景色，着急地向目标走去。然后终于<br>到了这个目的地，但是你却发现，抑或是有人告诉你，前方有更漂亮的风景，你如果到达那里，人生会有<br>更精彩的不同……如此这般循环几个光景，你的人生就这样匆匆而去而鲜有发自内心的愉悦。<br>　　春节期间看到了一个讽刺的帖子，其中最主要的内容是:”真正好的办法是巧妙引导，控制节奏，让<br>臣民们始终保持一种奋斗的状态。20出头，头十年，让他们去为房子，车子，娶妻生子忙，第二个十年，<br>让他们为房贷，车贷，子女教育经费去忙，等到了第三个十年，就得为老来医保，儿女成人等做准备而继<br>续忙。如此一来，人生最黄金的三十年不经意间弹指而过。在臣民们为自己所谓生活而忙碌时，就不太会<br>有人能静下心来质疑苏丹统治的正当性，合法性等等命题。”<br>　　这其中，有多少人不是我们自己给自己定义的成功标准，或者在外在的氛围和期望的影响下，进行自我<br>审查和个性阉割，从而成为“成功”这条路上的一个急匆匆的行者的呢？</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-springsemister" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/22/springsemister/" class="article-date">
+      <time datetime="2016-02-22T08:30:36.000Z" itemprop="datePublished">2016-02-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/22/springsemister/">进展汇总,新阶段计划</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170"><a href="#u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170" class="headerlink" title="年前的自我安慰"></a>年前的自我安慰</h1><p>新年之前，给自己画了很多美好的期许，如同中学生涯的放假期间，带回去很多课本和试卷，<br>结果又原封不动地带回学校一样，这些定下的计划鲜有完成。大概也就是没有手生而已。我把<br>这种现象叫做心理上的自我安慰。</p>
+<h1 id="u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551"><a href="#u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551" class="headerlink" title="第一次开会之前的补救"></a>第一次开会之前的补救</h1><p>半个月过去了，我又回到那个朝九晚十的生活轨道，赶紧在进度报告之前，完成一些工作。经过<br>几天的不断写代码和测试，也算是完成了以下任务:</p>
+<ol>
+<li>实现了文件按数据块的对称加、解密</li>
+<li>理解了一部分冗余分散加密的原理<br>再加上一些研究过程中的速记note,应该可以进行下一步的工作了。</li>
+</ol>
+<h1 id="u4E0B_u4E00_u6B65_u7684_u5DE5_u4F5C"><a href="#u4E0B_u4E00_u6B65_u7684_u5DE5_u4F5C" class="headerlink" title="下一步的工作"></a>下一步的工作</h1><p>这大概是我学习生涯以来，如此有总结性和计划性的时刻，办公的电脑桌面文件夹里，都是各种各<br>样的todo-list和note。<br>下一步主要就是<strong>实现caont-rs冗余加/解码</strong>了，因此需要了解迦罗瓦运算，详细地阅读原作者的<br>实现了。<br>过渡期就是如此麻烦，还需要留心即将到来的暑期实习招聘，一边需要做准备了。毕竟不想再经历本科<br>毕业时候的迷茫和毫无准备的仓促。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/program-schedule/">program schedule</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-winter-vacation" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/01/29/winter-vacation/" class="article-date">
-  	<time datetime="2016-01-29T06:28:09.000Z" itemprop="datePublished">2016-01-29</time>
+      <time datetime="2016-01-29T06:28:09.000Z" itemprop="datePublished">2016-01-29</time>
 </a>
     </div>
   
@@ -257,9 +410,9 @@
       
 
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
-	</div>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
+    </div>
 
       
       <div class="clearfix"></div>
@@ -277,30 +430,12 @@
 
 
 
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
   
     <article id="post-leetcode319" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/01/21/leetcode319/" class="article-date">
-  	<time datetime="2016-01-21T06:49:47.000Z" itemprop="datePublished">2016-01-21</time>
+      <time datetime="2016-01-21T06:49:47.000Z" itemprop="datePublished">2016-01-21</time>
 </a>
     </div>
   
@@ -374,9 +509,9 @@
       
 
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+    </div>
 
       
       <div class="clearfix"></div>
@@ -394,30 +529,12 @@
 
 
 
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
   
     <article id="post-firstsnow" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/20/firstsnow/" class="article-date">
-  	<time datetime="2016-01-20T18:08:28.000Z" itemprop="datePublished">2016-01-21</time>
+      <a href="/2016/01/21/firstsnow/" class="article-date">
+      <time datetime="2016-01-20T18:08:28.000Z" itemprop="datePublished">2016-01-21</time>
 </a>
     </div>
   
@@ -430,7 +547,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/20/firstsnow/">2016年第一场雪想到的</a>
+      <a class="article-title" href="/2016/01/21/firstsnow/">2016年第一场雪想到的</a>
     </h1>
   
 
@@ -450,9 +567,9 @@
       
 
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
-	</div>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
+    </div>
 
       
       <div class="clearfix"></div>
@@ -469,236 +586,6 @@
 
 
 
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-golangserv" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/11/golangserv/" class="article-date">
-  	<time datetime="2016-01-11T04:12:08.000Z" itemprop="datePublished">2016-01-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
-<h1 id="Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD"><a href="#Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD" class="headerlink" title="Go版本的主要功能"></a>Go版本的主要功能</h1><ol>
-<li>自定义资源文件位置<br>主要是通过<code>flag</code>模块解析src参数来实现，比如<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/serv -src /</span>tmp</span><br><span class="line">请求<span class="string">URL:</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//<span class="label">xxx/123.jpg</span></span></span><br><span class="line">最终服务器查找的文件地址:</span><br><span class="line"><span class="regexp">/tmp/</span><span class="number">123.</span>jpg</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>测试中对于”//“这种错误也能兼容，因为它使用的是Join转化路径，而不是拼接字符串。<br>关键代码如下:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">relativePath := req.URL.Path</span><br><span class="line">filename, err := filepath.Abs(filepath.Join(*curDir, relativePath))</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>判断请求类型<br>这部分主要有忽略”favicon.ico”请求、判断路径是否正确和文件是否存在<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//忽略favicon请求:</span></span><br><span class="line"><span class="keyword">if</span> relativePath == <span class="string">"/favicon.ico"</span> &#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>路径是否正确直接判断上文中的err就好了，这里就不表述。实验时发现请求的是目录，服务<br>器立马输出错误，然后退出了。这怎么行，一点都不健壮，所以要判断是不是文件:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fileinfo, e := os.Stat(filename)</span><br><span class="line"><span class="comment">//文件不存在</span></span><br><span class="line"><span class="keyword">if</span> os.IsNotExist(e) &#123;</span><br><span class="line">	log.Println(filename, <span class="string">" is not exists."</span>)</span><br><span class="line">	res.WriteHeader(<span class="number">404</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不是文件，返回500错误</span></span><br><span class="line"><span class="keyword">if</span> fileinfo.IsDir() &#123;</span><br><span class="line">	res.WriteHeader(<span class="number">500</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>判断文件类型并读取、发送文据<br>判断文件类型主要是为了响应时的<code>content-type</code>,对于不是图片的请求，直接返回了<code>text/plain</code>:<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extname := filepath.Ext(reqfile)</span><br><span class="line"><span class="keyword">switch</span> extname &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">".jpg"</span>, <span class="string">".jpeg"</span>, <span class="string">".jpe"</span>, <span class="string">".jfif"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/jpeg"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".png"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/png"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".ico"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/x-icon"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".gif"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/gif"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".tif"</span>, <span class="string">".tiff"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/jiff"</span></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"text/plain"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>发送数据就比较简单了，为了不在传递参数时拷贝，我用了拷贝指针的办法:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data []<span class="typename">byte</span></span><br><span class="line"><span class="comment">//读取文件</span></span><br><span class="line">ReadFileFromPath(&amp;data, filename)</span><br><span class="line">res.WriteHeader(<span class="number">200</span>)</span><br><span class="line">res.Write(data)</span><br></pre></td></tr></table></figure></p>
-<h1 id="u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4"><a href="#u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4" class="headerlink" title="与上一版本的性能测试对比"></a>与上一版本的性能测试对比</h1><p>这里主要用到了apache的ab工具，以及开源软件webbench。<br>两者都在同一环境下，均没有做优化。</p>
-<ol>
-<li>ab测试,并发请求200，总请求数4000:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -c <span class="number">200</span> -n <span class="number">4000</span> http:<span class="comment">//localhost:8080/fact10000.png</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>测试结果如下:</p>
-<p>go 版本:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Document Path:          /img/fact10000.png</span><br><span class="line">Document Length:        <span class="number">27488</span> <span class="keyword">bytes</span></span><br><span class="line"></span><br><span class="line">Concurrency Level:      <span class="number">200</span></span><br><span class="line">Time taken <span class="keyword">for</span> tests:   <span class="number">2.493</span> <span class="built_in">seconds</span></span><br><span class="line">Complete requests:      <span class="number">4000</span></span><br><span class="line">Failed requests:        <span class="number">0</span></span><br><span class="line">Total transferred:      <span class="number">110276000</span> <span class="keyword">bytes</span></span><br><span class="line">HTML transferred:       <span class="number">109952000</span> <span class="keyword">bytes</span></span><br><span class="line">Requests per <span class="keyword">second</span>:    <span class="number">1604.80</span> [<span class="comment">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">124.626</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.623</span> [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          <span class="number">43205.78</span> [Kbytes/<span class="built_in">sec</span>] received <span class="comment"> //网络传输速度，排除网路问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*网络上消耗的时间的分解*/</span></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              <span class="built_in">min</span>  mean[+/-sd] <span class="built_in">median</span>   <span class="built_in">max</span></span><br><span class="line">Connect:        <span class="number">0</span>    <span class="number">4</span>  <span class="number">39.6</span>      <span class="number">0</span>    <span class="number">1003</span></span><br><span class="line">Processing:     <span class="number">3</span>  <span class="number">117</span> <span class="number">143.3</span>     <span class="number">56</span>    <span class="number">1184</span></span><br><span class="line">Waiting:        <span class="number">2</span>   <span class="number">65</span>  <span class="number">41.9</span>     <span class="number">50</span>     <span class="number">173</span></span><br><span class="line">Total:          <span class="number">4</span>  <span class="number">121</span> <span class="number">147.3</span>     <span class="number">57</span>    <span class="number">1184</span></span><br><span class="line"></span><br><span class="line">*下面的内容为整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间，</span><br><span class="line">其中 <span class="number">50</span>％ 的用户响应时间小于 <span class="number">57</span> 毫秒，<span class="number">66</span> ％ 的用户响应时间小于 <span class="number">100</span> 毫秒，</span><br><span class="line">最大的响应时间小于 <span class="number">1184</span> 毫秒*/</span><br><span class="line"></span><br><span class="line">Percentage <span class="operator">of</span> <span class="operator">the</span> requests served <span class="operator">within</span> <span class="operator">a</span> certain <span class="built_in">time</span> (ms)</span><br><span class="line">  <span class="number">50</span>%     <span class="number">57</span></span><br><span class="line">  <span class="number">66</span>%    <span class="number">109</span></span><br><span class="line">  <span class="number">75</span>%    <span class="number">150</span></span><br><span class="line">  <span class="number">80</span>%    <span class="number">157</span></span><br><span class="line">  <span class="number">90</span>%    <span class="number">290</span></span><br><span class="line">  <span class="number">95</span>%    <span class="number">406</span></span><br><span class="line">  <span class="number">98</span>%    <span class="number">583</span></span><br><span class="line">  <span class="number">99</span>%    <span class="number">739</span></span><br><span class="line"> <span class="number">100</span>%   <span class="number">1184</span> (longest request)</span><br></pre></td></tr></table></figure></p>
-<p>nodejs版本:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Concurrency Level:      <span class="number">200</span></span><br><span class="line">Time taken <span class="keyword">for</span> tests:   <span class="number">3.019</span> <span class="built_in">seconds</span></span><br><span class="line">Complete requests:      <span class="number">4000</span></span><br><span class="line">Failed requests:        <span class="number">0</span></span><br><span class="line">Total transferred:      <span class="number">110352000</span> <span class="keyword">bytes</span></span><br><span class="line">HTML transferred:       <span class="number">109952000</span> <span class="keyword">bytes</span></span><br><span class="line">Requests per <span class="keyword">second</span>:    <span class="number">1325.07</span> [<span class="comment">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">150.935</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.755</span> [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          <span class="number">35699.34</span> [Kbytes/<span class="built_in">sec</span>] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              <span class="built_in">min</span>  mean[+/-sd] <span class="built_in">median</span>   <span class="built_in">max</span></span><br><span class="line">Connect:        <span class="number">0</span>   <span class="number">24</span> <span class="number">150.8</span>      <span class="number">0</span>    <span class="number">1003</span></span><br><span class="line">Processing:    <span class="number">67</span>  <span class="number">119</span>  <span class="number">50.4</span>    <span class="number">103</span>     <span class="number">420</span></span><br><span class="line">Waiting:       <span class="number">67</span>  <span class="number">118</span>  <span class="number">50.3</span>    <span class="number">103</span>     <span class="number">420</span></span><br><span class="line">Total:         <span class="number">71</span>  <span class="number">143</span> <span class="number">156.3</span>    <span class="number">105</span>    <span class="number">1116</span></span><br><span class="line"></span><br><span class="line">Percentage <span class="operator">of</span> <span class="operator">the</span> requests served <span class="operator">within</span> <span class="operator">a</span> certain <span class="built_in">time</span> (ms)</span><br><span class="line">  <span class="number">50</span>%    <span class="number">105</span></span><br><span class="line">  <span class="number">66</span>%    <span class="number">125</span></span><br><span class="line">  <span class="number">75</span>%    <span class="number">141</span></span><br><span class="line">  <span class="number">80</span>%    <span class="number">145</span></span><br><span class="line">  <span class="number">90</span>%    <span class="number">160</span></span><br><span class="line">  <span class="number">95</span>%    <span class="number">303</span></span><br><span class="line">  <span class="number">98</span>%   <span class="number">1093</span></span><br><span class="line">  <span class="number">99</span>%   <span class="number">1099</span></span><br><span class="line"> <span class="number">100</span>%   <span class="number">1116</span> (longest request)</span><br></pre></td></tr></table></figure></p>
-<p>二者情况是差不多的，go略微好于nodejs。</p>
-<ol>
-<li>连续3次请求测试平均值,选取用户最关心的三项参数<br>go:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Requests per second:    <span class="number">1604.80</span> [<span class="preprocessor">#/sec] (mean)    <span class="comment">//吞吐率</span></span></span><br><span class="line">Time per request:       <span class="number">124.626</span> [ms] (mean)      <span class="comment">//用户平均请求等待时间</span></span><br><span class="line">Time per request:       <span class="number">0.623</span> [ms] (mean, across all concurrent requests) <span class="comment">//服务器平均请求等待时间</span></span><br><span class="line"></span><br><span class="line">Requests per second:    <span class="number">1627.66</span> [<span class="preprocessor">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">122.876</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.614</span> [ms] (mean, across all concurrent requests)</span><br><span class="line"></span><br><span class="line">Requests per second:    <span class="number">1747.35</span> [<span class="preprocessor">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">114.459</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.572</span> [ms] (mean, across all concurrent requests)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>nodejs:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1325<span class="class">.07</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)      </span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       150<span class="class">.935</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)         </span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.755</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)  </span><br><span class="line"></span><br><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1156<span class="class">.69</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       172<span class="class">.908</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.865</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)</span><br><span class="line"></span><br><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1231<span class="class">.65</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       162<span class="class">.383</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.812</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)</span><br></pre></td></tr></table></figure></p>
-<p>可以看出二者在吞吐率上,Go好于nodejs,平均等待时间上二者相差无几。</p>
-<ol>
-<li>webbench 压力测试<br>压力测试30秒内，并发请求数200,连续测试3次<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webbench -t <span class="number">30</span> -c <span class="number">200</span> http:<span class="comment">//127.0.0.1:8080/img/fact10000.png</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>go的表现:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Speed=<span class="number">111574</span> pages/min, <span class="number">51317124</span> bytes/sec. <span class="comment">//速度，111574页/每分钟，51317124字节/秒</span></span><br><span class="line">Speed=<span class="number">100538</span> pages/min, <span class="number">46228920</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">103186</span> pages/min, <span class="number">47440784</span> bytes/sec.</span><br><span class="line"></span><br><span class="line">资源占用:</span><br><span class="line">VIRT    RES     SHR     CPU   MEM   TIME</span><br><span class="line"><span class="number">364756</span>  <span class="number">26252</span>   <span class="number">4336</span> S  <span class="number">61.9</span>  <span class="number">0.0</span>   <span class="number">0</span>:<span class="number">15.26</span> serv </span><br><span class="line"><span class="number">364884</span>  <span class="number">25960</span>   <span class="number">4044</span> S  <span class="number">58.7</span>  <span class="number">0.0</span></span><br><span class="line"><span class="number">364884</span>  <span class="number">25960</span>   <span class="number">4044</span> R  <span class="number">57.9</span>  <span class="number">0.0</span></span><br></pre></td></tr></table></figure></p>
-<p>nodejs的表现:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Speed=<span class="number">78864</span> pages/min, <span class="number">36259112</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">42868</span> pages/min, <span class="number">19710708</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">36340</span> pages/min, <span class="number">16708262</span> bytes/sec.</span><br><span class="line"></span><br><span class="line">资源占用:</span><br><span class="line">VIRT    RES     SHR     CPU   MEM   TIME</span><br><span class="line"><span class="number">955320</span>  <span class="number">74196</span>  <span class="number">14252</span> R  <span class="number">73.6</span>  <span class="number">0.1</span>   <span class="number">0</span>:<span class="number">10.49</span> node</span><br><span class="line"><span class="number">960768</span>  <span class="number">79408</span>  <span class="number">14252</span> R  <span class="number">33.2</span>  <span class="number">0.1</span></span><br><span class="line"><span class="number">961604</span>  <span class="number">79256</span>  <span class="number">14252</span> R  <span class="number">34.7</span>  <span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
-<p>二者都是0错误,可以看出nodejs在速度和资源占用率都比Go表现的差，<br>速度大概只有go的一半不到，内存占用率却是go的3倍左右，CPU使用率<br>稍好于go。</p>
-<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>   从测试里可以看到，Go的http性能是好于nodejs的，不过对于这么<br>简单的应用，可能无法完全反应Go和nodejs的http性能高低吧，但是go的<br>http的模块我觉得很好用，写代码也是同步方式，不像nodejs我写到逻辑越来<br>越复杂的时候就有点越发要好好学一学异步编程的思想，这种思维转换一时还<br>无法适应，所以我往往选择javascript先完成一部分功能，打开思路后使用Go<br>去实现。<br>　另外今天的收获就是学会了做网络测试了，这对我来说又增长了能力。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ab/">ab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webbench/">webbench</a></li></ul>
-	</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-staticfileserv" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/10/staticfileserv/" class="article-date">
-  	<time datetime="2016-01-10T05:44:38.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/staticfileserv/">静态文件服务</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668"><a href="#u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668" class="headerlink" title="为什么做静态文件服务器"></a>为什么做静态文件服务器</h1><p>　　这几天博客搭建起来后，美化和主题也设置得差不多了，就是在写作时，<br>有时候需要插入图片，图片使用的相对地址会在hexo生成博客时失效，总不<br>可能插入一个图片就在它生成后去相应的html里改引用地址吧，再说上传的时<br>候Hexo可能默认不会上传。<br>　　所以这种情况下，就需要一个文件服务器去为我们生成的博客传输图片。</p>
-<h1 id="u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="现有的解决方法"></a>现有的解决方法</h1><h2 id="1-_u4E03_u725B_u670D_u52A1"><a href="#1-_u4E03_u725B_u670D_u52A1" class="headerlink" title="1.七牛服务"></a>1.七牛服务</h2><p>　　七牛的静态文件服务听说性能很高，也是用我最近学习的golang写的。不少<br>人都是推荐这种服务，所以我就去七牛官网看了一下，有免费试用版，每个月<br>请求一万次到十万次，对我来说够用了。想注册的时候有以下两点要求我比较介意:</p>
-<ul>
-<li>需要填写手机号</li>
-<li>个人信息等隐私内容。</li>
-</ul>
-<p>　　国内的服务很多都把个人信息卖了，导致我总是收到垃圾短信和推销电话，因此现在就奉行<br>能不注册就不注册的态度。另外，我写个博客还要去七牛上上传，两边还得对上号，再说自己的<br>需求就是插入静态内容，也不复杂，为什么不自己做呢？自己动手，丰衣足食，还可以后续改进。<br>所以有了下面的做法。</p>
-<h2 id="2-_u5728_u4E91_u4E0A_u642D_u5EFA_u6587_u4EF6_u670D_u52A1_u5668"><a href="#2-_u5728_u4E91_u4E0A_u642D_u5EFA_u6587_u4EF6_u670D_u52A1_u5668" class="headerlink" title="2.在云上搭建文件服务器"></a>2.在云上搭建文件服务器</h2><p>　　当浏览到包含插入图片的博客时，相当于发起了一次http请求，如果返回的是200,那就是说明<br>取到了图片，所以我们文件服务这边就是写一个http服务，监听这些请求，发送图片的数据过去就<br>行了。具体逻辑如下:</p>
-<ol>
-<li>在md引用地址写上要请求的文件的地址A</li>
-<li>服务监听端口，一旦有请求过来，就取request的url中的文件路径</li>
-<li>判断该文件是否存在，如果不存在返回404</li>
-<li>存在该文件的话，读取文件，response返回二进制数据即可</li>
-</ol>
-<h1 id="u5177_u4F53_u5B9E_u73B0"><a href="#u5177_u4F53_u5B9E_u73B0" class="headerlink" title="具体实现"></a>具体实现</h1><p>　　本来先写Go版本的，结果测试时，go中读取文件的”ioutil”和”os”模块都不能读取多层目录下的<br>文件内容，为了尽快上线，我用了nodejs,里面的http模块也很好用，异步不需要等待的特点正好适合<br>I/O操作，前期也没有考虑多个请求就开多个操作，或者是否Javascript异步模型不需要这些东西来提<br>高性能。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 访问根目录在当前目录,</span><br><span class="line"> * 例如要访问img下的fact.png,就使用http://[云地址]:8080/img/fact.png</span><br><span class="line"> * </span><br><span class="line"> **/</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> rootPath = <span class="string">"."</span>;</span><br><span class="line">	<span class="comment">//屏蔽favicon请求</span></span><br><span class="line">	<span class="keyword">if</span>(req.url!==<span class="string">'/favicon.ico'</span>)&#123;</span><br><span class="line">		<span class="keyword">var</span> filename = rootPath+req.url;</span><br><span class="line">		<span class="keyword">var</span> img_type = path.extname(req.url).split(<span class="string">'.'</span>)[<span class="number">1</span>];</span><br><span class="line">		<span class="comment">//读取相应的文件</span></span><br><span class="line">		fs.readFile(filename,<span class="string">'binary'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,file</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(err)&#123;</span><br><span class="line">				res.writeHead(<span class="number">500</span>,&#123;<span class="string">"Content-Type"</span>:<span class="string">"text/plain"</span>&#125;);</span><br><span class="line">				res.write(err+<span class="string">'\n'</span>);</span><br><span class="line">			    <span class="built_in">console</span>.log(<span class="string">'request:'</span>,req.url,<span class="string">'\t\t[Failed].'</span>);</span><br><span class="line">				res.end();</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;<span class="comment">//返回数据</span></span><br><span class="line">				res.writeHead(<span class="number">200</span>,&#123;<span class="string">"Content-Type"</span>:<span class="string">"image/"</span>+img_type&#125;);</span><br><span class="line">				res.write(file,<span class="string">"binary"</span>);</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">'request:'</span>,req.url,<span class="string">'\t\t[Ok].'</span>);</span><br><span class="line">				res.end();<span class="comment">//等待发送完成</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure></p>
-<p>　　然后将这段代码发在云上运行，并将博客里要插入的图片放在rootPath下，更新<br>博客后，再访问服务端果然出现了request ok的信息，gitcafe和github上的博客在浏<br>览时，也成功加载了图片。说明我的想法是正确的。</p>
-<h1 id="u540E_u7EED"><a href="#u540E_u7EED" class="headerlink" title="后续"></a>后续</h1><p>服务器写的还是很简陋的，总的来说有以下需要改进:</p>
-<ol>
-<li>将服务器地址写到配置文件中，而不是每次都写域名，更新域名更方便。</li>
-<li>既没有对请求进行判断，不能防范攻击。</li>
-<li>多个人浏览时是否依旧能流畅加载图片没有测试。</li>
-<li>javascript的异步模式应该多个请求怎么处理没有弄清。<br>　　<br>所以，接下来针对这几点，可以一边用一边改，这就是未完的工作了。不过好歹可以用了，<br>也不用去注册一个服务，自己又得到了锻炼。说不定发展到最后可以提供多个服务。一个<br>web框架大概也是这样一点一点地加起来的。</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/program/">program</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server/">server</a></li></ul>
-	</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
 
   
   
@@ -717,71 +604,51 @@
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
             </div>
         </div>
-        <div class="visit">
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <span id="site-visit" >海贼到访数: 
-                    <span id="busuanzi_value_site_uv"></span>
-                </span>
-            </span>
-            <span id="busuanzi_container_page_pv" style='display:none'>
-                <span id="page-visit">, 本页阅读量: 
-                    <span id="busuanzi_value_page_pv"></span>
-                </span>
-            </span>
-        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </footer>
+
     </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-
-<script>
-	var spfkConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/js/main.js" type="text/javascript"></script>
 
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 21;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
 </div>
-
 <script>
     $(document).ready(function() {
         if ($("#comments").length < 1) {
@@ -790,14 +657,35 @@ MathJax.Hub.Queue(function() {
     })
 </script>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
   </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.gitcafe.io/"/>
-  <updated>2016-02-22T12:42:54.785Z</updated>
+  <updated>2016-02-25T04:24:31.493Z</updated>
   <id>http://linghutf.gitcafe.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[个人密码存储在线服务]]></title>
+    <link href="http://linghutf.gitcafe.io/2016/02/25/secretsys-md/"/>
+    <id>http://linghutf.gitcafe.io/2016/02/25/secretsys-md/</id>
+    <published>2016-02-25T04:22:29.000Z</published>
+    <updated>2016-02-25T04:24:31.493Z</updated>
+    <content type="html"><![CDATA[<h1 id="u4E2A_u4EBA_u521D_u8877"><a href="#u4E2A_u4EBA_u521D_u8877" class="headerlink" title="个人初衷"></a>个人初衷</h1><p>随着</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="u4E2A_u4EBA_u521D_u8877"><a href="#u4E2A_u4EBA_u521D_u8877" class="headerlink" title="个人初衷"></a>个人初衷</h1><p>随着</p>
+]]>
+    </summary>
+    
+      <category term="aes" scheme="http://linghutf.gitcafe.io/tags/aes/"/>
+    
+      <category term="beego" scheme="http://linghutf.gitcafe.io/tags/beego/"/>
+    
+      <category term="go" scheme="http://linghutf.gitcafe.io/tags/go/"/>
+    
+      <category term="html" scheme="http://linghutf.gitcafe.io/tags/html/"/>
+    
+      <category term="javascript" scheme="http://linghutf.gitcafe.io/tags/javascript/"/>
+    
+      <category term="mysql" scheme="http://linghutf.gitcafe.io/tags/mysql/"/>
+    
+      <category term="server" scheme="http://linghutf.gitcafe.io/tags/server/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[在外的元宵节]]></title>

@@ -148,7 +148,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/aes/" style="font-size: 10px;">aes</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/beego/" style="font-size: 10px;">beego</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 15px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 15px;">server</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a>
+                        <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Makefile/" style="font-size: 10px;">Makefile</a> <a href="/tags/STL/" style="font-size: 15px;">STL</a> <a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/aes/" style="font-size: 10px;">aes</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/beego/" style="font-size: 10px;">beego</a> <a href="/tags/c/" style="font-size: 15px;">c++</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/mutex/" style="font-size: 10px;">mutex</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 15px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 15px;">server</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a> <a href="/tags/基础技术/" style="font-size: 10px;">基础技术</a>
                     </div>
                 </section>
                 
@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-secretsys-md" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-C++11多线程同步互斥初探" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/25/secretsys-md/" class="article-date">
-      <time datetime="2016-02-25T04:22:29.000Z" itemprop="datePublished">2016-02-25</time>
+      <a href="/2016/03/20/C++11多线程同步互斥初探/" class="article-date">
+      <time datetime="2016-03-20T08:14:41.000Z" itemprop="datePublished">2016-03-20</time>
 </a>
     </div>
   
@@ -245,7 +245,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/25/secretsys-md/">个人密码存储在线服务</a>
+      <a class="article-title" href="/2016/03/20/C++11多线程同步互斥初探/">C++11多线程同步互斥初探</a>
     </h1>
   
 
@@ -255,14 +255,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="u4E2A_u4EBA_u521D_u8877"><a href="#u4E2A_u4EBA_u521D_u8877" class="headerlink" title="个人初衷"></a>个人初衷</h1><blockquote>
-<ul>
-<li>随着互联网使用的时间增长，自己在网上的账号越来越多，但因为之前就注重安全功能，<br>所以我很少使用同一套账号系统。所以账号数量越来越多导致我难以记住，而且很多信息比<br>如网银包含有账号之外的安全信息。虽然chrome有记住密码功能，但一些安全问题，保密安全<br>码它都无能为力。</li>
-<li>之前考虑过使用1Password等软件，有些是有使用环境限制，而且不知道运作方式，不知道会不<br>会丢失或被攻击者窃取个人信息，这也是我想自己完全掌握自己的个人信息安全的原因。</li>
-<li>基于以上因素，我萌生了开发一套在线密码管理系统，这样既省略了同步因素，还能随时查询，<br>不用的时候导出文件就可以了。</li>
-</ul>
-</blockquote>
-
+        
       
     </div>
     
@@ -272,7 +265,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aes/">aes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/beego/">beego</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server/">server</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STL/">STL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mutex/">mutex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thread/">thread</a></li></ul>
     </div>
 
       
@@ -292,11 +285,11 @@
 
 
   
-    <article id="post-20160222" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-C++位图排序解决亿级数量问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/22/20160222/" class="article-date">
-      <time datetime="2016-02-22T08:31:53.000Z" itemprop="datePublished">2016-02-22</time>
+      <a href="/2016/03/10/C++位图排序解决亿级数量问题/" class="article-date">
+      <time datetime="2016-03-10T03:12:43.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
   
@@ -309,7 +302,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/22/20160222/">在外的元宵节</a>
+      <a class="article-title" href="/2016/03/10/C++位图排序解决亿级数量问题/">C++位图排序解决亿级数量问题</a>
     </h1>
   
 
@@ -319,8 +312,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　春节假期转眼就过去了，感觉是过得最快的一个春节。马上又面临新的挑战，正处在一个学习<br>和工作的过渡期，莫名的烦心事和压力随之而来。开学时间很早，之前所有相聚的年轻人一股脑儿<br>全离开了，为了明年的春节聚首又回到城市奋斗，看得让人心慌，想到未来我在哪里，是否也像他<br>们一般匆匆来去?现在的娱乐方式多不胜数，但是人的情绪来源越来越少，仿佛只有通往金钱的道路<br>才能让人心旷神怡，只有人人羡慕的生活才是成功的人生。在这种环境下，假期像是一场鸵鸟的避风<br>动作，暂时没有烦恼，心却没有安宁下来。于是，剩下的日子，终于像风一样迅速消失在心灵的沙漠<br>中。<br>　　元宵节之前的几天，我就已经来到了实验室，开始了日复一日的工作，和同年人继续没有交流却<br>保持默契地竞争。突然发现，原来节日本为人带来欢乐的意义就是这样丢失的。你还有很多工作，前方<br>还有许多美好的憧憬在你到达之后才能实现，于是你忽略了路边的景色，着急地向目标走去。然后终于<br>到了这个目的地，但是你却发现，抑或是有人告诉你，前方有更漂亮的风景，你如果到达那里，人生会有<br>更精彩的不同……如此这般循环几个光景，你的人生就这样匆匆而去而鲜有发自内心的愉悦。<br>　　春节期间看到了一个讽刺的帖子，其中最主要的内容是:”真正好的办法是巧妙引导，控制节奏，让<br>臣民们始终保持一种奋斗的状态。20出头，头十年，让他们去为房子，车子，娶妻生子忙，第二个十年，<br>让他们为房贷，车贷，子女教育经费去忙，等到了第三个十年，就得为老来医保，儿女成人等做准备而继<br>续忙。如此一来，人生最黄金的三十年不经意间弹指而过。在臣民们为自己所谓生活而忙碌时，就不太会<br>有人能静下心来质疑苏丹统治的正当性，合法性等等命题。”<br>　　这其中，有多少人不是我们自己给自己定义的成功标准，或者在外在的氛围和期望的影响下，进行自我<br>审查和个性阉割，从而成为“成功”这条路上的一个急匆匆的行者的呢？</p>
-
+        
       
     </div>
     
@@ -330,7 +322,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sort/">sort</a></li></ul>
     </div>
 
       
@@ -350,11 +342,11 @@
 
 
   
-    <article id="post-springsemister" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-STL的有序和无序哈希容器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/22/springsemister/" class="article-date">
-      <time datetime="2016-02-22T08:30:36.000Z" itemprop="datePublished">2016-02-22</time>
+      <a href="/2016/03/06/STL的有序和无序哈希容器/" class="article-date">
+      <time datetime="2016-03-06T13:22:26.000Z" itemprop="datePublished">2016-03-06</time>
 </a>
     </div>
   
@@ -367,7 +359,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/22/springsemister/">进展汇总,新阶段计划</a>
+      <a class="article-title" href="/2016/03/06/STL的有序和无序哈希容器/">STL的有序和无序哈希容器</a>
     </h1>
   
 
@@ -377,14 +369,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170"><a href="#u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170" class="headerlink" title="年前的自我安慰"></a>年前的自我安慰</h1><p>新年之前，给自己画了很多美好的期许，如同中学生涯的放假期间，带回去很多课本和试卷，<br>结果又原封不动地带回学校一样，这些定下的计划鲜有完成。大概也就是没有手生而已。我把<br>这种现象叫做心理上的自我安慰。</p>
-<h1 id="u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551"><a href="#u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551" class="headerlink" title="第一次开会之前的补救"></a>第一次开会之前的补救</h1><p>半个月过去了，我又回到那个朝九晚十的生活轨道，赶紧在进度报告之前，完成一些工作。经过<br>几天的不断写代码和测试，也算是完成了以下任务:</p>
-<ol>
-<li>实现了文件按数据块的对称加、解密</li>
-<li>理解了一部分冗余分散加密的原理<br>再加上一些研究过程中的速记note,应该可以进行下一步的工作了。</li>
-</ol>
-<h1 id="u4E0B_u4E00_u6B65_u7684_u5DE5_u4F5C"><a href="#u4E0B_u4E00_u6B65_u7684_u5DE5_u4F5C" class="headerlink" title="下一步的工作"></a>下一步的工作</h1><p>这大概是我学习生涯以来，如此有总结性和计划性的时刻，办公的电脑桌面文件夹里，都是各种各<br>样的todo-list和note。<br>下一步主要就是<strong>实现caont-rs冗余加/解码</strong>了，因此需要了解迦罗瓦运算，详细地阅读原作者的<br>实现了。<br>过渡期就是如此麻烦，还需要留心即将到来的暑期实习招聘，一边需要做准备了。毕竟不想再经历本科<br>毕业时候的迷茫和毫无准备的仓促。</p>
-
+        
       
     </div>
     
@@ -394,7 +379,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/program-schedule/">program schedule</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HashMap/">HashMap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STL/">STL</a></li></ul>
     </div>
 
       
@@ -414,11 +399,11 @@
 
 
   
-    <article id="post-winter-vacation" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Linux下C-C-动态库的生成和加载" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/29/winter-vacation/" class="article-date">
-      <time datetime="2016-01-29T06:28:09.000Z" itemprop="datePublished">2016-01-29</time>
+      <a href="/2016/03/06/Linux下C-C-动态库的生成和加载/" class="article-date">
+      <time datetime="2016-03-06T13:19:37.000Z" itemprop="datePublished">2016-03-06</time>
 </a>
     </div>
   
@@ -431,7 +416,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/29/winter-vacation/">写在放假之前</a>
+      <a class="article-title" href="/2016/03/06/Linux下C-C-动态库的生成和加载/">Linux下C/C++动态库的生成和加载</a>
     </h1>
   
 
@@ -441,10 +426,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4"><a href="#u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4" class="headerlink" title="匆忙与无所适从之间"></a>匆忙与无所适从之间</h1><p>　快到猴年春节了，这一年过得很累，发生了太多的事，压力也大了起来，未来的工作，现在<br>的生活…都交织在我的脑海里。很想回去舒服地躺在床上看看书，或者就是发一下午呆。可<br>惜时间不等人，两周里还有很多要完成的事。<br>　不过，能过第一个想回家吃妈妈做的菜的春节，我的心情还是有些愉快迫切的、
-　</p>
-<h1 id="u5047_u671F_u7684_u9050_u60F3"><a href="#u5047_u671F_u7684_u9050_u60F3" class="headerlink" title="假期的遐想"></a>假期的遐想</h1><p>　最近的两周老板也没怎么来，我手头的事情也比较棘手，有些像刺猬无从下嘴的感觉。检讨<br>一下工作就是零星做了些面试算法题，leetcode英文题对于目前浮躁的我来说有些难，DP、背包<br>也没有看，回家需要复习一下算法了。文件系统，加密模块,也需要做个雏形出来。<br>　很想潇潇洒洒地在家里四处游荡，和朋友去爬山，然后静静坐在山峰最高处，静静地注视着芸<br>芸众生、人间烟火，做着无边无际的梦。</p>
-
+        
       
     </div>
     
@@ -454,7 +436,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Makefile/">Makefile</a></li></ul>
     </div>
 
       
@@ -474,11 +456,11 @@
 
 
   
-    <article id="post-leetcode319" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-C++四种转型cast" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/21/leetcode319/" class="article-date">
-      <time datetime="2016-01-21T06:49:47.000Z" itemprop="datePublished">2016-01-21</time>
+      <a href="/2016/03/06/C++四种转型cast/" class="article-date">
+      <time datetime="2016-03-06T13:17:41.000Z" itemprop="datePublished">2016-03-06</time>
 </a>
     </div>
   
@@ -491,7 +473,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a>
+      <a class="article-title" href="/2016/03/06/C++四种转型cast/">C++四种转型cast</a>
     </h1>
   
 
@@ -501,49 +483,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
-<p>Example:</p>
-<p>Given n = 3. </p>
-<p>At first, the three bulbs are [off, off, off].<br>After first round, the three bulbs are [on, on, on].<br>After second round, the three bulbs are [on, off, on].<br>After third round, the three bulbs are [on, off, off]. </p>
-<p>So you should return 1, because there is only one bulb is on.</p>
-<h3 id="u9898_u76EE_u542B_u4E49"><a href="#u9898_u76EE_u542B_u4E49" class="headerlink" title="题目含义"></a>题目含义</h3><p>就是说给n个开关分别对应控制这n个灯泡的亮灭，步骤如下:</p>
-<ul>
-<li>开始时开关都是关的，为方便叙述，位置从1开始</li>
-<li>step=1,将所有位置的开关打开</li>
-<li>step=2,将所有位置为2的倍数的开关转换状态</li>
-<li>…</li>
-<li>step=n,转换完开关后,统计还有多少灯泡开者</li>
-</ul>
-<hr>
-<h1 id="u89E3_u6CD5"><a href="#u89E3_u6CD5" class="headerlink" title="解法"></a>解法</h1><h2 id="1-_u76F4_u89C2_u89E3_u6CD5"><a href="#1-_u76F4_u89C2_u89E3_u6CD5" class="headerlink" title="1.直观解法"></a>1.直观解法</h2><h3 id="u601D_u8DEF"><a href="#u601D_u8DEF" class="headerlink" title="思路"></a>思路</h3><p>分析完题目后,首先想到的就是把开关这些控制流程自己模拟<br>一遍，用布尔数组模拟开关，最后统计为true的开关数就可以<br>了。</p>
-<p>那就开始写吧，leetcode支持c/c++，感觉够了，至于能不能<br>用STL库还不清楚，自己动手写一些常用数据结构，虽说性能有<br>损失，但是为了AC,也只能自己注意性能了，尽量不要手动分配<br>大的数组。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bulbswitcher</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">//c99支持的关键字_Bool,ansi不支持,leetcode测试通过</span></span><br><span class="line">    <span class="keyword">_Bool</span> *p=(<span class="keyword">_Bool</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//全为false,避免求反时未定义</span></span><br><span class="line">    <span class="built_in">memset</span>(p,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;++j)&#123;           <span class="comment">//step 1-&gt;n</span></span><br><span class="line">        <span class="keyword">for</span>(i=j;i&lt;n;i+=j+<span class="number">1</span>)&#123;    <span class="comment">//对应的开关,每次跳跃的间隔j+1</span></span><br><span class="line">            *(p+i)=!(*(p+i));   <span class="comment">//不知道编译器是否会优化，所以采用这种直接寻址方式</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//统计为true的开关,如果有c++的accumulate更好</span></span><br><span class="line">    sum(p,n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上传到leetcode jude,不一会儿出现了Limit except，发现它的测试数是10000000,<br>总用时1+s,这么大数字居然超时了.我自己在线下测试的结果：</p>
-<ul>
-<li><p>普通编译:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-1.png" alt="leetcode-1"></p>
-</li>
-<li><p>开启-O2 优化<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-2.png" alt="leetcode-2"></p>
-</li>
-</ul>
-<p>可以发现这种算法复杂度O(n^2),数字一大性能就不行了。普通编译结果也是超过1s,看来leetcode没有做优化,并且超时时间设置1s,<br>如此只能再想其他解法.</p>
-<hr>
-<h2 id="2-_u8FDB_u9636_u65B9_u6848"><a href="#2-_u8FDB_u9636_u65B9_u6848" class="headerlink" title="2.进阶方案"></a>2.进阶方案</h2><p>总觉得这样转换的状像是符合某种数学规律，也许是常年的理工教育培养了这种直觉，<br>我就试一试究竟有没有规律,基于现有代码很好改动。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> max)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;max;++i)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%3d:%3d\n"</span>,i,bulbswitcher(i));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>打印结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-3.png" alt="leetcode-3"></p>
-<p>居然有这么多一样的，看起来像台阶一样，必须满足某种条件才能增加一级.<br>那我再改进一下试探方法,为了一查究竟这么多相同的数字有什么关系，以及开关<br>数n和最后结果的关系，采用哈希表去做，c没有，其实开个大数组也行，我这里用<br>的是Go。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> test(n <span class="typename">int</span>)&#123;</span><br><span class="line">    m:=<span class="built_in">make</span>(<span class="keyword">map</span>[<span class="typename">int</span>]<span class="typename">int</span>,n)</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;<span class="number">1000</span>;i++&#123;</span><br><span class="line">        m[bulbswitcher(i)]++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//无序表，对key排序    </span></span><br><span class="line">    sort.SortInts(map_keys)</span><br><span class="line">    <span class="keyword">for</span> _,k:=<span class="keyword">range</span> map_keys&#123;</span><br><span class="line">        fmt.Printf(<span class="string">"%3d:%3d\n"</span>,k,m[k])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-4.png" alt="leetcode-4"></p>
-<p>果然有关系!原来最后的结果对应的原始开关数n是一个奇数等差数列:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第i级,<span class="keyword">ret</span>表示<span class="keyword">n</span>在这一级内，则最终的结果</span><br><span class="line">cnt表示有多少个<span class="keyword">n</span>是对应<span class="keyword">ret</span>这个结果的，也就是<span class="keyword">n</span>的范围</span><br><span class="line">关系如下:</span><br><span class="line">       2*<span class="keyword">ret</span>+1 = cnt </span><br><span class="line">=&gt;     <span class="keyword">ret</span> = (cnt-1)/2</span><br></pre></td></tr></table></figure></p>
-<p>现在我们只要求出这个范围cnt就行了。由于k对应的最后的结果，而v对应n,表明我们需要判断这个n落在哪一级内，<br>也就是将v加起来，直到加到第i级超过n的值，那么n就是在这一级内。<br>基于这种思想有代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">magic</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> i,cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">3</span>;cnt&lt;n;i+=<span class="number">2</span>)&#123; <span class="comment">//第i级所包含的原始开关数范围,cnt统计n之前的数量</span></span><br><span class="line">        cnt+=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (i-<span class="number">3</span>)&gt;&gt;<span class="number">1</span>;<span class="comment">//因为数列没有cnt=1对应的ret</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>改进之后算法复杂度为O(n/2)=&gt;O(n)，现在上传改进的代码,这次通过了，耗时0s,但是在分布图里，<br>居然只打败了同样用C的6.83%,看来很多人结果比我好啊，也不知道<br>它的测试数字是不是都是一样的。</p>
-<p>看一下能不能继续改进。对了，奇数等差数列不是有求和公式吗?我们知道n，直接求它在那一级的范围<br>内，不就是ret的值么?避免了一个个去加然后判断,这就是最终版本的方法。</p>
-<h2 id="3-_u6700_u7EC8_u89E3_u6CD5"><a href="#3-_u6700_u7EC8_u89E3_u6CD5" class="headerlink" title="3.最终解法"></a>3.最终解法</h2><p>因为奇数2n-1的求和公式:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">对于上面的关系有:</span><br><span class="line"></span><br><span class="line">         <span class="keyword">sum</span> = (2*<span class="keyword">ret</span>+1+3)*<span class="keyword">ret</span>/2</span><br><span class="line">     =&gt;      =  <span class="keyword">ret</span>*<span class="keyword">ret</span> + 2*<span class="keyword">ret</span></span><br><span class="line"></span><br><span class="line">所以反推有:     </span><br><span class="line">     -&gt;    <span class="keyword">n</span> &lt;= <span class="keyword">ret</span>*<span class="keyword">ret</span></span><br><span class="line">     =&gt;   <span class="keyword">ret</span> = <span class="literal">sqrt</span>(<span class="keyword">n</span>) 向下取整</span><br></pre></td></tr></table></figure></p>
-<p>这种解法C函数表示就是<code>floor(sqrt(n))</code><br>所以改进的代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">final_magic</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">floor</span>(<span class="built_in">sqrt</span>(n));<span class="comment">//隐式转型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样简单多了。然后上传leetcode测试结果,35个测试全部通过，<br>耗时0ms，居然还是打败6.88%,郁闷</p>
-<h2 id="4-_u4E09_u79CD_u89E3_u6CD5_u7684_u5355_u5143_u3001_u6027_u80FD_u6D4B_u8BD5"><a href="#4-_u4E09_u79CD_u89E3_u6CD5_u7684_u5355_u5143_u3001_u6027_u80FD_u6D4B_u8BD5" class="headerlink" title="4.三种解法的单元、性能测试"></a>4.三种解法的单元、性能测试</h2><p>为了测试的方便，我将代码改写成go，然后使用自带test，之前2方案<br>比较快，所以以它为基准测试其他2种正确性。开始的时候都是手写的测试<br>case,用map去对比,本想设置测试上限10000000，但是超过了10分钟，出<br>现了panic，10万以上第一种方法就很慢了。<br>测试代码部分:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>(</span><br><span class="line">    MAX = <span class="number">10000</span>   <span class="comment">//测试范围</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">//通用测试方法，传入测试函数参数</span></span><br><span class="line"><span class="keyword">func</span> test(t *testing.T,Func <span class="keyword">func</span>(<span class="typename">int</span>) <span class="typename">int</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;=MAX;i++&#123;</span><br><span class="line">        <span class="keyword">if</span> Func(i)!=Magic(i)&#123;</span><br><span class="line">            <span class="comment">//结果出错</span></span><br><span class="line">            t.Errorf(<span class="string">"%3d:%3d calc failed."</span>,i,Func(i))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">TestCommon(t)&#123;</span><br><span class="line">    test(t,Common)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TestFinalMagic(t)</span><br></pre></td></tr></table></figure></p>
-<p>性能测试，代码类似:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通用性能测试方法</span></span><br><span class="line"><span class="keyword">func</span> bench(b *testing.B,Func <span class="keyword">func</span>(<span class="typename">int</span>) <span class="typename">int</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;=MAX;i++&#123;</span><br><span class="line">        Func(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BenchmarkCommon(b)</span><br><span class="line">BenchmarkMagic(b)</span><br><span class="line">BenchmarFinalkMagic(b)</span><br></pre></td></tr></table></figure></p>
-<p>测试结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-5.png" alt="leetcode-5"></p>
-<hr>
-<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>第一种最符合程序员解决问题的思维，也很容易理解。后面的方法已经脱离了问题，变成了纯粹的数学问题<br>无奈第一种性能要差得多。这大概就是提醒我们，抽象生活问题成数学问题，然后去解决它吧。很惭愧，我<br>没有通过分析问题去提炼其中的数学规律，而是凭感觉试出来的，<br>最后，学到的是go中的函数参数了，顺便复习了C语言的一些内容。</p>
-
+        
       
     </div>
     
@@ -553,7 +493,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础技术/">基础技术</a></li></ul>
     </div>
 
       
@@ -575,7 +515,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>

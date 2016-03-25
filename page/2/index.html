@@ -148,7 +148,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/aes/" style="font-size: 10px;">aes</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/beego/" style="font-size: 10px;">beego</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 15px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 15px;">server</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a>
+                        <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Makefile/" style="font-size: 10px;">Makefile</a> <a href="/tags/STL/" style="font-size: 15px;">STL</a> <a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/aes/" style="font-size: 10px;">aes</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/beego/" style="font-size: 10px;">beego</a> <a href="/tags/c/" style="font-size: 15px;">c++</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/mutex/" style="font-size: 10px;">mutex</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 15px;">program schedule</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/server/" style="font-size: 15px;">server</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a> <a href="/tags/基础技术/" style="font-size: 10px;">基础技术</a>
                     </div>
                 </section>
                 
@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-firstsnow" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-secretsys-md" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/21/firstsnow/" class="article-date">
-      <time datetime="2016-01-20T18:08:28.000Z" itemprop="datePublished">2016-01-21</time>
+      <a href="/2016/02/25/secretsys-md/" class="article-date">
+      <time datetime="2016-02-25T04:22:29.000Z" itemprop="datePublished">2016-02-25</time>
 </a>
     </div>
   
@@ -245,7 +245,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/firstsnow/">2016年第一场雪想到的</a>
+      <a class="article-title" href="/2016/02/25/secretsys-md/">个人密码存储在线服务</a>
     </h1>
   
 
@@ -255,7 +255,71 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>早上一如既往的起床洗漱然后出门，走到楼道口才发现今天居然下雪了，</p>
+        <h1 id="u4E2A_u4EBA_u521D_u8877"><a href="#u4E2A_u4EBA_u521D_u8877" class="headerlink" title="个人初衷"></a>个人初衷</h1><blockquote>
+<ul>
+<li>随着互联网使用的时间增长，自己在网上的账号越来越多，但因为之前就注重安全功能，<br>所以我很少使用同一套账号系统。所以账号数量越来越多导致我难以记住，而且很多信息比<br>如网银包含有账号之外的安全信息。虽然chrome有记住密码功能，但一些安全问题，保密安全<br>码它都无能为力。</li>
+<li>之前考虑过使用1Password等软件，有些是有使用环境限制，而且不知道运作方式，不知道会不<br>会丢失或被攻击者窃取个人信息，这也是我想自己完全掌握自己的个人信息安全的原因。</li>
+<li>基于以上因素，我萌生了开发一套在线密码管理系统，这样既省略了同步因素，还能随时查询，<br>不用的时候导出文件就可以了。</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aes/">aes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/beego/">beego</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server/">server</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20160222" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/22/20160222/" class="article-date">
+      <time datetime="2016-02-22T08:31:53.000Z" itemprop="datePublished">2016-02-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/22/20160222/">在外的元宵节</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　春节假期转眼就过去了，感觉是过得最快的一个春节。马上又面临新的挑战，正处在一个学习<br>和工作的过渡期，莫名的烦心事和压力随之而来。开学时间很早，之前所有相聚的年轻人一股脑儿<br>全离开了，为了明年的春节聚首又回到城市奋斗，看得让人心慌，想到未来我在哪里，是否也像他<br>们一般匆匆来去?现在的娱乐方式多不胜数，但是人的情绪来源越来越少，仿佛只有通往金钱的道路<br>才能让人心旷神怡，只有人人羡慕的生活才是成功的人生。在这种环境下，假期像是一场鸵鸟的避风<br>动作，暂时没有烦恼，心却没有安宁下来。于是，剩下的日子，终于像风一样迅速消失在心灵的沙漠<br>中。<br>　　元宵节之前的几天，我就已经来到了实验室，开始了日复一日的工作，和同年人继续没有交流却<br>保持默契地竞争。突然发现，原来节日本为人带来欢乐的意义就是这样丢失的。你还有很多工作，前方<br>还有许多美好的憧憬在你到达之后才能实现，于是你忽略了路边的景色，着急地向目标走去。然后终于<br>到了这个目的地，但是你却发现，抑或是有人告诉你，前方有更漂亮的风景，你如果到达那里，人生会有<br>更精彩的不同……如此这般循环几个光景，你的人生就这样匆匆而去而鲜有发自内心的愉悦。<br>　　春节期间看到了一个讽刺的帖子，其中最主要的内容是:”真正好的办法是巧妙引导，控制节奏，让<br>臣民们始终保持一种奋斗的状态。20出头，头十年，让他们去为房子，车子，娶妻生子忙，第二个十年，<br>让他们为房贷，车贷，子女教育经费去忙，等到了第三个十年，就得为老来医保，儿女成人等做准备而继<br>续忙。如此一来，人生最黄金的三十年不经意间弹指而过。在臣民们为自己所谓生活而忙碌时，就不太会<br>有人能静下心来质疑苏丹统治的正当性，合法性等等命题。”<br>　　这其中，有多少人不是我们自己给自己定义的成功标准，或者在外在的氛围和期望的影响下，进行自我<br>审查和个性阉割，从而成为“成功”这条路上的一个急匆匆的行者的呢？</p>
 
       
     </div>
@@ -286,11 +350,11 @@
 
 
   
-    <article id="post-golangserv" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-springsemister" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/11/golangserv/" class="article-date">
-      <time datetime="2016-01-11T04:12:08.000Z" itemprop="datePublished">2016-01-11</time>
+      <a href="/2016/02/22/springsemister/" class="article-date">
+      <time datetime="2016-02-22T08:30:36.000Z" itemprop="datePublished">2016-02-22</time>
 </a>
     </div>
   
@@ -303,7 +367,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a>
+      <a class="article-title" href="/2016/02/22/springsemister/">进展汇总,新阶段计划</a>
     </h1>
   
 
@@ -313,223 +377,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="u5173_u4E8E_u4E0A_u4E00_u7248_u672C"><a href="#u5173_u4E8E_u4E0A_u4E00_u7248_u672C" class="headerlink" title="关于上一版本"></a>关于上一版本</h1><p>　　昨天完成了nodejs版本的图片服务器<a href="http://linghutf.gitcafe.io/2016/01/10/staticfileserv/">staticserv</a><br>之后，当时没有对请求的类型做判断，这只是我自己使用，如果是做成通用模块，需要考虑防范不合适的请求。之前，<br>首先考虑的是Go版本的服务器，只不过自己没有弄清<strong>go的资源地址都是相对于项目的GOPATH的地址</strong>，还是使用老方法<br><code>\a\b\c.txt</code>去读取文件，结果都无法读到文件，所以写了nodejs版本。今天学习了<code>path/filepath</code>模块之后，终于掌握<br>了正确写法。比如要读取”./a/b.txt”,需要这么写:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">absPath:_:=filepath.Abs(<span class="string">"./a/b.txt"</span>)</span><br><span class="line">bytes,err:=ioutil.ReadFile(absPath)</span><br></pre></td></tr></table></figure></p>
-<h1 id="Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD"><a href="#Go_u7248_u672C_u7684_u4E3B_u8981_u529F_u80FD" class="headerlink" title="Go版本的主要功能"></a>Go版本的主要功能</h1><ol>
-<li>自定义资源文件位置<br>主要是通过<code>flag</code>模块解析src参数来实现，比如<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/serv -src /</span>tmp</span><br><span class="line">请求<span class="string">URL:</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//xxx/123.jpg</span></span><br><span class="line">最终服务器查找的文件地址:</span><br><span class="line"><span class="regexp">/tmp/</span><span class="number">123.</span>jpg</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>测试中对于”//“这种错误也能兼容，因为它使用的是Join转化路径，而不是拼接字符串。<br>关键代码如下:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">relativePath := req.URL.Path</span><br><span class="line">filename, err := filepath.Abs(filepath.Join(*curDir, relativePath))</span><br></pre></td></tr></table></figure></p>
+        <h1 id="u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170"><a href="#u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170" class="headerlink" title="年前的自我安慰"></a>年前的自我安慰</h1><p>新年之前，给自己画了很多美好的期许，如同中学生涯的放假期间，带回去很多课本和试卷，<br>结果又原封不动地带回学校一样，这些定下的计划鲜有完成。大概也就是没有手生而已。我把<br>这种现象叫做心理上的自我安慰。</p>
+<h1 id="u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551"><a href="#u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551" class="headerlink" title="第一次开会之前的补救"></a>第一次开会之前的补救</h1><p>半个月过去了，我又回到那个朝九晚十的生活轨道，赶紧在进度报告之前，完成一些工作。经过<br>几天的不断写代码和测试，也算是完成了以下任务:</p>
 <ol>
-<li>判断请求类型<br>这部分主要有忽略”favicon.ico”请求、判断路径是否正确和文件是否存在<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//忽略favicon请求:</span></span><br><span class="line"><span class="keyword">if</span> relativePath == <span class="string">"/favicon.ico"</span> &#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>实现了文件按数据块的对称加、解密</li>
+<li>理解了一部分冗余分散加密的原理<br>再加上一些研究过程中的速记note,应该可以进行下一步的工作了。</li>
 </ol>
-<p>路径是否正确直接判断上文中的err就好了，这里就不表述。实验时发现请求的是目录，服务<br>器立马输出错误，然后退出了。这怎么行，一点都不健壮，所以要判断是不是文件:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fileinfo, e := os.Stat(filename)</span><br><span class="line"><span class="comment">//文件不存在</span></span><br><span class="line"><span class="keyword">if</span> os.IsNotExist(e) &#123;</span><br><span class="line">	log.Println(filename, <span class="string">" is not exists."</span>)</span><br><span class="line">	res.WriteHeader(<span class="number">404</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不是文件，返回500错误</span></span><br><span class="line"><span class="keyword">if</span> fileinfo.IsDir() &#123;</span><br><span class="line">	res.WriteHeader(<span class="number">500</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>判断文件类型并读取、发送文据<br>判断文件类型主要是为了响应时的<code>content-type</code>,对于不是图片的请求，直接返回了<code>text/plain</code>:<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extname := filepath.Ext(reqfile)</span><br><span class="line"><span class="keyword">switch</span> extname &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">".jpg"</span>, <span class="string">".jpeg"</span>, <span class="string">".jpe"</span>, <span class="string">".jfif"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/jpeg"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".png"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/png"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".ico"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/x-icon"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".gif"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/gif"</span></span><br><span class="line"><span class="keyword">case</span> <span class="string">".tif"</span>, <span class="string">".tiff"</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"image/jiff"</span></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"text/plain"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>发送数据就比较简单了，为了不在传递参数时拷贝，我用了拷贝指针的办法:<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data []<span class="typename">byte</span></span><br><span class="line"><span class="comment">//读取文件</span></span><br><span class="line">ReadFileFromPath(&amp;data, filename)</span><br><span class="line">res.WriteHeader(<span class="number">200</span>)</span><br><span class="line">res.Write(data)</span><br></pre></td></tr></table></figure></p>
-<h1 id="u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4"><a href="#u4E0E_u4E0A_u4E00_u7248_u672C_u7684_u6027_u80FD_u6D4B_u8BD5_u5BF9_u6BD4" class="headerlink" title="与上一版本的性能测试对比"></a>与上一版本的性能测试对比</h1><p>这里主要用到了apache的ab工具，以及开源软件webbench。<br>两者都在同一环境下，均没有做优化。</p>
-<ol>
-<li>ab测试,并发请求200，总请求数4000:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -c <span class="number">200</span> -n <span class="number">4000</span> http:<span class="comment">//localhost:8080/fact10000.png</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>测试结果如下:</p>
-<p>go 版本:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Document Path:          /img/fact10000.png</span><br><span class="line">Document Length:        <span class="number">27488</span> <span class="keyword">bytes</span></span><br><span class="line"></span><br><span class="line">Concurrency Level:      <span class="number">200</span></span><br><span class="line">Time taken <span class="keyword">for</span> tests:   <span class="number">2.493</span> <span class="built_in">seconds</span></span><br><span class="line">Complete requests:      <span class="number">4000</span></span><br><span class="line">Failed requests:        <span class="number">0</span></span><br><span class="line">Total transferred:      <span class="number">110276000</span> <span class="keyword">bytes</span></span><br><span class="line">HTML transferred:       <span class="number">109952000</span> <span class="keyword">bytes</span></span><br><span class="line">Requests per <span class="keyword">second</span>:    <span class="number">1604.80</span> [<span class="comment">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">124.626</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.623</span> [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          <span class="number">43205.78</span> [Kbytes/<span class="built_in">sec</span>] received <span class="comment"> //网络传输速度，排除网路问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*网络上消耗的时间的分解*/</span></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              <span class="built_in">min</span>  mean[+/-sd] <span class="built_in">median</span>   <span class="built_in">max</span></span><br><span class="line">Connect:        <span class="number">0</span>    <span class="number">4</span>  <span class="number">39.6</span>      <span class="number">0</span>    <span class="number">1003</span></span><br><span class="line">Processing:     <span class="number">3</span>  <span class="number">117</span> <span class="number">143.3</span>     <span class="number">56</span>    <span class="number">1184</span></span><br><span class="line">Waiting:        <span class="number">2</span>   <span class="number">65</span>  <span class="number">41.9</span>     <span class="number">50</span>     <span class="number">173</span></span><br><span class="line">Total:          <span class="number">4</span>  <span class="number">121</span> <span class="number">147.3</span>     <span class="number">57</span>    <span class="number">1184</span></span><br><span class="line"></span><br><span class="line">*下面的内容为整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间，</span><br><span class="line">其中 <span class="number">50</span>％ 的用户响应时间小于 <span class="number">57</span> 毫秒，<span class="number">66</span> ％ 的用户响应时间小于 <span class="number">100</span> 毫秒，</span><br><span class="line">最大的响应时间小于 <span class="number">1184</span> 毫秒*/</span><br><span class="line"></span><br><span class="line">Percentage <span class="operator">of</span> <span class="operator">the</span> requests served <span class="operator">within</span> <span class="operator">a</span> certain <span class="built_in">time</span> (ms)</span><br><span class="line">  <span class="number">50</span>%     <span class="number">57</span></span><br><span class="line">  <span class="number">66</span>%    <span class="number">109</span></span><br><span class="line">  <span class="number">75</span>%    <span class="number">150</span></span><br><span class="line">  <span class="number">80</span>%    <span class="number">157</span></span><br><span class="line">  <span class="number">90</span>%    <span class="number">290</span></span><br><span class="line">  <span class="number">95</span>%    <span class="number">406</span></span><br><span class="line">  <span class="number">98</span>%    <span class="number">583</span></span><br><span class="line">  <span class="number">99</span>%    <span class="number">739</span></span><br><span class="line"> <span class="number">100</span>%   <span class="number">1184</span> (longest request)</span><br></pre></td></tr></table></figure></p>
-<p>nodejs版本:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Concurrency Level:      <span class="number">200</span></span><br><span class="line">Time taken <span class="keyword">for</span> tests:   <span class="number">3.019</span> <span class="built_in">seconds</span></span><br><span class="line">Complete requests:      <span class="number">4000</span></span><br><span class="line">Failed requests:        <span class="number">0</span></span><br><span class="line">Total transferred:      <span class="number">110352000</span> <span class="keyword">bytes</span></span><br><span class="line">HTML transferred:       <span class="number">109952000</span> <span class="keyword">bytes</span></span><br><span class="line">Requests per <span class="keyword">second</span>:    <span class="number">1325.07</span> [<span class="comment">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">150.935</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.755</span> [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          <span class="number">35699.34</span> [Kbytes/<span class="built_in">sec</span>] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              <span class="built_in">min</span>  mean[+/-sd] <span class="built_in">median</span>   <span class="built_in">max</span></span><br><span class="line">Connect:        <span class="number">0</span>   <span class="number">24</span> <span class="number">150.8</span>      <span class="number">0</span>    <span class="number">1003</span></span><br><span class="line">Processing:    <span class="number">67</span>  <span class="number">119</span>  <span class="number">50.4</span>    <span class="number">103</span>     <span class="number">420</span></span><br><span class="line">Waiting:       <span class="number">67</span>  <span class="number">118</span>  <span class="number">50.3</span>    <span class="number">103</span>     <span class="number">420</span></span><br><span class="line">Total:         <span class="number">71</span>  <span class="number">143</span> <span class="number">156.3</span>    <span class="number">105</span>    <span class="number">1116</span></span><br><span class="line"></span><br><span class="line">Percentage <span class="operator">of</span> <span class="operator">the</span> requests served <span class="operator">within</span> <span class="operator">a</span> certain <span class="built_in">time</span> (ms)</span><br><span class="line">  <span class="number">50</span>%    <span class="number">105</span></span><br><span class="line">  <span class="number">66</span>%    <span class="number">125</span></span><br><span class="line">  <span class="number">75</span>%    <span class="number">141</span></span><br><span class="line">  <span class="number">80</span>%    <span class="number">145</span></span><br><span class="line">  <span class="number">90</span>%    <span class="number">160</span></span><br><span class="line">  <span class="number">95</span>%    <span class="number">303</span></span><br><span class="line">  <span class="number">98</span>%   <span class="number">1093</span></span><br><span class="line">  <span class="number">99</span>%   <span class="number">1099</span></span><br><span class="line"> <span class="number">100</span>%   <span class="number">1116</span> (longest request)</span><br></pre></td></tr></table></figure></p>
-<p>二者情况是差不多的，go略微好于nodejs。</p>
-<ol>
-<li>连续3次请求测试平均值,选取用户最关心的三项参数<br>go:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Requests per second:    <span class="number">1604.80</span> [<span class="preprocessor">#/sec] (mean)    <span class="comment">//吞吐率</span></span></span><br><span class="line">Time per request:       <span class="number">124.626</span> [ms] (mean)      <span class="comment">//用户平均请求等待时间</span></span><br><span class="line">Time per request:       <span class="number">0.623</span> [ms] (mean, across all concurrent requests) <span class="comment">//服务器平均请求等待时间</span></span><br><span class="line"></span><br><span class="line">Requests per second:    <span class="number">1627.66</span> [<span class="preprocessor">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">122.876</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.614</span> [ms] (mean, across all concurrent requests)</span><br><span class="line"></span><br><span class="line">Requests per second:    <span class="number">1747.35</span> [<span class="preprocessor">#/sec] (mean)</span></span><br><span class="line">Time per request:       <span class="number">114.459</span> [ms] (mean)</span><br><span class="line">Time per request:       <span class="number">0.572</span> [ms] (mean, across all concurrent requests)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>nodejs:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1325<span class="class">.07</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)      </span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       150<span class="class">.935</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)         </span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.755</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)  </span><br><span class="line"></span><br><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1156<span class="class">.69</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       172<span class="class">.908</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.865</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)</span><br><span class="line"></span><br><span class="line"><span class="tag">Requests</span> <span class="tag">per</span> <span class="tag">second</span>:    1231<span class="class">.65</span> <span class="attr_selector">[#/sec]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       162<span class="class">.383</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>)</span><br><span class="line"><span class="tag">Time</span> <span class="tag">per</span> <span class="tag">request</span>:       0<span class="class">.812</span> <span class="attr_selector">[ms]</span> (<span class="tag">mean</span>, <span class="tag">across</span> <span class="tag">all</span> <span class="tag">concurrent</span> <span class="tag">requests</span>)</span><br></pre></td></tr></table></figure></p>
-<p>可以看出二者在吞吐率上,Go好于nodejs,平均等待时间上二者相差无几。</p>
-<ol>
-<li>webbench 压力测试<br>压力测试30秒内，并发请求数200,连续测试3次<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webbench -t <span class="number">30</span> -c <span class="number">200</span> http:<span class="comment">//127.0.0.1:8080/img/fact10000.png</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>go的表现:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Speed=<span class="number">111574</span> pages/min, <span class="number">51317124</span> bytes/sec. <span class="comment">//速度，111574页/每分钟，51317124字节/秒</span></span><br><span class="line">Speed=<span class="number">100538</span> pages/min, <span class="number">46228920</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">103186</span> pages/min, <span class="number">47440784</span> bytes/sec.</span><br><span class="line"></span><br><span class="line">资源占用:</span><br><span class="line">VIRT    RES     SHR     CPU   MEM   TIME</span><br><span class="line"><span class="number">364756</span>  <span class="number">26252</span>   <span class="number">4336</span> S  <span class="number">61.9</span>  <span class="number">0.0</span>   <span class="number">0</span>:<span class="number">15.26</span> serv </span><br><span class="line"><span class="number">364884</span>  <span class="number">25960</span>   <span class="number">4044</span> S  <span class="number">58.7</span>  <span class="number">0.0</span></span><br><span class="line"><span class="number">364884</span>  <span class="number">25960</span>   <span class="number">4044</span> R  <span class="number">57.9</span>  <span class="number">0.0</span></span><br></pre></td></tr></table></figure></p>
-<p>nodejs的表现:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Speed=<span class="number">78864</span> pages/min, <span class="number">36259112</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">42868</span> pages/min, <span class="number">19710708</span> bytes/sec.</span><br><span class="line">Speed=<span class="number">36340</span> pages/min, <span class="number">16708262</span> bytes/sec.</span><br><span class="line"></span><br><span class="line">资源占用:</span><br><span class="line">VIRT    RES     SHR     CPU   MEM   TIME</span><br><span class="line"><span class="number">955320</span>  <span class="number">74196</span>  <span class="number">14252</span> R  <span class="number">73.6</span>  <span class="number">0.1</span>   <span class="number">0</span>:<span class="number">10.49</span> node</span><br><span class="line"><span class="number">960768</span>  <span class="number">79408</span>  <span class="number">14252</span> R  <span class="number">33.2</span>  <span class="number">0.1</span></span><br><span class="line"><span class="number">961604</span>  <span class="number">79256</span>  <span class="number">14252</span> R  <span class="number">34.7</span>  <span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
-<p>二者都是0错误,可以看出nodejs在速度和资源占用率都比Go表现的差，<br>速度大概只有go的一半不到，内存占用率却是go的3倍左右，CPU使用率<br>稍好于go。</p>
-<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>   从测试里可以看到，Go的http性能是好于nodejs的，不过对于这么<br>简单的应用，可能无法完全反应Go和nodejs的http性能高低吧，但是go的<br>http的模块我觉得很好用，写代码也是同步方式，不像nodejs我写到逻辑越来<br>越复杂的时候就有点越发要好好学一学异步编程的思想，这种思维转换一时还<br>无法适应，所以我往往选择javascript先完成一部分功能，打开思路后使用Go<br>去实现。<br>　另外今天的收获就是学会了做网络测试了，这对我来说又增长了能力。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ab/">ab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webbench/">webbench</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-staticfileserv" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/10/staticfileserv/" class="article-date">
-      <time datetime="2016-01-10T05:44:38.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/staticfileserv/">静态文件服务</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668"><a href="#u4E3A_u4EC0_u4E48_u505A_u9759_u6001_u6587_u4EF6_u670D_u52A1_u5668" class="headerlink" title="为什么做静态文件服务器"></a>为什么做静态文件服务器</h1><p>　　这几天博客搭建起来后，美化和主题也设置得差不多了，就是在写作时，<br>有时候需要插入图片，图片使用的相对地址会在hexo生成博客时失效，总不<br>可能插入一个图片就在它生成后去相应的html里改引用地址吧，再说上传的时<br>候Hexo可能默认不会上传。<br>　　所以这种情况下，就需要一个文件服务器去为我们生成的博客传输图片。</p>
-<h1 id="u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u73B0_u6709_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="现有的解决方法"></a>现有的解决方法</h1><h2 id="1-_u4E03_u725B_u670D_u52A1"><a href="#1-_u4E03_u725B_u670D_u52A1" class="headerlink" title="1.七牛服务"></a>1.七牛服务</h2><p>　　七牛的静态文件服务听说性能很高，也是用我最近学习的golang写的。不少<br>人都是推荐这种服务，所以我就去七牛官网看了一下，有免费试用版，每个月<br>请求一万次到十万次，对我来说够用了。想注册的时候有以下两点要求我比较介意:</p>
-<ul>
-<li>需要填写手机号</li>
-<li>个人信息等隐私内容。</li>
-</ul>
-<p>　　国内的服务很多都把个人信息卖了，导致我总是收到垃圾短信和推销电话，因此现在就奉行<br>能不注册就不注册的态度。另外，我写个博客还要去七牛上上传，两边还得对上号，再说自己的<br>需求就是插入静态内容，也不复杂，为什么不自己做呢？自己动手，丰衣足食，还可以后续改进。<br>所以有了下面的做法。</p>
-<h2 id="2-_u5728_u4E91_u4E0A_u642D_u5EFA_u6587_u4EF6_u670D_u52A1_u5668"><a href="#2-_u5728_u4E91_u4E0A_u642D_u5EFA_u6587_u4EF6_u670D_u52A1_u5668" class="headerlink" title="2.在云上搭建文件服务器"></a>2.在云上搭建文件服务器</h2><p>　　当浏览到包含插入图片的博客时，相当于发起了一次http请求，如果返回的是200,那就是说明<br>取到了图片，所以我们文件服务这边就是写一个http服务，监听这些请求，发送图片的数据过去就<br>行了。具体逻辑如下:</p>
-<ol>
-<li>在md引用地址写上要请求的文件的地址A</li>
-<li>服务监听端口，一旦有请求过来，就取request的url中的文件路径</li>
-<li>判断该文件是否存在，如果不存在返回404</li>
-<li>存在该文件的话，读取文件，response返回二进制数据即可</li>
-</ol>
-<h1 id="u5177_u4F53_u5B9E_u73B0"><a href="#u5177_u4F53_u5B9E_u73B0" class="headerlink" title="具体实现"></a>具体实现</h1><p>　　本来先写Go版本的，结果测试时，go中读取文件的”ioutil”和”os”模块都不能读取多层目录下的<br>文件内容，为了尽快上线，我用了nodejs,里面的http模块也很好用，异步不需要等待的特点正好适合<br>I/O操作，前期也没有考虑多个请求就开多个操作，或者是否Javascript异步模型不需要这些东西来提<br>高性能。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 访问根目录在当前目录,</span><br><span class="line"> * 例如要访问img下的fact.png,就使用http://[云地址]:8080/img/fact.png</span><br><span class="line"> * </span><br><span class="line"> **/</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> rootPath = <span class="string">"."</span>;</span><br><span class="line">	<span class="comment">//屏蔽favicon请求</span></span><br><span class="line">	<span class="keyword">if</span>(req.url!==<span class="string">'/favicon.ico'</span>)&#123;</span><br><span class="line">		<span class="keyword">var</span> filename = rootPath+req.url;</span><br><span class="line">		<span class="keyword">var</span> img_type = path.extname(req.url).split(<span class="string">'.'</span>)[<span class="number">1</span>];</span><br><span class="line">		<span class="comment">//读取相应的文件</span></span><br><span class="line">		fs.readFile(filename,<span class="string">'binary'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,file</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(err)&#123;</span><br><span class="line">				res.writeHead(<span class="number">500</span>,&#123;<span class="string">"Content-Type"</span>:<span class="string">"text/plain"</span>&#125;);</span><br><span class="line">				res.write(err+<span class="string">'\n'</span>);</span><br><span class="line">			    <span class="built_in">console</span>.log(<span class="string">'request:'</span>,req.url,<span class="string">'\t\t[Failed].'</span>);</span><br><span class="line">				res.end();</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;<span class="comment">//返回数据</span></span><br><span class="line">				res.writeHead(<span class="number">200</span>,&#123;<span class="string">"Content-Type"</span>:<span class="string">"image/"</span>+img_type&#125;);</span><br><span class="line">				res.write(file,<span class="string">"binary"</span>);</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">'request:'</span>,req.url,<span class="string">'\t\t[Ok].'</span>);</span><br><span class="line">				res.end();<span class="comment">//等待发送完成</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure></p>
-<p>　　然后将这段代码发在云上运行，并将博客里要插入的图片放在rootPath下，更新<br>博客后，再访问服务端果然出现了request ok的信息，gitcafe和github上的博客在浏<br>览时，也成功加载了图片。说明我的想法是正确的。</p>
-<h1 id="u540E_u7EED"><a href="#u540E_u7EED" class="headerlink" title="后续"></a>后续</h1><p>服务器写的还是很简陋的，总的来说有以下需要改进:</p>
-<ol>
-<li>将服务器地址写到配置文件中，而不是每次都写域名，更新域名更方便。</li>
-<li>既没有对请求进行判断，不能防范攻击。</li>
-<li>多个人浏览时是否依旧能流畅加载图片没有测试。</li>
-<li>javascript的异步模式应该多个请求怎么处理没有弄清。<br>　　<br>所以，接下来针对这几点，可以一边用一边改，这就是未完的工作了。不过好歹可以用了，<br>也不用去注册一个服务，自己又得到了锻炼。说不定发展到最后可以提供多个服务。一个<br>web框架大概也是这样一点一点地加起来的。</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/program/">program</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server/">server</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-schedule" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/10/schedule/" class="article-date">
-      <time datetime="2016-01-09T20:52:30.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="u6700_u8FD1_u7684_u72B6_u51B5"><a href="#u6700_u8FD1_u7684_u72B6_u51B5" class="headerlink" title="最近的状况"></a>最近的状况</h1><p>　　学校的报告一个接一个，等一个个忙完想休息一下，结果导师说我之前给他的报告不行，<br>不是要搜集论文，而是要找美国的存储实验室。1个月10到20个，还要有介绍，这就必须<br>要搜到实验室之后仔细看别人的实验室情况，有点大海捞针的意思。每天一来实验室面对<br>这些，春节过后还要找实习，必须要复习一些东西，另外之前的计划工作也需要完成，心态<br>就越发变得急躁了。<br>　　从15年12月初开始就忙碌了起来，当时要考数学和英语，另外还有学院的一个项目，写报告，<br>复习，确定每天的工作计划，感觉事情就像流水线一样过来，必须要确定轻重缓急，看过很多书籍<br>和电影说<strong>把每天的工作列成一个清单，按重要程度分为20%和80%,完成那20%重要的事情。</strong>这样<br>才是有效率，不会忙了一天还不知道忙的什么。当时就觉得这个方案很有必要，开始每天在桌面上<br>写清单了，做完一个标记完成。可是时间一长，桌面图标多得惨不忍睹，也不知道具体一项任务写到<br>哪里去了，还是有点乱糟糟的。所以萌生了统一写博客里，还能不随时携带就可以查阅。</p>
-<h1 id="u4E4B_u524D_u7684_u6E05_u5355"><a href="#u4E4B_u524D_u7684_u6E05_u5355" class="headerlink" title="之前的清单"></a>之前的清单</h1><ul>
-<li>工程数学                 2015-12-05                        完成(js 统计库一半)</li>
-<li>英语口语                 2015-12-17        口语提纲        完成</li>
-<li>移动互联网演讲           2015-12-23        sslstrip实验    完成                  </li>
-<li>移动互联网安全报告       2016-01-03                        完成</li>
-<li>并行处理报告 Latex       2016-01-05        LaTeX模板       完成</li>
-<li>cdstore搭建、测试        2015-12-25        docker          完成</li>
-</ul>
-<h1 id="u672A_u6765_u8981_u505A_u7684_u4E8B_u60C5"><a href="#u672A_u6765_u8981_u505A_u7684_u4E8B_u60C5" class="headerlink" title="未来要做的事情"></a>未来要做的事情</h1><h2 id="1-_u5B66_u4E1A_u65B9_u9762"><a href="#1-_u5B66_u4E1A_u65B9_u9762" class="headerlink" title="1.学业方面"></a>1.学业方面</h2><p>准备:</p>
-<ul>
-<li>Linux C底层，数据存储书籍，论文</li>
-<li>分散加密论文，Hash、前后相关论文</li>
-<li>数据去重论文</li>
-</ul>
-<p>截止日期:2016-01-30 :待定</p>
-<ul>
-<li>实验室报告，至少15个，数量为先，介绍可以简单一些，只列出<strong>名称、网址、研究方向、研究成果</strong></li>
-<li>磁盘分散加密，去重<ul>
-<li>C底层数据块控制</li>
-<li>hash加密</li>
-<li>比对，删除重复，软连接保持一致</li>
-</ul>
-</li>
-<li>Latex学习，考虑写开题报告</li>
-</ul>
-<h2 id="2-_u5DE5_u4F5C_u76F8_u5173"><a href="#2-_u5DE5_u4F5C_u76F8_u5173" class="headerlink" title="2.工作相关"></a>2.工作相关</h2><p>时间:2016-01-10 ~ 2016-03</p>
-<ul>
-<li>数据结构复习，链表、优先队列、二叉树、哈希表相关，c/go实现</li>
-<li>操作系统，线程相关，了解分布式</li>
-<li>网络，http/net相关，TCP/IP介绍,epoll，Ajax异步</li>
-<li>数据库，完整操作一遍</li>
-<li>相关复习计划参照<a href="https://www.zhihu.com/question/28033201" target="_blank" rel="external">2016工作</a>、<a href="https://www.zhihu.com/question/34574154/answer/74272370" target="_blank" rel="external">后台准备</a></li>
-</ul>
-<h2 id="3-_u4E1A_u4F59_u953B_u70BC"><a href="#3-_u4E1A_u4F59_u953B_u70BC" class="headerlink" title="3.业余锻炼"></a>3.业余锻炼</h2><p>起始:2016-02-01 ~ 2016-03</p>
-<ul>
-<li>博客文件服务器，根据请求返回插图</li>
-<li>go数据结构与算法</li>
-<li>beego博客,ajax前端部分</li>
-</ul>
-<h1 id="u540E_u8BB0"><a href="#u540E_u8BB0" class="headerlink" title="后记"></a>后记</h1><p>　　先想到这些，就暂时记这么多吧，完成一件会标记一项。按照事情紧迫性一件件地去落实，<br>相信最终必然有收获!</p>
+<h1 id="u4E0B_u4E00_u6B65_u7684_u5DE5_u4F5C"><a href="#u4E0B_u4E00_u6B65_u7684_u5DE5_u4F5C" class="headerlink" title="下一步的工作"></a>下一步的工作</h1><p>这大概是我学习生涯以来，如此有总结性和计划性的时刻，办公的电脑桌面文件夹里，都是各种各<br>样的todo-list和note。<br>下一步主要就是<strong>实现caont-rs冗余加/解码</strong>了，因此需要了解迦罗瓦运算，详细地阅读原作者的<br>实现了。<br>过渡期就是如此麻烦，还需要留心即将到来的暑期实习招聘，一边需要做准备了。毕竟不想再经历本科<br>毕业时候的迷茫和毫无准备的仓促。</p>
 
       
     </div>
@@ -560,11 +414,11 @@
 
 
   
-    <article id="post-bloghelp" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-winter-vacation" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/09/bloghelp/" class="article-date">
-      <time datetime="2016-01-09T02:56:27.000Z" itemprop="datePublished">2016-01-09</time>
+      <a href="/2016/01/29/winter-vacation/" class="article-date">
+      <time datetime="2016-01-29T06:28:09.000Z" itemprop="datePublished">2016-01-29</time>
 </a>
     </div>
   
@@ -577,7 +431,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a>
+      <a class="article-title" href="/2016/01/29/winter-vacation/">写在放假之前</a>
     </h1>
   
 
@@ -587,71 +441,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="u9759_u6001_u535A_u5BA2_u642D_u5EFA"><a href="#u9759_u6001_u535A_u5BA2_u642D_u5EFA" class="headerlink" title="静态博客搭建"></a>静态博客搭建</h1><ul>
-<li>主要针对新版hexo(&gt;=3.0),之前的也就是同时发布的修改方法不同</li>
-</ul>
-<p>根据我这两天搭建的经历，写下详细的帮助教程，总结自己的经验，也是为了避免后来者犯错。<br>注意:<strong>现在hexo都是3.0以上版本，使用方法与之前的2.0版本有所不同，这也是我被坑的地方，需要用新的方法.</strong></p>
-<h2 id="1-_u5B89_u88C5Hexo_u7B49_u5DE5_u5177"><a href="#1-_u5B89_u88C5Hexo_u7B49_u5DE5_u5177" class="headerlink" title="1.安装Hexo等工具"></a>1.安装Hexo等工具</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">前提工具:git nodejs <span class="built_in">npm</span> ssh服务</span><br><span class="line"><span class="built_in">npm</span> install hexo hexo-deploy-git -g</span><br></pre></td></tr></table></figure>
-<p>我安装在免费的云中，这样换个地方，换台电脑也能有环境编辑上传文件，安装在本地需要额外的步骤。<br>国内免费的有<a href="https://coding.net/" target="_blank" rel="external">代码市场</a>，反正也就一个编辑上传的地方。当然也可以直接使用<br>云的服务建立博客，这种最简单。</p>
-<h2 id="2-_u5EFA_u7ACB_u672C_u5730_u955C_u50CF"><a href="#2-_u5EFA_u7ACB_u672C_u5730_u955C_u50CF" class="headerlink" title="2.建立本地镜像"></a>2.建立本地镜像</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir &lt;your <span class="keyword">project</span>&gt;             <span class="comment">//博客项目文件夹</span></span><br><span class="line">cd &lt;your <span class="keyword">project</span>&gt; &amp;&amp; hexo init   <span class="comment">//进入项目，初始化hexo环境</span></span><br><span class="line">npm install                      <span class="comment">//安装必要组件</span></span><br></pre></td></tr></table></figure>
-<p>此时就可以新建博客了</p>
-<h2 id="3-_u521B_u5EFA_u535A_u5BA2"><a href="#3-_u521B_u5EFA_u535A_u5BA2" class="headerlink" title="3.创建博客"></a>3.创建博客</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">'&lt;blog title&gt;'</span>     <span class="comment">//会在/source/_posts/生成相应的文件文件夹</span></span><br><span class="line">编辑<span class="keyword">index</span>.md即可</span><br></pre></td></tr></table></figure>
-<p>或者直接发布到_post:<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> &lt;blog name&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-_u53D1_u5E03_u65B9_u6CD5"><a href="#4-_u53D1_u5E03_u65B9_u6CD5" class="headerlink" title="4.发布方法"></a>4.发布方法</h2><h3 id="1-_u53D1_u5E03_u5728_u4E91_u4E0A"><a href="#1-_u53D1_u5E03_u5728_u4E91_u4E0A" class="headerlink" title="1.发布在云上"></a>1.发布在云上</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">g</span> &amp;&amp; hexo s               <span class="comment">//生成博客，并开始启动服务</span></span><br></pre></td></tr></table></figure>
-<p>此时访问云分配给你的<em><a href="http://域名:4000/" target="_blank" rel="external">http://域名:4000/</a></em>即可看到你的博客</p>
-<h3 id="2-_u53D1_u5E03_u5728Github"><a href="#2-_u53D1_u5E03_u5728Github" class="headerlink" title="2.发布在Github"></a>2.发布在Github</h3><ol>
-<li>在自己的github上建立一个与用户名相同的repo</li>
-<li>在repo <code>Settings</code>中选择开启<code>Github Pages</code></li>
-<li><p>由于之前安装了hexo-deploy-git,因此只要配置git config即可</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user<span class="class">.name</span> <span class="string">"your github name"</span></span><br><span class="line">git config --global user<span class="class">.email</span> <span class="string">"you github email"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改本地站点下的<em>/_config.xml</em>,找到<em>deploy</em>:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">message</span>: <span class="string">"update blog."</span></span><br><span class="line">  <span class="attribute">repo</span>: </span><br><span class="line">    <span class="attribute">github</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:your-name/youn-name.github.io.git</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>注意:这里不是网上所说的那种配置方式:</strong><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: github</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:luoyibu/luoyibu.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
-<p>当然，这种方式也可以，不过一次发布到2个及以上的托管服务会有问题，所以还是<br>使用新方法吧!</p>
-<ol>
-<li>发布博客<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">发布之前，最好清理本地环境：</span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">生成并发布：</span><br><span class="line">hexo <span class="keyword">d</span> -<span class="keyword">g</span>   <span class="comment">//与 hexo g -d 相同</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="3-_u53D1_u5E03_u5728Gitcafe"><a href="#3-_u53D1_u5E03_u5728Gitcafe" class="headerlink" title="3.发布在Gitcafe"></a>3.发布在Gitcafe</h3><p>由于github在国外，国内访问不稳定，可以使用国内服务gitcafe,操作步骤也差不多。<br>这里提一下提前准备的东西。</p>
-<ol>
-<li>最好使用和github同名的账户，我就是这么干的，这样全局<code>git config</code>就是一样的，省去<br>一些麻烦。然后新建一个同用户名的repo</li>
-<li><p>在~/.ssh下生成ssh密钥:</p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -<span class="keyword">C</span> <span class="string">"邮箱地址"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>copy id_rsa.pub中内容到github和gitcafe <code>SSH</code> 公钥管理中</p>
-</li>
-<li>修改本地站点下的<em>/_config.xml</em>,找到<em>deploy</em>:<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">message</span>: <span class="string">"update blog."</span></span><br><span class="line">  <span class="attribute">repo</span>: </span><br><span class="line">    <span class="attribute">gitcafe</span>: git<span class="variable">@gitcafe</span>.<span class="attribute">com</span>:your-name/your-name.git</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>这里和网上教程介绍的也不一样,不需要brach: gitcafe-pages也能成功。</strong><br>之后发布操作和github发布相同，就不再赘述。</p>
-<h2 id="Github_u548CGitcafe_u540C_u65F6_u53D1_u5E03"><a href="#Github_u548CGitcafe_u540C_u65F6_u53D1_u5E03" class="headerlink" title="Github和Gitcafe同时发布"></a>Github和Gitcafe同时发布</h2><p>github访问不稳定,gitcafe又快，为了国际化，能不能两个都发布呢?相信很多人和我<br>的想法一样，我找了很多资料，就连写makefile的都有，现在新版，同时发布已经很方便了。<br>网上大部分的是:<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">修改本地站点下的<span class="keyword">*</span>/_config.xml<span class="keyword">*</span>,修改<span class="keyword">*</span>deploy<span class="keyword">*</span>:</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  message: [message]</span><br><span class="line">  repo:</span><br><span class="line">    github: <span class="variable">&lt;repository url&gt;</span>,master</span><br><span class="line">    gitcafe: <span class="variable">&lt;repository url&gt;</span>,gitcafe-pages</span><br></pre></td></tr></table></figure></p>
-<p>这种在新版中经过我测试是不行的，github 的master分支一直出错，只有gitcage能成功。</p>
-<p><strong>新版方法</strong><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">message</span>: <span class="string">"update blog."</span></span><br><span class="line">  <span class="attribute">repo</span>: </span><br><span class="line">    <span class="attribute">github</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:your-name/your-name.github.io.git</span><br><span class="line">    <span class="attribute">gitcafe</span>: git<span class="variable">@gitcafe</span>.<span class="attribute">com</span>:your-name/your-name.git</span><br></pre></td></tr></table></figure></p>
-<p>不需要设置brach,两个发布都会成功。</p>
-<hr>
-<h2 id="5-_u5176_u4ED6_u6709_u7528_u7684_u64CD_u4F5C"><a href="#5-_u5176_u4ED6_u6709_u7528_u7684_u64CD_u4F5C" class="headerlink" title="5.其他有用的操作"></a>5.其他有用的操作</h2><h3 id="u6539_u53D8_u535A_u5BA2_u7684_u4E3B_u9898_u989C_u8272"><a href="#u6539_u53D8_u535A_u5BA2_u7684_u4E3B_u9898_u989C_u8272" class="headerlink" title="改变博客的主题颜色"></a>改变博客的主题颜色</h3><ul>
-<li>由于使用的主题惨白的，对我来说是比较难看清内容的，所以我开始折腾<br>怎么换主题，去看原作者，发现他语焉不详，只提了一下solarized dark和highlightjs<br>高亮。然后昨晚对比css忙活到大半夜也没有成功。</li>
-<li>今天仔细搜了下发现hexo3以上版本用的就是highlightjs,并且node_modules里已经有<br>stylus插件了，所以尝试了在theme中的config定义theme_color为常用sublime配色,果然成功了!</li>
-</ul>
-<p>现在记录下来以帮助那些还在惨白主题中苦苦挣扎的程序员吧!</p>
-<ul>
-<li>可以去highlightjs官网的<a href="https://highlightjs.org/static/demo/" target="_blank" rel="external">demo</a>选择自己喜欢的主题</li>
-<li>在<em><your theme="">/_config.yml</your></em>添加:<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">theme_color</span>:</span><br><span class="line">    <span class="attribute">theme</span>: <span class="string">"Monokai Sublime"</span> <span class="comment">//你的主题名字</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>重新部署博客就可以看到新主题生效了，再也不用盯着惨白色看博客。</p>
-<h3 id="u535A_u5BA2_u5220_u9664"><a href="#u535A_u5BA2_u5220_u9664" class="headerlink" title="博客删除"></a>博客删除</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">删除仓库里面 source/_posts/我的文章.md</span><br><span class="line"></span><br><span class="line">执行下面命令更新博客</span><br><span class="line"></span><br><span class="line">hexo g == hexo generate<span class="preprocessor">#生成</span></span><br><span class="line">hexo s == hexo <span class="keyword">server</span> <span class="preprocessor">#启动服务预览</span></span><br><span class="line">hexo d == hexo deploy<span class="preprocessor">#部署</span></span><br></pre></td></tr></table></figure>
-<h3 id="u6DFB_u52A0_u5206_u7C7B/tags"><a href="#u6DFB_u52A0_u5206_u7C7B/tags" class="headerlink" title="添加分类/tags"></a>添加分类/tags</h3><h4 id="u65B0_u5EFA_u5206_u7C7B_3A"><a href="#u65B0_u5EFA_u5206_u7C7B_3A" class="headerlink" title="新建分类:"></a>新建分类:</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">"&lt;category name&gt;"</span></span><br></pre></td></tr></table></figure>
-<p>在生成的相应md中修改如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: &lt;文章标题&gt;</span><br><span class="line">date: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">09</span> <span class="number">10</span>:<span class="number">56</span>:<span class="number">27</span></span><br><span class="line">type: <span class="string">"&lt;category name&gt;"</span></span><br></pre></td></tr></table></figure></p>
-<p>修改本地layour下的<em>/themes/<your-them>/_config.xml</your-them></em>，找到<em>menu</em>:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">menu</span>:</span><br><span class="line">  main: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  category: /&lt;category name&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="u65B0_u5EFAtags"><a href="#u65B0_u5EFAtags" class="headerlink" title="新建tags"></a>新建tags</h4><p>直接在新建的md文件中添加<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">tag</span><span class="variable">s:</span> &lt;your <span class="keyword">tag</span> name&gt;</span><br></pre></td></tr></table></figure></p>
-<p>修改本地layour下的<em>/themes/<your-them>/_config.xml</your-them></em>，添加:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">tag</span><span class="variable">s:</span> /&lt;your <span class="keyword">tag</span> name&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="u6539_u53D8_u65B0_u5EFA_u535A_u5BA2_u7684_u6A21_u677F"><a href="#u6539_u53D8_u65B0_u5EFA_u535A_u5BA2_u7684_u6A21_u677F" class="headerlink" title="改变新建博客的模板"></a>改变新建博客的模板</h3><p>修改<em><your site="">/scaffolds/</your></em>下相应的文件即可:<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">post.md  =<span class="function">=&gt;</span>  对应hexo <span class="keyword">new</span> 生成的md模板</span><br><span class="line">page.md  =<span class="function">=&gt;</span>  对应hexo <span class="keyword">new</span> page生成的categories模板</span><br></pre></td></tr></table></figure></p>
-<p>可以在其中加上<code>categories:</code>模板，这样就不用每次手动添加了。<br>例如:<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">title:</span> <span class="expansion">&#123;&#123; title &#125;&#125;</span></span><br><span class="line"><span class="symbol">author:</span> <span class="expansion">&#123;&#123; your-name &#125;&#125;</span>  /<span class="regexp">/添加的模板</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="u6700_u540E"><a href="#u6700_u540E" class="headerlink" title="最后"></a>最后</h1><p>　　今天通过这种方法，我在<a href="https://linghutf.github.io/" target="_blank" rel="external">github</a>和<a href="http://linghutf.gitcafe.com" target="_blank" rel="external">gitcafe</a>上的博客<br>都正常运行了，也是经经历一番排错和查找问题的经历。<br>　　其实有些东西自己摸索出来还是很有成就感的，印象也更深，即使是别人早已知道的。<br>希望给想建立自己博客的人一点帮助。后续遇到的一些问题都会在博客上更新，<br>欢迎关注<a href="https:://linghutf.gitcafe.com/" target="_blank" rel="external">我</a>!</p>
+        <h1 id="u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4"><a href="#u5306_u5FD9_u4E0E_u65E0_u6240_u9002_u4ECE_u4E4B_u95F4" class="headerlink" title="匆忙与无所适从之间"></a>匆忙与无所适从之间</h1><p>　快到猴年春节了，这一年过得很累，发生了太多的事，压力也大了起来，未来的工作，现在<br>的生活…都交织在我的脑海里。很想回去舒服地躺在床上看看书，或者就是发一下午呆。可<br>惜时间不等人，两周里还有很多要完成的事。<br>　不过，能过第一个想回家吃妈妈做的菜的春节，我的心情还是有些愉快迫切的、
+　</p>
+<h1 id="u5047_u671F_u7684_u9050_u60F3"><a href="#u5047_u671F_u7684_u9050_u60F3" class="headerlink" title="假期的遐想"></a>假期的遐想</h1><p>　最近的两周老板也没怎么来，我手头的事情也比较棘手，有些像刺猬无从下嘴的感觉。检讨<br>一下工作就是零星做了些面试算法题，leetcode英文题对于目前浮躁的我来说有些难，DP、背包<br>也没有看，回家需要复习一下算法了。文件系统，加密模块,也需要做个雏形出来。<br>　很想潇潇洒洒地在家里四处游荡，和朋友去爬山，然后静静坐在山峰最高处，静静地注视着芸<br>芸众生、人间烟火，做着无边无际的梦。</p>
 
       
     </div>
@@ -662,7 +454,106 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-leetcode319" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/21/leetcode319/" class="article-date">
+      <time datetime="2016-01-21T06:49:47.000Z" itemprop="datePublished">2016-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
+<p>Example:</p>
+<p>Given n = 3. </p>
+<p>At first, the three bulbs are [off, off, off].<br>After first round, the three bulbs are [on, on, on].<br>After second round, the three bulbs are [on, off, on].<br>After third round, the three bulbs are [on, off, off]. </p>
+<p>So you should return 1, because there is only one bulb is on.</p>
+<h3 id="u9898_u76EE_u542B_u4E49"><a href="#u9898_u76EE_u542B_u4E49" class="headerlink" title="题目含义"></a>题目含义</h3><p>就是说给n个开关分别对应控制这n个灯泡的亮灭，步骤如下:</p>
+<ul>
+<li>开始时开关都是关的，为方便叙述，位置从1开始</li>
+<li>step=1,将所有位置的开关打开</li>
+<li>step=2,将所有位置为2的倍数的开关转换状态</li>
+<li>…</li>
+<li>step=n,转换完开关后,统计还有多少灯泡开者</li>
+</ul>
+<hr>
+<h1 id="u89E3_u6CD5"><a href="#u89E3_u6CD5" class="headerlink" title="解法"></a>解法</h1><h2 id="1-_u76F4_u89C2_u89E3_u6CD5"><a href="#1-_u76F4_u89C2_u89E3_u6CD5" class="headerlink" title="1.直观解法"></a>1.直观解法</h2><h3 id="u601D_u8DEF"><a href="#u601D_u8DEF" class="headerlink" title="思路"></a>思路</h3><p>分析完题目后,首先想到的就是把开关这些控制流程自己模拟<br>一遍，用布尔数组模拟开关，最后统计为true的开关数就可以<br>了。</p>
+<p>那就开始写吧，leetcode支持c/c++，感觉够了，至于能不能<br>用STL库还不清楚，自己动手写一些常用数据结构，虽说性能有<br>损失，但是为了AC,也只能自己注意性能了，尽量不要手动分配<br>大的数组。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bulbswitcher</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">//c99支持的关键字_Bool,ansi不支持,leetcode测试通过</span></span><br><span class="line">    <span class="keyword">_Bool</span> *p=(<span class="keyword">_Bool</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//全为false,避免求反时未定义</span></span><br><span class="line">    <span class="built_in">memset</span>(p,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="keyword">_Bool</span>)*n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;++j)&#123;           <span class="comment">//step 1-&gt;n</span></span><br><span class="line">        <span class="keyword">for</span>(i=j;i&lt;n;i+=j+<span class="number">1</span>)&#123;    <span class="comment">//对应的开关,每次跳跃的间隔j+1</span></span><br><span class="line">            *(p+i)=!(*(p+i));   <span class="comment">//不知道编译器是否会优化，所以采用这种直接寻址方式</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//统计为true的开关,如果有c++的accumulate更好</span></span><br><span class="line">    sum(p,n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上传到leetcode jude,不一会儿出现了Limit except，发现它的测试数是10000000,<br>总用时1+s,这么大数字居然超时了.我自己在线下测试的结果：</p>
+<ul>
+<li><p>普通编译:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-1.png" alt="leetcode-1"></p>
+</li>
+<li><p>开启-O2 优化<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-2.png" alt="leetcode-2"></p>
+</li>
+</ul>
+<p>可以发现这种算法复杂度O(n^2),数字一大性能就不行了。普通编译结果也是超过1s,看来leetcode没有做优化,并且超时时间设置1s,<br>如此只能再想其他解法.</p>
+<hr>
+<h2 id="2-_u8FDB_u9636_u65B9_u6848"><a href="#2-_u8FDB_u9636_u65B9_u6848" class="headerlink" title="2.进阶方案"></a>2.进阶方案</h2><p>总觉得这样转换的状像是符合某种数学规律，也许是常年的理工教育培养了这种直觉，<br>我就试一试究竟有没有规律,基于现有代码很好改动。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> max)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;max;++i)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%3d:%3d\n"</span>,i,bulbswitcher(i));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>打印结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-3.png" alt="leetcode-3"></p>
+<p>居然有这么多一样的，看起来像台阶一样，必须满足某种条件才能增加一级.<br>那我再改进一下试探方法,为了一查究竟这么多相同的数字有什么关系，以及开关<br>数n和最后结果的关系，采用哈希表去做，c没有，其实开个大数组也行，我这里用<br>的是Go。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> test(n <span class="typename">int</span>)&#123;</span><br><span class="line">    m:=<span class="built_in">make</span>(<span class="keyword">map</span>[<span class="typename">int</span>]<span class="typename">int</span>,n)</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;<span class="number">1000</span>;i++&#123;</span><br><span class="line">        m[bulbswitcher(i)]++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//无序表，对key排序    </span></span><br><span class="line">    sort.SortInts(map_keys)</span><br><span class="line">    <span class="keyword">for</span> _,k:=<span class="keyword">range</span> map_keys&#123;</span><br><span class="line">        fmt.Printf(<span class="string">"%3d:%3d\n"</span>,k,m[k])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-4.png" alt="leetcode-4"></p>
+<p>果然有关系!原来最后的结果对应的原始开关数n是一个奇数等差数列:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第i级,<span class="keyword">ret</span>表示<span class="keyword">n</span>在这一级内，则最终的结果</span><br><span class="line">cnt表示有多少个<span class="keyword">n</span>是对应<span class="keyword">ret</span>这个结果的，也就是<span class="keyword">n</span>的范围</span><br><span class="line">关系如下:</span><br><span class="line">       2*<span class="keyword">ret</span>+1 = cnt </span><br><span class="line">=&gt;     <span class="keyword">ret</span> = (cnt-1)/2</span><br></pre></td></tr></table></figure></p>
+<p>现在我们只要求出这个范围cnt就行了。由于k对应的最后的结果，而v对应n,表明我们需要判断这个n落在哪一级内，<br>也就是将v加起来，直到加到第i级超过n的值，那么n就是在这一级内。<br>基于这种思想有代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">magic</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> i,cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">3</span>;cnt&lt;n;i+=<span class="number">2</span>)&#123; <span class="comment">//第i级所包含的原始开关数范围,cnt统计n之前的数量</span></span><br><span class="line">        cnt+=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (i-<span class="number">3</span>)&gt;&gt;<span class="number">1</span>;<span class="comment">//因为数列没有cnt=1对应的ret</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>改进之后算法复杂度为O(n/2)=&gt;O(n)，现在上传改进的代码,这次通过了，耗时0s,但是在分布图里，<br>居然只打败了同样用C的6.83%,看来很多人结果比我好啊，也不知道<br>它的测试数字是不是都是一样的。</p>
+<p>看一下能不能继续改进。对了，奇数等差数列不是有求和公式吗?我们知道n，直接求它在那一级的范围<br>内，不就是ret的值么?避免了一个个去加然后判断,这就是最终版本的方法。</p>
+<h2 id="3-_u6700_u7EC8_u89E3_u6CD5"><a href="#3-_u6700_u7EC8_u89E3_u6CD5" class="headerlink" title="3.最终解法"></a>3.最终解法</h2><p>因为奇数2n-1的求和公式:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">对于上面的关系有:</span><br><span class="line"></span><br><span class="line">         <span class="keyword">sum</span> = (2*<span class="keyword">ret</span>+1+3)*<span class="keyword">ret</span>/2</span><br><span class="line">     =&gt;      =  <span class="keyword">ret</span>*<span class="keyword">ret</span> + 2*<span class="keyword">ret</span></span><br><span class="line"></span><br><span class="line">所以反推有:     </span><br><span class="line">     -&gt;    <span class="keyword">n</span> &lt;= <span class="keyword">ret</span>*<span class="keyword">ret</span></span><br><span class="line">     =&gt;   <span class="keyword">ret</span> = <span class="literal">sqrt</span>(<span class="keyword">n</span>) 向下取整</span><br></pre></td></tr></table></figure></p>
+<p>这种解法C函数表示就是<code>floor(sqrt(n))</code><br>所以改进的代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">final_magic</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">floor</span>(<span class="built_in">sqrt</span>(n));<span class="comment">//隐式转型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样简单多了。然后上传leetcode测试结果,35个测试全部通过，<br>耗时0ms，居然还是打败6.88%,郁闷</p>
+<h2 id="4-_u4E09_u79CD_u89E3_u6CD5_u7684_u5355_u5143_u3001_u6027_u80FD_u6D4B_u8BD5"><a href="#4-_u4E09_u79CD_u89E3_u6CD5_u7684_u5355_u5143_u3001_u6027_u80FD_u6D4B_u8BD5" class="headerlink" title="4.三种解法的单元、性能测试"></a>4.三种解法的单元、性能测试</h2><p>为了测试的方便，我将代码改写成go，然后使用自带test，之前2方案<br>比较快，所以以它为基准测试其他2种正确性。开始的时候都是手写的测试<br>case,用map去对比,本想设置测试上限10000000，但是超过了10分钟，出<br>现了panic，10万以上第一种方法就很慢了。<br>测试代码部分:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>(</span><br><span class="line">    MAX = <span class="number">10000</span>   <span class="comment">//测试范围</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">//通用测试方法，传入测试函数参数</span></span><br><span class="line"><span class="keyword">func</span> test(t *testing.T,Func <span class="keyword">func</span>(<span class="typename">int</span>) <span class="typename">int</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;=MAX;i++&#123;</span><br><span class="line">        <span class="keyword">if</span> Func(i)!=Magic(i)&#123;</span><br><span class="line">            <span class="comment">//结果出错</span></span><br><span class="line">            t.Errorf(<span class="string">"%3d:%3d calc failed."</span>,i,Func(i))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">TestCommon(t)&#123;</span><br><span class="line">    test(t,Common)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TestFinalMagic(t)</span><br></pre></td></tr></table></figure></p>
+<p>性能测试，代码类似:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通用性能测试方法</span></span><br><span class="line"><span class="keyword">func</span> bench(b *testing.B,Func <span class="keyword">func</span>(<span class="typename">int</span>) <span class="typename">int</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;=MAX;i++&#123;</span><br><span class="line">        Func(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BenchmarkCommon(b)</span><br><span class="line">BenchmarkMagic(b)</span><br><span class="line">BenchmarFinalkMagic(b)</span><br></pre></td></tr></table></figure></p>
+<p>测试结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-5.png" alt="leetcode-5"></p>
+<hr>
+<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>第一种最符合程序员解决问题的思维，也很容易理解。后面的方法已经脱离了问题，变成了纯粹的数学问题<br>无奈第一种性能要差得多。这大概就是提醒我们，抽象生活问题成数学问题，然后去解决它吧。很惭愧，我<br>没有通过分析问题去提炼其中的数学规律，而是凭感觉试出来的，<br>最后，学到的是go中的函数参数了，顺便复习了C语言的一些内容。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
     </div>
 
       
@@ -684,7 +575,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>

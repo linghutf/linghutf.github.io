@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.gitcafe.io/"/>
-  <updated>2016-03-20T08:15:47.106Z</updated>
+  <updated>2016-03-20T08:15:47.000Z</updated>
   <id>http://linghutf.gitcafe.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://linghutf.gitcafe.io/2016/03/20/C++11%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5%E5%88%9D%E6%8E%A2/"/>
     <id>http://linghutf.gitcafe.io/2016/03/20/C++11多线程同步互斥初探/</id>
     <published>2016-03-20T08:14:41.000Z</published>
-    <updated>2016-03-20T08:15:47.106Z</updated>
+    <updated>2016-03-20T08:15:47.000Z</updated>
     <content type="html"></content>
     <summary type="html">
     
@@ -36,14 +36,26 @@
   </entry>
   
   <entry>
-    <title><![CDATA[C++位图排序解决亿级数量问题]]></title>
+    <title><![CDATA[C++ bitset解决亿级数数据排序问题]]></title>
     <link href="http://linghutf.gitcafe.io/2016/03/10/C++%E4%BD%8D%E5%9B%BE%E6%8E%92%E5%BA%8F%E8%A7%A3%E5%86%B3%E4%BA%BF%E7%BA%A7%E6%95%B0%E9%87%8F%E9%97%AE%E9%A2%98/"/>
     <id>http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/</id>
     <published>2016-03-10T03:12:43.000Z</published>
-    <updated>2016-03-10T03:13:42.029Z</updated>
-    <content type="html"></content>
+    <updated>2016-04-10T13:16:20.139Z</updated>
+    <content type="html"><![CDATA[<h2 id="u95EE_u9898_u6765_u6E90"><a href="#u95EE_u9898_u6765_u6E90" class="headerlink" title="问题来源"></a>问题来源</h2><p>　　在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，哈希排序利用哈希函数时间复杂度能达到O(N),快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。<br>　　但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作，这对于长期工作的服务器来说是不利的。<br>　　因此，在这种海量数据排序的需求刺激下，产生了一种简易的”哈希”方法，那就是位图排序。</p>
+<h2 id="u6392_u5E8F_u601D_u60F3"><a href="#u6392_u5E8F_u601D_u60F3" class="headerlink" title="排序思想"></a>排序思想</h2><p>　　位图排序的思想非常简单，那就是将一个个数据映射到它在有序的数轴上的一点，这个数轴可以是一个数组，数字的大小就是哈希因子，所以在遍历一遍数据集，设置好这些数字的点表示之后，我们就可以根据相应位置的状态，反过来来确定数据集中是否有这个数字，由于我们是有序的遍历的，因此查找出来的数字也是有序的，这样间接地达到了我们的目的。<br>　　位图很像数学中的数轴的概念，有哪些数字，就会在相应的位置标记它们，最后数据都是有序的。而且这种方法，一个数字占用的位置只有一个bit,对于0~2&lt;&lt;32的4字节非负整数范围来说，最大的数为42亿，在实际应用场景下基本足够，而所需要的空间占用大概只需要2&lt;&lt;32/8/1024^2=512M的内存，在内存占用上和效率上都有着无可比拟的优势。</p>
+<h2 id="u5B9E_u9645_u6D4B_u8BD5"><a href="#u5B9E_u9645_u6D4B_u8BD5" class="headerlink" title="实际测试"></a>实际测试</h2><p>　　说了这么多，当然需要实际测试一番，才能证明位图排序真的在海量数据排序上具有优势。<br>　　例如在我的服务器上，随机生成1000W个整数，现在需要将它们排序。那么对于快速排序，哈希排序和位图排序，分别需要多少时间呢？</p>
+<p>###1. 快排</p>
+<ul>
+<li>主要分为partiiton和sort两个阶段，使用STL自带的快排实现</li>
+<li>注意,STL的sort会在递归sort层数过多时变成堆排序，虽然时间复杂度都是O(NlgN),但是这种测试只是作为一种参考</li>
+<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。</li>
+</ul>
+<p><img src="https://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"></p>
+<p>#####STL的sort所用时间</p>
+<p>###2. 哈希排序</p>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<h2 id="u95EE_u9898_u6765_u6E90"><a href="#u95EE_u9898_u6765_u6E90" class="headerlink" title="问题来源"></a>问题来源</h2><p>　　在实际运用场景里，经常会遇到把大量数据有序输]]>
     </summary>
     
       <category term="algorithm" scheme="http://linghutf.gitcafe.io/tags/algorithm/"/>
@@ -59,7 +71,7 @@
     <link href="http://linghutf.gitcafe.io/2016/03/06/STL%E7%9A%84%E6%9C%89%E5%BA%8F%E5%92%8C%E6%97%A0%E5%BA%8F%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/"/>
     <id>http://linghutf.gitcafe.io/2016/03/06/STL的有序和无序哈希容器/</id>
     <published>2016-03-06T13:22:26.000Z</published>
-    <updated>2016-03-06T13:22:53.894Z</updated>
+    <updated>2016-03-06T13:22:53.000Z</updated>
     <content type="html"></content>
     <summary type="html">
     
@@ -78,7 +90,7 @@
     <link href="http://linghutf.gitcafe.io/2016/03/06/Linux%E4%B8%8BC-C-%E5%8A%A8%E6%80%81%E5%BA%93%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E5%8A%A0%E8%BD%BD/"/>
     <id>http://linghutf.gitcafe.io/2016/03/06/Linux下C-C-动态库的生成和加载/</id>
     <published>2016-03-06T13:19:37.000Z</published>
-    <updated>2016-03-06T13:20:30.758Z</updated>
+    <updated>2016-03-06T13:20:30.000Z</updated>
     <content type="html"></content>
     <summary type="html">
     
@@ -99,7 +111,7 @@
     <link href="http://linghutf.gitcafe.io/2016/03/06/C++%E5%9B%9B%E7%A7%8D%E8%BD%AC%E5%9E%8Bcast/"/>
     <id>http://linghutf.gitcafe.io/2016/03/06/C++四种转型cast/</id>
     <published>2016-03-06T13:17:41.000Z</published>
-    <updated>2016-03-06T13:18:32.310Z</updated>
+    <updated>2016-03-06T13:18:32.000Z</updated>
     <content type="html"></content>
     <summary type="html">
     
@@ -116,7 +128,7 @@
     <link href="http://linghutf.gitcafe.io/2016/02/25/secretsys-md/"/>
     <id>http://linghutf.gitcafe.io/2016/02/25/secretsys-md/</id>
     <published>2016-02-25T04:22:29.000Z</published>
-    <updated>2016-02-25T13:09:57.895Z</updated>
+    <updated>2016-02-25T13:09:57.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u4E2A_u4EBA_u521D_u8877"><a href="#u4E2A_u4EBA_u521D_u8877" class="headerlink" title="个人初衷"></a>个人初衷</h1><blockquote>
 <ul>
 <li>随着互联网使用的时间增长，自己在网上的账号越来越多，但因为之前就注重安全功能，<br>所以我很少使用同一套账号系统。所以账号数量越来越多导致我难以记住，而且很多信息比<br>如网银包含有账号之外的安全信息。虽然chrome有记住密码功能，但一些安全问题，保密安全<br>码它都无能为力。</li>
@@ -152,7 +164,7 @@
     <link href="http://linghutf.gitcafe.io/2016/02/22/20160222/"/>
     <id>http://linghutf.gitcafe.io/2016/02/22/20160222/</id>
     <published>2016-02-22T08:31:53.000Z</published>
-    <updated>2016-02-22T12:42:54.785Z</updated>
+    <updated>2016-02-22T12:42:54.000Z</updated>
     <content type="html"><![CDATA[<p>　　春节假期转眼就过去了，感觉是过得最快的一个春节。马上又面临新的挑战，正处在一个学习<br>和工作的过渡期，莫名的烦心事和压力随之而来。开学时间很早，之前所有相聚的年轻人一股脑儿<br>全离开了，为了明年的春节聚首又回到城市奋斗，看得让人心慌，想到未来我在哪里，是否也像他<br>们一般匆匆来去?现在的娱乐方式多不胜数，但是人的情绪来源越来越少，仿佛只有通往金钱的道路<br>才能让人心旷神怡，只有人人羡慕的生活才是成功的人生。在这种环境下，假期像是一场鸵鸟的避风<br>动作，暂时没有烦恼，心却没有安宁下来。于是，剩下的日子，终于像风一样迅速消失在心灵的沙漠<br>中。<br>　　元宵节之前的几天，我就已经来到了实验室，开始了日复一日的工作，和同年人继续没有交流却<br>保持默契地竞争。突然发现，原来节日本为人带来欢乐的意义就是这样丢失的。你还有很多工作，前方<br>还有许多美好的憧憬在你到达之后才能实现，于是你忽略了路边的景色，着急地向目标走去。然后终于<br>到了这个目的地，但是你却发现，抑或是有人告诉你，前方有更漂亮的风景，你如果到达那里，人生会有<br>更精彩的不同……如此这般循环几个光景，你的人生就这样匆匆而去而鲜有发自内心的愉悦。<br>　　春节期间看到了一个讽刺的帖子，其中最主要的内容是:”真正好的办法是巧妙引导，控制节奏，让<br>臣民们始终保持一种奋斗的状态。20出头，头十年，让他们去为房子，车子，娶妻生子忙，第二个十年，<br>让他们为房贷，车贷，子女教育经费去忙，等到了第三个十年，就得为老来医保，儿女成人等做准备而继<br>续忙。如此一来，人生最黄金的三十年不经意间弹指而过。在臣民们为自己所谓生活而忙碌时，就不太会<br>有人能静下心来质疑苏丹统治的正当性，合法性等等命题。”<br>　　这其中，有多少人不是我们自己给自己定义的成功标准，或者在外在的氛围和期望的影响下，进行自我<br>审查和个性阉割，从而成为“成功”这条路上的一个急匆匆的行者的呢？</p>
 ]]></content>
     <summary type="html">
@@ -168,7 +180,7 @@
     <link href="http://linghutf.gitcafe.io/2016/02/22/springsemister/"/>
     <id>http://linghutf.gitcafe.io/2016/02/22/springsemister/</id>
     <published>2016-02-22T08:30:36.000Z</published>
-    <updated>2016-02-22T13:01:49.449Z</updated>
+    <updated>2016-02-22T13:01:49.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170"><a href="#u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170" class="headerlink" title="年前的自我安慰"></a>年前的自我安慰</h1><p>新年之前，给自己画了很多美好的期许，如同中学生涯的放假期间，带回去很多课本和试卷，<br>结果又原封不动地带回学校一样，这些定下的计划鲜有完成。大概也就是没有手生而已。我把<br>这种现象叫做心理上的自我安慰。</p>
 <h1 id="u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551"><a href="#u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551" class="headerlink" title="第一次开会之前的补救"></a>第一次开会之前的补救</h1><p>半个月过去了，我又回到那个朝九晚十的生活轨道，赶紧在进度报告之前，完成一些工作。经过<br>几天的不断写代码和测试，也算是完成了以下任务:</p>
 <ol>
@@ -210,7 +222,7 @@
     <link href="http://linghutf.gitcafe.io/2016/01/21/leetcode319/"/>
     <id>http://linghutf.gitcafe.io/2016/01/21/leetcode319/</id>
     <published>2016-01-21T06:49:47.000Z</published>
-    <updated>2016-02-28T14:13:30.281Z</updated>
+    <updated>2016-02-28T14:13:30.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
 <p>Example:</p>
 <p>Given n = 3. </p>
@@ -574,7 +586,7 @@
     <link href="http://linghutf.gitcafe.io/2016/01/09/factor/"/>
     <id>http://linghutf.gitcafe.io/2016/01/09/factor/</id>
     <published>2016-01-08T21:12:36.000Z</published>
-    <updated>2016-02-28T14:10:30.533Z</updated>
+    <updated>2016-02-28T14:10:30.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u9898_u76EE_u6765_u6E90"><a href="#u9898_u76EE_u6765_u6E90" class="headerlink" title="题目来源"></a>题目来源</h1><p>这是日本一个编程网站上的题，当时看别人介绍的时候，说每通过一道题，就可以给<br>动漫女性角色换一件衣服或装饰，这道题是比较难的，也是”奖励”最重的一道，做完基本<br>就通关了。话说这种方式还比较新颖，对那些死宅的程序员来说，诱惑很大。<br>若有兴趣，可以移步<a href="https://paiza.jp/poh/ando" target="_blank" rel="external">Get a girl friend in programing</a>。</p>
 <h2 id="u91CC_u9762_u90FD_u662F_u65E5_u6587_uFF0C_u6211_u90FD_u662F_u8FDE_u8499_u5E26_u731C_u624D_u6210_u529F_u505A_u5230_u6700_u540E_u4E00_u9898_u3002"><a href="#u91CC_u9762_u90FD_u662F_u65E5_u6587_uFF0C_u6211_u90FD_u662F_u8FDE_u8499_u5E26_u731C_u624D_u6210_u529F_u505A_u5230_u6700_u540E_u4E00_u9898_u3002" class="headerlink" title="里面都是日文，我都是连蒙带猜才成功做到最后一题。"></a>里面都是日文，我都是连蒙带猜才成功做到最后一题。</h2><h1 id="u9898_u76EE_u63CF_u8FF0"><a href="#u9898_u76EE_u63CF_u8FF0" class="headerlink" title="题目描述"></a>题目描述</h1><p><strong>0&lt;=n&lt;=1000000,求n!去除末尾所有0之后的后9位数字，其中9位数字中若以0开头,则去掉0,剩下的数字即为结果</strong>。<br>例如:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span>!=<span class="number">3628800</span> =&gt; 去掉末尾<span class="number">0</span>，变成<span class="number">36288</span></span><br><span class="line"><span class="number">38</span>!=<span class="number">523022617466601111760007224100074291200000000</span> </span><br><span class="line">=&gt; 去掉<span class="number">0</span>,取<span class="number">9</span>位数字，得到<span class="number">000742912</span>，</span><br><span class="line">=&gt; 去掉开头的<span class="number">0</span>,得到最后结果<span class="number">742912</span></span><br></pre></td></tr></table></figure></p>
 <hr>

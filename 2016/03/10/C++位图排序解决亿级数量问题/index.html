@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>C++ bitset解决亿级数数据排序问题 | 欢迎来到linghutf的博客!</title>
+  <title>位图解决海量数据排序问题 | 欢迎来到linghutf的博客!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题来源　　在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，哈希排序利用哈希函数时间复杂度能达到O(N),快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。　　但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选">
+  <meta name="description" content="问题来源  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ bitset解决亿级数数据排序问题">
+<meta property="og:title" content="位图解决海量数据排序问题">
 <meta property="og:url" content="http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/index.html">
 <meta property="og:site_name" content="欢迎来到linghutf的博客!">
-<meta property="og:description" content="问题来源　　在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，哈希排序利用哈希函数时间复杂度能达到O(N),快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。　　但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选">
-<meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png">
-<meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png">
-<meta property="og:updated_time" content="2016-04-10T13:36:08.963Z">
+<meta property="og:description" content="问题来源  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作">
+<meta property="og:image" content="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png">
+<meta property="og:image" content="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png">
+<meta property="og:image" content="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png">
+<meta property="og:updated_time" content="2016-04-11T03:41:02.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ bitset解决亿级数数据排序问题">
-<meta name="twitter:description" content="问题来源　　在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，哈希排序利用哈希函数时间复杂度能达到O(N),快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。　　但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选">
+<meta name="twitter:title" content="位图解决海量数据排序问题">
+<meta name="twitter:description" content="问题来源  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到linghutf的博客!" type="application/atom+xml">
   
@@ -244,7 +245,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      C++ bitset解决亿级数数据排序问题
+      位图解决海量数据排序问题
     </h1>
   
 
@@ -265,20 +266,40 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="u95EE_u9898_u6765_u6E90"><a href="#u95EE_u9898_u6765_u6E90" class="headerlink" title="问题来源"></a><strong>问题来源</strong></h2><p>　　在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，哈希排序利用哈希函数时间复杂度能达到O(N),快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。<br>　　但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作，这对于长期工作的服务器来说是不利的。<br>　　因此，在这种海量数据排序的需求刺激下，产生了一种简易的”哈希”方法，那就是位图排序。</p>
-<h2 id="u6392_u5E8F_u601D_u60F3"><a href="#u6392_u5E8F_u601D_u60F3" class="headerlink" title="排序思想"></a><strong>排序思想</strong></h2><p>　　位图排序的思想非常简单，那就是将一个个数据映射到它在有序的数轴上的一点，这个数轴可以是一个数组，数字的大小就是哈希因子，所以在遍历一遍数据集，设置好这些数字的点表示之后，我们就可以根据相应位置的状态，反过来来确定数据集中是否有这个数字，由于我们是有序的遍历的，因此查找出来的数字也是有序的，这样间接地达到了我们的目的。<br>　　位图很像数学中的数轴的概念，有哪些数字，就会在相应的位置标记它们，最后数据都是有序的。而且这种方法，一个数字占用的位置只有一个bit,对于0~2&lt;&lt;32的4字节非负整数范围来说，最大的数为42亿，在实际应用场景下基本足够，而所需要的空间占用大概只需要2&lt;&lt;32/8/1024^2=512M的内存，在内存占用上和效率上都有着无可比拟的优势。</p>
-<h2 id="u5B9E_u9645_u6D4B_u8BD5"><a href="#u5B9E_u9645_u6D4B_u8BD5" class="headerlink" title="实际测试"></a><strong>实际测试</strong></h2><p>　　说了这么多，当然需要实际测试一番，才能证明位图排序真的在海量数据排序上具有优势。<br>　　例如在我的服务器上，随机生成1000W个整数，现在需要将它们排序。那么对于快速排序，哈希排序和位图排序，分别需要多少时间呢？</p>
-<p>###1. 快排</p>
+        <h2 id="u95EE_u9898_u6765_u6E90"><a href="#u95EE_u9898_u6765_u6E90" class="headerlink" title="问题来源"></a><strong>问题来源</strong></h2><p>  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。<br>  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作，这对于长期工作的服务器来说是不利的。<br>  因此，在这种海量数据排序的需求刺激下，产生了一种简易的”哈希”方法，那就是位图排序。</p>
+<h2 id="u6392_u5E8F_u601D_u60F3"><a href="#u6392_u5E8F_u601D_u60F3" class="headerlink" title="排序思想"></a><strong>排序思想</strong></h2><p>  位图排序的思想非常简单，那就是将一个个数据映射到它在有序的数轴上的一点，这个数轴可以是一个数组，数字的大小就是哈希因子，所以在遍历一遍数据集，设置好这些数字的点表示之后，我们就可以根据相应位置的状态，反过来来确定数据集中是否有这个数字，由于我们是有序的遍历的，因此查找出来的数字也是有序的，这样间接地达到了我们的目的。<br>  位图很像数学中的数轴的概念，有哪些数字，就会在相应的位置标记它们，最后数据都是有序的。而且这种方法，一个数字占用的位置只有一个bit,对于0~2&lt;&lt;32的4字节非负整数范围来说，最大的数为42亿，在实际应用场景下基本足够，而所需要的空间占用大概只需要2&lt;&lt;32/8/1024^2=512M的内存，在内存占用上和效率上都有着无可比拟的优势。</p>
+<h2 id="u5B9E_u9645_u6D4B_u8BD5"><a href="#u5B9E_u9645_u6D4B_u8BD5" class="headerlink" title="实际测试"></a><strong>实际测试</strong></h2><p>说了这么多，当然需要实际测试一番，才能证明位图排序真的在海量数据排序上具有优势。<br>例如在我的服务器上，随机生成1000W个整数，现在需要将它们排序。那么对于快速排序，二叉树排序和位图排序，分别需要多少时间呢？</p>
+<blockquote>
+<ul>
+<li>机器环境GCC5.3.1,编译参数-std=c++11 -O3</li>
+<li>Gist<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js"></script></li>
+<li>源代码详见<a href="https://github.com/linghutf/topcoder/blob/master/blog/Sort.cc" target="_blank" rel="external">topcoder</a></li>
+</ul>
+</blockquote>
+<p>###1. <strong>快排</strong></p>
 <ul>
 <li>主要分为partiiton和sort两个阶段，使用STL自带的快排实现</li>
 <li>注意,STL的sort会在递归sort层数过多时变成堆排序，虽然时间复杂度都是O(NlgN),但是这种测试只是作为一种参考</li>
-<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。</li>
+<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。<br><img src="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"><br>#####STL的sort所用时间</li>
 </ul>
-<p><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"></p>
-<p>#####STL的sort所用时间</p>
-<p>###2. 哈希排序</p>
-<p><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"></p>
-<p>#####红黑树实现的链表所用时间</p>
+<p>###2. <strong>二叉树排序</strong></p>
+<ul>
+<li>测试中使用的红黑树实现的有序multiset,由于红黑树查询、删除、插入的时间复杂度均为O(lgK),因此遍历一遍数据之后时间复杂度就是O(NlgN)了</li>
+<li>但是可能在茶如大量数据时频繁创建和改变节点属性，因此综合性能可能不如快速排序。以下的时间即可说明这个问题。<br><img src="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"><br>#####红黑树实现的链表所用时间</li>
+</ul>
+<p>###3. <strong>位图排序</strong></p>
+<ul>
+<li>位图排序可以看做是一种特殊的哈希排序。使用元素数值作为哈希函数</li>
+<li>但是这种方法在有重复元素的环境下，需要在遍历设置位图状态时，记录重复元素的个数。</li>
+<li>另一个问题就是C/C++程序运行时分配的栈空间是有限制的，分配几百M的内存运行时就会报错，所以我们需要使用dynamic_bitset,这种动态bitset由boost库实现，是在堆上分配的内存，因此突破了限制。<br>-与bitset不同之处还有dynamic_bitset的set效率没有STL bitset高。</li>
+</ul>
+<p><img src="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png" alt="bitsort"></p>
+<p>#####位图排序所用时间</p>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a><strong>总结</strong></h2><ol>
+<li>在上面的结果中，可以看出，因为快排不是单纯地快排，STL内部的内存分配等都有优化，因此出现了比位图排序快的情况</li>
+<li>在海量数据情况，一次将数据排序是不可能的，因此这次的测试规模只是反映一种简单的比较。实际情况中，需要结合排序和分治的思想。</li>
+<li>位图排序的用途不只是排序，由于它每个比较的单元只占用1bit,很适合处理大量数据和文件的问题，在Linux的多路复用I/O函数select中,它作为文件描述符的状态集使用，每次查询bit位数值就可以判断相应文件描述符IO状态。</li>
+</ol>
 
       
     </div>
@@ -287,12 +308,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/10/C++位图排序解决亿级数量问题/">C++ bitset解决亿级数数据排序问题</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/10/C++位图排序解决亿级数量问题/">位图解决海量数据排序问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 linghutf 的个人博客">linghutf</a></p>
         <p><span>发布时间:</span>2016年03月10日 - 11时12分</p>
-        <p><span>最后更新:</span>2016年04月10日 - 21时36分</p>
+        <p><span>最后更新:</span>2016年04月11日 - 11时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/10/C++位图排序解决亿级数量问题/" title="C++ bitset解决亿级数数据排序问题">http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/</a>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/10/C++位图排序解决亿级数量问题/" title="位图解决海量数据排序问题">http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
@@ -328,7 +349,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u95EE_u9898_u6765_u6E90"><span class="toc-number">1.</span> <span class="toc-text">问题来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6392_u5E8F_u601D_u60F3"><span class="toc-number">2.</span> <span class="toc-text">排序思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5B9E_u9645_u6D4B_u8BD5"><span class="toc-number">3.</span> <span class="toc-text">实际测试</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u95EE_u9898_u6765_u6E90"><span class="toc-number">1.</span> <span class="toc-text">问题来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6392_u5E8F_u601D_u60F3"><span class="toc-number">2.</span> <span class="toc-text">排序思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5B9E_u9645_u6D4B_u8BD5"><span class="toc-number">3.</span> <span class="toc-text">实际测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -390,7 +411,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/10/C++位图排序解决亿级数量问题/" data-title="C++ bitset解决亿级数数据排序问题" data-url="http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/10/C++位图排序解决亿级数量问题/" data-title="位图解决海量数据排序问题" data-url="http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -424,7 +445,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/C++11多线程同步互斥初探/">C++11多线程同步互斥初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/C++位图排序解决亿级数量问题/">C++ bitset解决亿级数数据排序问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/STL的有序和无序哈希容器/">STL的有序和无序哈希容器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/Linux下C-C-动态库的生成和加载/">Linux下C/C++动态库的生成和加载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/C++四种转型cast/">C++四种转型cast</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/25/secretsys-md/">个人密码存储在线服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/20160222/">在外的元宵节</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/springsemister/">进展汇总,新阶段计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/winter-vacation/">写在放假之前</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/firstsnow/">2016年第一场雪想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/C++11多线程同步互斥初探/">C++11多线程同步互斥初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/C++位图排序解决亿级数量问题/">位图解决海量数据排序问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/STL的有序和无序哈希容器/">STL的有序和无序哈希容器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/Linux下C-C-动态库的生成和加载/">Linux下C/C++动态库的生成和加载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/C++四种转型cast/">C++四种转型cast</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/25/secretsys-md/">个人密码存储在线服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/20160222/">在外的元宵节</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/springsemister/">进展汇总,新阶段计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/winter-vacation/">写在放假之前</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/firstsnow/">2016年第一场雪想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

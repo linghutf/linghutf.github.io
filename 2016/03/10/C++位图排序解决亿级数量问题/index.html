@@ -11,10 +11,10 @@
 <meta property="og:url" content="http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/index.html">
 <meta property="og:site_name" content="欢迎来到linghutf的博客!">
 <meta property="og:description" content="问题来源  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作">
-<meta property="og:image" content="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png">
-<meta property="og:image" content="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png">
-<meta property="og:image" content="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png">
-<meta property="og:updated_time" content="2016-04-11T03:41:02.476Z">
+<meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png">
+<meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png">
+<meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png">
+<meta property="og:updated_time" content="2016-04-11T03:47:33.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="位图解决海量数据排序问题">
 <meta name="twitter:description" content="问题来源  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作">
@@ -272,7 +272,6 @@
 <blockquote>
 <ul>
 <li>机器环境GCC5.3.1,编译参数-std=c++11 -O3</li>
-<li>Gist<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js"></script></li>
 <li>源代码详见<a href="https://github.com/linghutf/topcoder/blob/master/blog/Sort.cc" target="_blank" rel="external">topcoder</a></li>
 </ul>
 </blockquote>
@@ -280,12 +279,16 @@
 <ul>
 <li>主要分为partiiton和sort两个阶段，使用STL自带的快排实现</li>
 <li>注意,STL的sort会在递归sort层数过多时变成堆排序，虽然时间复杂度都是O(NlgN),但是这种测试只是作为一种参考</li>
-<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。<br><img src="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"><br>#####STL的sort所用时间</li>
+<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"><br>#####STL的sort所用时间<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=quicksort.cc"></script>
+
+</li>
 </ul>
 <p>###2. <strong>二叉树排序</strong></p>
 <ul>
 <li>测试中使用的红黑树实现的有序multiset,由于红黑树查询、删除、插入的时间复杂度均为O(lgK),因此遍历一遍数据之后时间复杂度就是O(NlgN)了</li>
-<li>但是可能在茶如大量数据时频繁创建和改变节点属性，因此综合性能可能不如快速排序。以下的时间即可说明这个问题。<br><img src="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"><br>#####红黑树实现的链表所用时间</li>
+<li>但是可能在茶如大量数据时频繁创建和改变节点属性，因此综合性能可能不如快速排序。以下的时间即可说明这个问题。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"><br>#####红黑树实现的排序所用时间<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=hashsort.cc"></script>
+
+</li>
 </ul>
 <p>###3. <strong>位图排序</strong></p>
 <ul>
@@ -293,8 +296,10 @@
 <li>但是这种方法在有重复元素的环境下，需要在遍历设置位图状态时，记录重复元素的个数。</li>
 <li>另一个问题就是C/C++程序运行时分配的栈空间是有限制的，分配几百M的内存运行时就会报错，所以我们需要使用dynamic_bitset,这种动态bitset由boost库实现，是在堆上分配的内存，因此突破了限制。<br>-与bitset不同之处还有dynamic_bitset的set效率没有STL bitset高。</li>
 </ul>
-<p><img src="http-test://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png" alt="bitsort"></p>
-<p>#####位图排序所用时间</p>
+<p><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png" alt="bitsort"></p>
+<p>#####位图实现的排序所用时间</p>
+<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=bitsort.cc"></script>
+
 <h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a><strong>总结</strong></h2><ol>
 <li>在上面的结果中，可以看出，因为快排不是单纯地快排，STL内部的内存分配等都有优化，因此出现了比位图排序快的情况</li>
 <li>在海量数据情况，一次将数据排序是不可能的，因此这次的测试规模只是反映一种简单的比较。实际情况中，需要结合排序和分治的思想。</li>
@@ -311,7 +316,7 @@
         <p><span>本文标题:</span><a href="/2016/03/10/C++位图排序解决亿级数量问题/">位图解决海量数据排序问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 linghutf 的个人博客">linghutf</a></p>
         <p><span>发布时间:</span>2016年03月10日 - 11时12分</p>
-        <p><span>最后更新:</span>2016年04月11日 - 11时41分</p>
+        <p><span>最后更新:</span>2016年04月11日 - 11时47分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/10/C++位图排序解决亿级数量问题/" title="位图解决海量数据排序问题">http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -40,7 +40,7 @@
     <link href="http://linghutf.gitcafe.io/2016/03/10/C++%E4%BD%8D%E5%9B%BE%E6%8E%92%E5%BA%8F%E8%A7%A3%E5%86%B3%E4%BA%BF%E7%BA%A7%E6%95%B0%E9%87%8F%E9%97%AE%E9%A2%98/"/>
     <id>http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/</id>
     <published>2016-03-10T03:12:43.000Z</published>
-    <updated>2016-04-11T03:47:33.604Z</updated>
+    <updated>2016-04-11T03:49:34.724Z</updated>
     <content type="html"><![CDATA[<h2 id="u95EE_u9898_u6765_u6E90"><a href="#u95EE_u9898_u6765_u6E90" class="headerlink" title="问题来源"></a><strong>问题来源</strong></h2><p>  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。<br>  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作，这对于长期工作的服务器来说是不利的。<br>  因此，在这种海量数据排序的需求刺激下，产生了一种简易的”哈希”方法，那就是位图排序。</p>
 <h2 id="u6392_u5E8F_u601D_u60F3"><a href="#u6392_u5E8F_u601D_u60F3" class="headerlink" title="排序思想"></a><strong>排序思想</strong></h2><p>  位图排序的思想非常简单，那就是将一个个数据映射到它在有序的数轴上的一点，这个数轴可以是一个数组，数字的大小就是哈希因子，所以在遍历一遍数据集，设置好这些数字的点表示之后，我们就可以根据相应位置的状态，反过来来确定数据集中是否有这个数字，由于我们是有序的遍历的，因此查找出来的数字也是有序的，这样间接地达到了我们的目的。<br>  位图很像数学中的数轴的概念，有哪些数字，就会在相应的位置标记它们，最后数据都是有序的。而且这种方法，一个数字占用的位置只有一个bit,对于0~2&lt;&lt;32的4字节非负整数范围来说，最大的数为42亿，在实际应用场景下基本足够，而所需要的空间占用大概只需要2&lt;&lt;32/8/1024^2=512M的内存，在内存占用上和效率上都有着无可比拟的优势。</p>
 <h2 id="u5B9E_u9645_u6D4B_u8BD5"><a href="#u5B9E_u9645_u6D4B_u8BD5" class="headerlink" title="实际测试"></a><strong>实际测试</strong></h2><p>说了这么多，当然需要实际测试一番，才能证明位图排序真的在海量数据排序上具有优势。<br>例如在我的服务器上，随机生成1000W个整数，现在需要将它们排序。那么对于快速排序，二叉树排序和位图排序，分别需要多少时间呢？</p>
@@ -54,14 +54,14 @@
 <ul>
 <li>主要分为partiiton和sort两个阶段，使用STL自带的快排实现</li>
 <li>注意,STL的sort会在递归sort层数过多时变成堆排序，虽然时间复杂度都是O(NlgN),但是这种测试只是作为一种参考</li>
-<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"><br>#####STL的sort所用时间<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=quicksort.cc"></script>
+<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"><h5 id="STL_u7684sort_u6240_u7528_u65F6_u95F4"><a href="#STL_u7684sort_u6240_u7528_u65F6_u95F4" class="headerlink" title="STL的sort所用时间"></a>STL的sort所用时间</h5><script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=quicksort.cc"></script>
 
 </li>
 </ul>
 <p>###2. <strong>二叉树排序</strong></p>
 <ul>
 <li>测试中使用的红黑树实现的有序multiset,由于红黑树查询、删除、插入的时间复杂度均为O(lgK),因此遍历一遍数据之后时间复杂度就是O(NlgN)了</li>
-<li>但是可能在茶如大量数据时频繁创建和改变节点属性，因此综合性能可能不如快速排序。以下的时间即可说明这个问题。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"><br>#####红黑树实现的排序所用时间<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=hashsort.cc"></script>
+<li>但是可能在茶如大量数据时频繁创建和改变节点属性，因此综合性能可能不如快速排序。以下的时间即可说明这个问题。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"><h5 id="u7EA2_u9ED1_u6811_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4"><a href="#u7EA2_u9ED1_u6811_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4" class="headerlink" title="红黑树实现的排序所用时间"></a>红黑树实现的排序所用时间</h5><script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=hashsort.cc"></script>
 
 </li>
 </ul>
@@ -72,8 +72,7 @@
 <li>另一个问题就是C/C++程序运行时分配的栈空间是有限制的，分配几百M的内存运行时就会报错，所以我们需要使用dynamic_bitset,这种动态bitset由boost库实现，是在堆上分配的内存，因此突破了限制。<br>-与bitset不同之处还有dynamic_bitset的set效率没有STL bitset高。</li>
 </ul>
 <p><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png" alt="bitsort"></p>
-<p>#####位图实现的排序所用时间</p>
-<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=bitsort.cc"></script>
+<h5 id="u4F4D_u56FE_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4"><a href="#u4F4D_u56FE_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4" class="headerlink" title="位图实现的排序所用时间"></a>位图实现的排序所用时间</h5><script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=bitsort.cc"></script>
 
 <h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a><strong>总结</strong></h2><ol>
 <li>在上面的结果中，可以看出，因为快排不是单纯地快排，STL内部的内存分配等都有优化，因此出现了比位图排序快的情况</li>
@@ -249,7 +248,7 @@
     <link href="http://linghutf.gitcafe.io/2016/01/21/leetcode319/"/>
     <id>http://linghutf.gitcafe.io/2016/01/21/leetcode319/</id>
     <published>2016-01-21T06:49:47.000Z</published>
-    <updated>2016-02-28T14:13:30.000Z</updated>
+    <updated>2016-04-11T07:39:09.466Z</updated>
     <content type="html"><![CDATA[<h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
 <p>Example:</p>
 <p>Given n = 3. </p>
@@ -292,6 +291,13 @@
 <p>测试结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-5.png" alt="leetcode-5"></p>
 <hr>
 <h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>第一种最符合程序员解决问题的思维，也很容易理解。后面的方法已经脱离了问题，变成了纯粹的数学问题<br>无奈第一种性能要差得多。这大概就是提醒我们，抽象生活问题成数学问题，然后去解决它吧。很惭愧，我<br>没有通过分析问题去提炼其中的数学规律，而是凭感觉试出来的，<br>最后，学到的是go中的函数参数了，顺便复习了C语言的一些内容。</p>
+<h1 id="u540E_u8BB0"><a href="#u540E_u8BB0" class="headerlink" title="后记"></a>后记</h1><ul>
+<li>未改进的版本相比改进版本来说，主要的耗时操作是两重循环，一个是O(N^2),一个是O(1);因此只有在n比较小<br>时，下文针对未改进版本优化才有价值</li>
+<li>对于这种状态转换问题，可以使用bitset解决，由于STL对位图的优化，每个状态位只占1个bit,比bool变量都<br>快，而且调式更为方便，效率也比数组高很多。</li>
+<li>针对每个数字，能被整除的相应位置反转状态，最后只需要统计其中为1的数量即可</li>
+<li>n值小的时候，性能比直接找出规律的方案差不了多少，主要的耗时操作是两重循环，所以这种方案也只有n较小<br>才可行，题目的目的是让我们找出规律，使用O(1)的算法。</li>
+<li>最后，代码如下:<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=bulbswitch.cc"></script></li>
+</ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first ]]>

@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-3.png">
 <meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-4.png">
 <meta property="og:image" content="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-5.png">
-<meta property="og:updated_time" content="2016-02-28T14:13:30.000Z">
+<meta property="og:updated_time" content="2016-04-11T07:39:09.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode-319的算法思考">
 <meta name="twitter:description" content="题目There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning of">
@@ -310,6 +310,13 @@
 <p>测试结果:<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/leetcode319-5.png" alt="leetcode-5"></p>
 <hr>
 <h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>第一种最符合程序员解决问题的思维，也很容易理解。后面的方法已经脱离了问题，变成了纯粹的数学问题<br>无奈第一种性能要差得多。这大概就是提醒我们，抽象生活问题成数学问题，然后去解决它吧。很惭愧，我<br>没有通过分析问题去提炼其中的数学规律，而是凭感觉试出来的，<br>最后，学到的是go中的函数参数了，顺便复习了C语言的一些内容。</p>
+<h1 id="u540E_u8BB0"><a href="#u540E_u8BB0" class="headerlink" title="后记"></a>后记</h1><ul>
+<li>未改进的版本相比改进版本来说，主要的耗时操作是两重循环，一个是O(N^2),一个是O(1);因此只有在n比较小<br>时，下文针对未改进版本优化才有价值</li>
+<li>对于这种状态转换问题，可以使用bitset解决，由于STL对位图的优化，每个状态位只占1个bit,比bool变量都<br>快，而且调式更为方便，效率也比数组高很多。</li>
+<li>针对每个数字，能被整除的相应位置反转状态，最后只需要统计其中为1的数量即可</li>
+<li>n值小的时候，性能比直接找出规律的方案差不了多少，主要的耗时操作是两重循环，所以这种方案也只有n较小<br>才可行，题目的目的是让我们找出规律，使用O(1)的算法。</li>
+<li>最后，代码如下:<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=bulbswitch.cc"></script></li>
+</ul>
 
       
     </div>
@@ -321,7 +328,7 @@
         <p><span>本文标题:</span><a href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 linghutf 的个人博客">linghutf</a></p>
         <p><span>发布时间:</span>2016年01月21日 - 14时49分</p>
-        <p><span>最后更新:</span>2016年02月28日 - 22时13分</p>
+        <p><span>最后更新:</span>2016年04月11日 - 15时39分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/21/leetcode319/" title="leetcode-319的算法思考">http://linghutf.gitcafe.io/2016/01/21/leetcode319/</a>
             <span class="copy-path" data-clipboard-text="原文: http://linghutf.gitcafe.io/2016/01/21/leetcode319/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -359,7 +366,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u76EE"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u9898_u76EE_u542B_u4E49"><span class="toc-number">1.1.</span> <span class="toc-text">题目含义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u89E3_u6CD5"><span class="toc-number"></span> <span class="toc-text">解法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_u76F4_u89C2_u89E3_u6CD5"><span class="toc-number">1.</span> <span class="toc-text">1.直观解法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u601D_u8DEF"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_u8FDB_u9636_u65B9_u6848"><span class="toc-number">2.</span> <span class="toc-text">2.进阶方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_u6700_u7EC8_u89E3_u6CD5"><span class="toc-number">3.</span> <span class="toc-text">3.最终解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_u4E09_u79CD_u89E3_u6CD5_u7684_u5355_u5143_u3001_u6027_u80FD_u6D4B_u8BD5"><span class="toc-number">4.</span> <span class="toc-text">4.三种解法的单元、性能测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u76EE"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u9898_u76EE_u542B_u4E49"><span class="toc-number">1.1.</span> <span class="toc-text">题目含义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u89E3_u6CD5"><span class="toc-number"></span> <span class="toc-text">解法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_u76F4_u89C2_u89E3_u6CD5"><span class="toc-number">1.</span> <span class="toc-text">1.直观解法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u601D_u8DEF"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_u8FDB_u9636_u65B9_u6848"><span class="toc-number">2.</span> <span class="toc-text">2.进阶方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_u6700_u7EC8_u89E3_u6CD5"><span class="toc-number">3.</span> <span class="toc-text">3.最终解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_u4E09_u79CD_u89E3_u6CD5_u7684_u5355_u5143_u3001_u6027_u80FD_u6D4B_u8BD5"><span class="toc-number">4.</span> <span class="toc-text">4.三种解法的单元、性能测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number"></span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u540E_u8BB0"><span class="toc-number"></span> <span class="toc-text">后记</span></a>
 </div>
 <style>
     .left-col .switch-btn {

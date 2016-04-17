@@ -326,14 +326,14 @@
 <ul>
 <li>主要分为partiiton和sort两个阶段，使用STL自带的快排实现</li>
 <li>注意,STL的sort会在递归sort层数过多时变成堆排序，虽然时间复杂度都是O(NlgN),但是这种测试只是作为一种参考</li>
-<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"><br>#####STL的sort所用时间<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=quicksort.cc"></script>
+<li>而且系统在每一次递归调用时都会保存栈信息，递归层数太多会导致栈溢出。所以，在海量数据排序一次性排序中，使用快排并不现实。基本都会借助归并的思想去分块排序然后合并。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_qsort.png" alt="qsort"><h5 id="STL_u7684sort_u6240_u7528_u65F6_u95F4"><a href="#STL_u7684sort_u6240_u7528_u65F6_u95F4" class="headerlink" title="STL的sort所用时间"></a>STL的sort所用时间</h5><script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=quicksort.cc"></script>
 
 </li>
 </ul>
 <p>###2. <strong>二叉树排序</strong></p>
 <ul>
 <li>测试中使用的红黑树实现的有序multiset,由于红黑树查询、删除、插入的时间复杂度均为O(lgK),因此遍历一遍数据之后时间复杂度就是O(NlgN)了</li>
-<li>但是可能在茶如大量数据时频繁创建和改变节点属性，因此综合性能可能不如快速排序。以下的时间即可说明这个问题。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"><br>#####红黑树实现的排序所用时间<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=hashsort.cc"></script>
+<li>但是可能在茶如大量数据时频繁创建和改变节点属性，因此综合性能可能不如快速排序。以下的时间即可说明这个问题。<br><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_hashsort.png" alt="hashsort"><h5 id="u7EA2_u9ED1_u6811_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4"><a href="#u7EA2_u9ED1_u6811_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4" class="headerlink" title="红黑树实现的排序所用时间"></a>红黑树实现的排序所用时间</h5><script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=hashsort.cc"></script>
 
 </li>
 </ul>
@@ -344,8 +344,7 @@
 <li>另一个问题就是C/C++程序运行时分配的栈空间是有限制的，分配几百M的内存运行时就会报错，所以我们需要使用dynamic_bitset,这种动态bitset由boost库实现，是在堆上分配的内存，因此突破了限制。<br>-与bitset不同之处还有dynamic_bitset的set效率没有STL bitset高。</li>
 </ul>
 <p><img src="http://7xr8se.com1.z0.glb.clouddn.com/huge_bitsort.png" alt="bitsort"></p>
-<p>#####位图实现的排序所用时间</p>
-<script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=bitsort.cc"></script>
+<h5 id="u4F4D_u56FE_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4"><a href="#u4F4D_u56FE_u5B9E_u73B0_u7684_u6392_u5E8F_u6240_u7528_u65F6_u95F4" class="headerlink" title="位图实现的排序所用时间"></a>位图实现的排序所用时间</h5><script src="https://gist.github.com/linghutf/4a0ab262600edda6f944b3eb95569ee9.js?file=bitsort.cc"></script>
 
 <h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a><strong>总结</strong></h2><ol>
 <li>在上面的结果中，可以看出，因为快排不是单纯地快排，STL内部的内存分配等都有优化，因此出现了比位图排序快的情况</li>

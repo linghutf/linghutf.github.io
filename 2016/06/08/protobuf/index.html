@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Protobuf使用手册 | 欢迎来到linghutf的博客!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Protobuf协议文件定义选择版本
+syntax 声明可以选择protobuf的编译器版本(v2和v3)
+syntax=&amp;quot;proto2&amp;quot;;选择2版本，各个字段必须明确标注编号以确定序列化后二进制数据字段的位置
+syntax=&amp;quot;proto3&amp;quot;;选择3版本,没有强制使用字段编号
+
+
+
+字段修饰符
+required 
+对于required的字段而言，编号初值是必">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Protobuf使用手册">
+<meta property="og:url" content="http://linghutf.gitcafe.io/2016/06/08/protobuf/index.html">
+<meta property="og:site_name" content="欢迎来到linghutf的博客!">
+<meta property="og:description" content="Protobuf协议文件定义选择版本
+syntax 声明可以选择protobuf的编译器版本(v2和v3)
+syntax=&amp;quot;proto2&amp;quot;;选择2版本，各个字段必须明确标注编号以确定序列化后二进制数据字段的位置
+syntax=&amp;quot;proto3&amp;quot;;选择3版本,没有强制使用字段编号
+
+
+
+字段修饰符
+required 
+对于required的字段而言，编号初值是必">
+<meta property="og:updated_time" content="2016-06-08T14:15:08.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Protobuf使用手册">
+<meta name="twitter:description" content="Protobuf协议文件定义选择版本
+syntax 声明可以选择protobuf的编译器版本(v2和v3)
+syntax=&amp;quot;proto2&amp;quot;;选择2版本，各个字段必须明确标注编号以确定序列化后二进制数据字段的位置
+syntax=&amp;quot;proto3&amp;quot;;选择3版本,没有强制使用字段编号
+
+
+
+字段修饰符
+required 
+对于required的字段而言，编号初值是必">
+  
+    <link rel="alternative" href="/atom.xml" title="欢迎来到linghutf的博客!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//img/favicon.jpg">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="//img/Ricciportrait.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">linghutf</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">林花谢了春红，太匆匆!</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives">历史</a></li>
+                        
+                            <li><a href="/tags">标签</a></li>
+                        
+                            <li><a href="/categories">分类</a></li>
+                        
+                            <li><a href="/about">简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
+                            
+                                <a class="fl v2ex" target="_blank" href="https://v2ex.com/member/linghutf" title="v2ex">v2ex</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                                <a class="fl segmentfault" target="_blank" href="http://segmentfault.com/u/linghutf" title="segmentfault">segmentfault</a>
+                            
+                                <a class="fl douban" target="_blank" href="http://www.douban.com/people/47914461/" title="douban">douban</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Makefile/" style="font-size: 10px;">Makefile</a> <a href="/tags/STL/" style="font-size: 15px;">STL</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/ab/" style="font-size: 10px;">ab</a> <a href="/tags/aes/" style="font-size: 10px;">aes</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/beego/" style="font-size: 10px;">beego</a> <a href="/tags/c/" style="font-size: 20px;">c++</a> <a href="/tags/cmake/" style="font-size: 10px;">cmake</a> <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/go/" style="font-size: 20px;">go</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/mutex/" style="font-size: 10px;">mutex</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/program-language/" style="font-size: 10px;">program language</a> <a href="/tags/program-schedule/" style="font-size: 15px;">program schedule</a> <a href="/tags/protobuf/" style="font-size: 10px;">protobuf</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/serialization/" style="font-size: 10px;">serialization</a> <a href="/tags/server/" style="font-size: 15px;">server</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/webbench/" style="font-size: 10px;">webbench</a> <a href="/tags/基础技术/" style="font-size: 10px;">基础技术</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">喜欢历史、文学、代码、数学以及安静的美。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">linghutf</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="//img/Ricciportrait.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">linghutf</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">林花谢了春红，太匆匆!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives">历史</a></li>
+                
+                    <li><a href="/tags">标签</a></li>
+                
+                    <li><a href="/categories">分类</a></li>
+                
+                    <li><a href="/about">简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
+                    
+                        <a class="v2ex" target="_blank" href="https://v2ex.com/member/linghutf" title="v2ex">v2ex</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                        <a class="segmentfault" target="_blank" href="http://segmentfault.com/u/linghutf" title="segmentfault">segmentfault</a>
+                    
+                        <a class="douban" target="_blank" href="http://www.douban.com/people/47914461/" title="douban">douban</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-protobuf" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/08/protobuf/" class="article-date">
+      <time datetime="2016-06-08T14:14:18.000Z" itemprop="datePublished">2016-06-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Protobuf使用手册
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmake/">cmake</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/protobuf/">protobuf</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49"><a href="#Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49" class="headerlink" title="Protobuf协议文件定义"></a>Protobuf协议文件定义</h2><h3 id="u9009_u62E9_u7248_u672C"><a href="#u9009_u62E9_u7248_u672C" class="headerlink" title="选择版本"></a>选择版本</h3><ul>
+<li><code>syntax</code> 声明可以选择protobuf的编译器版本(v2和v3)<ul>
+<li><code>syntax=&quot;proto2&quot;;</code>选择2版本，各个字段必须明确标注编号以确定序列化后二进制数据字段的位置</li>
+<li><code>syntax=&quot;proto3&quot;;</code>选择3版本,没有强制使用字段编号</li>
+</ul>
+</li>
+</ul>
+<h3 id="u5B57_u6BB5_u4FEE_u9970_u7B26"><a href="#u5B57_u6BB5_u4FEE_u9970_u7B26" class="headerlink" title="字段修饰符"></a>字段修饰符</h3><ul>
+<li><code>required</code> <ul>
+<li>对于required的字段而言，编号初值是必须要提供的，否则字段的便是未初始化的</li>
+<li>对于修饰符为required的字段，序列化的时候必须给予初始化,否则程序运行会异常</li>
+</ul>
+</li>
+<li><code>optional</code><ul>
+<li>对于optional的字段而言，如果未进行初始化，那么一个默认值将赋予该字段编号</li>
+<li>也可以指定默认值,如示例所示.</li>
+</ul>
+</li>
+<li><code>repeated</code><ul>
+<li>对于repeated的字段而言，该字段可以重复多个，即每个编码单元可能有多个该字段</li>
+<li>在高级语言里面，我们可以通过数组来实现，而在proto定义文件中可以使用repeated来修饰，从而达到相同目的。</li>
+<li>当然，出现0次也是包含在内的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="u5B57_u6BB5_u7C7B_u578B"><a href="#u5B57_u6BB5_u7C7B_u578B" class="headerlink" title="字段类型"></a>字段类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">proto Type</th>
+<th style="text-align:center">C++ Type</th>
+<th style="text-align:center">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">有符号32位整型数,非固定长度编码,编码效率比sint32低</td>
+</tr>
+<tr>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">有符号64位整型数,非固定长度编码</td>
+</tr>
+<tr>
+<td style="text-align:center">uint32</td>
+<td style="text-align:center">uint32</td>
+<td style="text-align:center">无符号32位整型数,非固定长度编码</td>
+</tr>
+<tr>
+<td style="text-align:center">uint64</td>
+<td style="text-align:center">uint64</td>
+<td style="text-align:center">无符号64位整型数,非固定长度编码</td>
+</tr>
+<tr>
+<td style="text-align:center">sint32</td>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">有符号32位整型数,非固定长度编码,效率较高</td>
+</tr>
+<tr>
+<td style="text-align:center">sint64</td>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">有符号64位整型数,非固定长度编码,效率较高</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed32</td>
+<td style="text-align:center">uint32</td>
+<td style="text-align:center">无符号,固定4字节编码,数据大于2^28时,效率比uint32高</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed64</td>
+<td style="text-align:center">uint64</td>
+<td style="text-align:center">无符号,固定8字节编码,数据大于2^56时,效率比uint32高</td>
+</tr>
+<tr>
+<td style="text-align:center">sfixed32</td>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">有符号,固定4字节编码</td>
+</tr>
+<tr>
+<td style="text-align:center">sfixed64</td>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">有符号,固定8字节编码</td>
+</tr>
+<tr>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">布尔值</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">float</td>
+<td style="text-align:center">浮点数</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">浮点数</td>
+</tr>
+<tr>
+<td style="text-align:center">string</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">必须为UTF-8编码或者7bit ASCII字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">bytes</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">字节数组</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u5B57_u6BB5_u7C7B_u578B_u5BF9_u5E94_u4E8C_u8FDB_u5236_u7C7B_u578B"><a href="#u5B57_u6BB5_u7C7B_u578B_u5BF9_u5E94_u4E8C_u8FDB_u5236_u7C7B_u578B" class="headerlink" title="字段类型对应二进制类型"></a>字段类型对应二进制类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">字段类型</th>
+<th style="text-align:center">二进制类型</th>
+<th style="text-align:center">二进制编码值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">int32,int64,uint32,uint64,sint32,sint64,bool,enum</td>
+<td style="text-align:center">Varint(可变长度int)</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed64,sfixed64,double</td>
+<td style="text-align:center">64bit固定长度</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">string,bytes,inner messages(内部嵌套),packaed repeated fields(repeated字段)</td>
+<td style="text-align:center">Length-delimited</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">groups(deprecated)</td>
+<td style="text-align:center">Start group</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">groups(deprecated)</td>
+<td style="text-align:center">Endd group</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed32,sfixed32,float</td>
+<td style="text-align:center">32bit固定长度</td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u6570_u636E_u7F16_u7801_u539F_u5219"><a href="#u6570_u636E_u7F16_u7801_u539F_u5219" class="headerlink" title="数据编码原则"></a>数据编码原则</h3><h4 id="1-Varints_u7F16_u7801_u89C4_u5219"><a href="#1-Varints_u7F16_u7801_u89C4_u5219" class="headerlink" title="1.Varints编码规则"></a>1.Varints编码规则</h4><ul>
+<li>protobuf编码基础是Varints,Varints是将一个整数序列化为一个或多个Bytes的方法,越小的整数，使用的Bytes越少<ul>
+<li>每个byte最高位(msb)是标志位,0表示是最后一个byte,1表示该字段值还有后续byte</li>
+<li>每个byte低7位存放数值</li>
+<li>Varints使用Little Endian(小端)字节序</li>
+</ul>
+</li>
+<li>转换示例</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dec(<span class="number">300</span>) </span><br><span class="line">=&gt; bin(<span class="number">00000001</span> <span class="number">00101100</span>) </span><br><span class="line">=&gt; Little(<span class="number">00101100</span> <span class="number">00000001</span>) </span><br><span class="line">=&gt; Encode(<span class="number">10101100</span> <span class="number">00000010</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2-_u6D88_u606F_u7F16_u7801_u89C4_u5219"><a href="#2-_u6D88_u606F_u7F16_u7801_u89C4_u5219" class="headerlink" title="2.消息编码规则"></a>2.消息编码规则</h4><ul>
+<li>message都是以一组或多组key-value对组成,key和value分别采用不同的编码方式</li>
+<li>序列化时，将message中所有key-value序列化成二进制字节流。反序列化时，解析出所有key-value对，<br>如果遇到无法识别的类型，则直接跳过。这种机制保证了旧有的编/解码在协议添加新的字段时，依旧可以正常工作</li>
+<li>key由两部分组成，一部分是在定义消息时对字段的编号（field_num），另一部分是字段类型（wire_type）</li>
+<li>key编码方式<code>filed_num&lt;&lt;3|wire_type</code>，编码后的二进制长度是<code>变长</code>的</li>
+<li>varint(wire_type=0)编码规则:<ul>
+<li>int32,int64直接按照varint方法来编码,因此-1,-2这种负数由于补码数表示有很多1,所占的byte也比较多</li>
+<li>sint32,sint64采用<code>Zigzag</code>方法来避免上述问题</li>
+<li>首先采用Zigzag方法，将正数、0和负数映射到无符号数上</li>
+<li>再采用varint编码方法</li>
+<li><code>Zigzag</code>映射规则</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Zigzag(n) = (n&lt;&lt;<span class="number">1</span>)^(n&gt;&gt;<span class="number">31</span>) ,n为sint32时</span><br><span class="line">Zigzag(n) = (n&lt;&lt;<span class="number">1</span>)^(n&gt;&gt;<span class="number">63</span>) ,n为sint64时</span><br></pre></td></tr></table></figure>
+<ul>
+<li>映射值表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Original(原始值)</th>
+<th style="text-align:center">(编码后的值)EncodeAs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">-2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">-3</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">2147483647</td>
+<td style="text-align:center">4294967294</td>
+</tr>
+<tr>
+<td style="text-align:center">-2147483648</td>
+<td style="text-align:center">4294967295</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>64bit(wire_type=1)和32bit(wire_type=5)编码是在key后更上Little Endian字节的数值</li>
+<li><p>length-delimited(wire_type=2)的编码方式：key+length+content</p>
+<ul>
+<li>key的编码方式是统一的</li>
+<li>length采用varints编码方式</li>
+<li>content就是由length指定的长度的Bytes</li>
+</ul>
+</li>
+<li><p>完整示例</p>
+<ul>
+<li><p>info.proto</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">message Test&#123;</span><br><span class="line">    required int32 uid = <span class="number">1</span>;</span><br><span class="line">    optional sint32 gid = <span class="number">2</span>;</span><br><span class="line">    repeated int32 rid = <span class="number">3</span>;</span><br><span class="line">    optional sint32 neg = <span class="number">4</span>;</span><br><span class="line">    optional int64 uuid = <span class="number">5</span>;</span><br><span class="line">    optional sint64 ttid = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Test t;</span><br><span class="line">t.set_uid(<span class="number">300</span>);<span class="comment">// int32 1</span></span><br><span class="line"></span><br><span class="line">t.set_gid(<span class="number">1</span>); <span class="comment">//sint32 2</span></span><br><span class="line"></span><br><span class="line">t.add_rid(<span class="number">1</span>); <span class="comment">//int32 3</span></span><br><span class="line">t.add_rid(<span class="number">2</span>);</span><br><span class="line">t.add_rid(<span class="number">3</span>);</span><br><span class="line">t.add_rid(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">t.set_neg(-<span class="number">1</span>);<span class="comment">//sint32 4</span></span><br><span class="line">t.set_uuid()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>二进制表示</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">      00001000 10101100 00000010       //uid , 8|0 = 00001000 , 300 = 10101100 00000010 (int32 Encode)</span><br><span class="line">      00010000 00000010                //gid , 16|0= 00010000 ,  1  = 00000010          (sint32 Encode)</span><br><span class="line">      00011000 00000001                //rid , 48|0= 00011000 ,  1  = 00000001          (int32 Encode)</span><br><span class="line">      00011000 00000010                //rid ,       -        ,  2</span><br><span class="line">      00011000 00000011                //rid ,       -        ,  3</span><br><span class="line">      00011000 11111111(9次)  00000001 //rid ,       -        ,  -1 = varint编码</span><br><span class="line">      00100000 00000001                //neg , 64|0= 00100000 ,  -1 = 1 = 00000001,     (sin32,Zigzag编码)</span><br><span class="line">      00101000 11111111(9次)  00000001 //uuid, 80|0=00101000  ,  -1 = varint编码,不定长 (int64 Encode)</span><br><span class="line">      00110000 11111110 11111111(3次) 00001111  //ttid, 128</span><br><span class="line">      </span><br><span class="line">    ``` </span><br><span class="line">#### 3.编解码字段顺序</span><br><span class="line">- 编解码与字段顺序无关,由key-value机制就能保证</span><br><span class="line">- 对于未知的字段，编码的时候会把它写在序列化完的已知字段后面</span><br><span class="line"></span><br><span class="line">### 嵌套与引用</span><br><span class="line"></span><br><span class="line">#### 1.嵌套定义</span><br><span class="line">- `message`定义中可以嵌套定义`message`,`enum`</span><br><span class="line">- 嵌套定义的单元外部可见，引用路径由外到内逐层引用</span><br><span class="line"></span><br><span class="line">#### 2.引用</span><br><span class="line">- 定义`package`相当于C++的`namespace`,外部引用时需要package名</span><br><span class="line">- 引用外部message定义，只需要`import`外部proto文件即可使用</span><br><span class="line">- 引用使用相对路径,生成文件时protobuf可以自动处理</span><br><span class="line"></span><br><span class="line">### 完整示例</span><br><span class="line"></span><br><span class="line">- user.proto</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">//user.proto</span><br><span class="line"></span><br><span class="line">syntax="proto2“;</span><br><span class="line">package user;</span><br><span class="line"></span><br><span class="line">message User&#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    </span><br><span class="line">    enum PhoneType&#123;</span><br><span class="line">        NONE = 1;</span><br><span class="line">        HOME = 2;</span><br><span class="line">        MOBILE = 3;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    message PhoneNumber &#123;</span><br><span class="line">        required string number = 1;</span><br><span class="line">        optional PhoneType type = 2 [default = MOBILE];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    repeated PhoneNumber phone = 2;</span><br><span class="line">    </span><br><span class="line">    optional sfixed32 age = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message Admin &#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    optional User.PhoneNumber phone = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>room.proto</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//room.proto</span></span><br><span class="line"></span><br><span class="line">syntax=<span class="string">"proto2"</span>;</span><br><span class="line">package room;</span><br><span class="line"></span><br><span class="line">import <span class="string">"relative_dir/user.proto"</span>;</span><br><span class="line"></span><br><span class="line">message Room &#123;</span><br><span class="line">    repeated sfixed64 rid = <span class="number">1</span>;</span><br><span class="line">    repeated user.User user = <span class="number">2</span>;</span><br><span class="line">    optional <span class="keyword">double</span> profit = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Protobuf_u7F16_u8BD1_u4F7F_u7528"><a href="#Protobuf_u7F16_u8BD1_u4F7F_u7528" class="headerlink" title="Protobuf编译使用"></a>Protobuf编译使用</h2><ul>
+<li>由协议生成C++文件:<code>protoc --cpp_out=${DIR} proto-file...</code></li>
+<li>多个协议文件依赖关系:<code>protoc --cpp_out=${DIR} base-proto-file deliver-proto-file...</code></li>
+<li>依赖问题按相对路径处理import即可解决</li>
+</ul>
+<h2 id="Protobuf_u5E8F_u5217_u5316_u4E0E_u53CD_u5E8F_u5217_u5316"><a href="#Protobuf_u5E8F_u5217_u5316_u4E0E_u53CD_u5E8F_u5217_u5316" class="headerlink" title="Protobuf序列化与反序列化"></a>Protobuf序列化与反序列化</h2><h3 id="1-_u521D_u59CB_u5316"><a href="#1-_u521D_u59CB_u5316" class="headerlink" title="1.初始化"></a>1.初始化</h3><ul>
+<li><code>set_xxx()</code>设置<code>required</code>,<code>optional</code>字段值</li>
+<li><code>add_xxx()</code>添加<code>repeated</code>字段值</li>
+<li><code>set_xxx(int,x)</code>设置<code>repeated</code>中元素的值</li>
+</ul>
+<h3 id="2-_u5E8F_u5217_u5316"><a href="#2-_u5E8F_u5217_u5316" class="headerlink" title="2.序列化"></a>2.序列化</h3><ul>
+<li><code>required</code>字段需要初始化,可以通过<code>IsInitialized</code>来检查是否完成message对象的初始化</li>
+<li><code>SerializedAsString()</code>,<code>SerializedToString(std::string*)</code>序列化为std::string</li>
+<li><code>SerializedToArray(void*,int)</code>序列化为byte数组</li>
+<li><code>SerializedToOstream(ostream*)</code>序列化到输出流</li>
+<li><code>ByteSize()</code>获取二进制字节序的大小，可用于初始化存放容器</li>
+</ul>
+<h3 id="3-_u53CD_u5E8F_u5217_u5316"><a href="#3-_u53CD_u5E8F_u5217_u5316" class="headerlink" title="3.反序列化"></a>3.反序列化</h3><ul>
+<li><code>ParseFromString(std::string&amp; data)</code>从字符串中反序列化</li>
+<li><code>ParseFromArray(const void *,int)</code>从字节序中反序列化</li>
+<li><code>ParseFromIstream(istream*)</code>从输入流中反序列化</li>
+<li><code>has_xxx()</code>用于检查相应字段是否存在数据</li>
+<li><code>xxx_size()</code>用于确定<code>repeated</code>字段是否存在，0表示未序列化</li>
+</ul>
+<h3 id="4-_u83B7_u53D6_u5BF9_u8C61"><a href="#4-_u83B7_u53D6_u5BF9_u8C61" class="headerlink" title="4.获取对象"></a>4.获取对象</h3><ul>
+<li><code>xxx()</code>返回<code>required/optional</code>字段的<code>const</code>值,只读模式，返回<code>repeated</code>列表的指针,用于修改</li>
+<li><code>mutable_xxx()</code>返回字段指针,用于修改</li>
+<li><code>xxx(int)</code>返回<code>repeated</code>字段列表的元素,只读</li>
+</ul>
+<h2 id="protobuf_u5B9E_u73B0_u539F_u7406"><a href="#protobuf_u5B9E_u73B0_u539F_u7406" class="headerlink" title="protobuf实现原理"></a>protobuf实现原理</h2><h3 id="1-protobuf_u7684cache_u673A_u5236"><a href="#1-protobuf_u7684cache_u673A_u5236" class="headerlink" title="1.protobuf的cache机制"></a>1.protobuf的cache机制</h3><ul>
+<li>protobuf message的clear()操作是存在cache机制的，它并不会释放申请的空间，这导致占用的空间越来越大。</li>
+<li>如果程序中protobuf message占用的空间变化很大，那么最好每次或定期进行清理。这样可以避免内存不断的上涨。</li>
+</ul>
+<h2 id="u6CE8_u610F_u4E8B_u9879"><a href="#u6CE8_u610F_u4E8B_u9879" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>嵌套定义时，被嵌套的结构体被解析成A_B形式,需要获取<code>mutable_b()</code>指针来初始化该字段,使用栈上的对象会导致程序异常</li>
+<li>应用程序中使用protobuf,需要在退出程序时调用<code>google::protobuf::ShutdownProtobufLibrary()</code>以清理内存,否则会造成内存泄漏</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/06/08/protobuf/">Protobuf使用手册</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 linghutf 的个人博客">linghutf</a></p>
+        <p><span>发布时间:</span>2016年06月08日 - 22时14分</p>
+        <p><span>最后更新:</span>2016年06月08日 - 22时15分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/08/protobuf/" title="Protobuf使用手册">http://linghutf.gitcafe.io/2016/06/08/protobuf/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://linghutf.gitcafe.io/2016/06/08/protobuf/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/06/TCP传输文件和对象序列化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TCP传输文件和对象序列化</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49"><span class="toc-number">1.</span> <span class="toc-text">Protobuf协议文件定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u9009_u62E9_u7248_u672C"><span class="toc-number">1.1.</span> <span class="toc-text">选择版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u4FEE_u9970_u7B26"><span class="toc-number">1.2.</span> <span class="toc-text">字段修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u7C7B_u578B"><span class="toc-number">1.3.</span> <span class="toc-text">字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u7C7B_u578B_u5BF9_u5E94_u4E8C_u8FDB_u5236_u7C7B_u578B"><span class="toc-number">1.4.</span> <span class="toc-text">字段类型对应二进制类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6570_u636E_u7F16_u7801_u539F_u5219"><span class="toc-number">1.5.</span> <span class="toc-text">数据编码原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Varints_u7F16_u7801_u89C4_u5219"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.Varints编码规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_u6D88_u606F_u7F16_u7801_u89C4_u5219"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.消息编码规则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u7F16_u8BD1_u4F7F_u7528"><span class="toc-number">2.</span> <span class="toc-text">Protobuf编译使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u5E8F_u5217_u5316_u4E0E_u53CD_u5E8F_u5217_u5316"><span class="toc-number">3.</span> <span class="toc-text">Protobuf序列化与反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_u521D_u59CB_u5316"><span class="toc-number">3.1.</span> <span class="toc-text">1.初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_u5E8F_u5217_u5316"><span class="toc-number">3.2.</span> <span class="toc-text">2.序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_u53CD_u5E8F_u5217_u5316"><span class="toc-number">3.3.</span> <span class="toc-text">3.反序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_u83B7_u53D6_u5BF9_u8C61"><span class="toc-number">3.4.</span> <span class="toc-text">4.获取对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#protobuf_u5B9E_u73B0_u539F_u7406"><span class="toc-number">4.</span> <span class="toc-text">protobuf实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-protobuf_u7684cache_u673A_u5236"><span class="toc-number">4.1.</span> <span class="toc-text">1.protobuf的cache机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6CE8_u610F_u4E8B_u9879"><span class="toc-number">5.</span> <span class="toc-text">注意事项</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/06/08/protobuf/" data-title="Protobuf使用手册" data-url="http://linghutf.gitcafe.io/2016/06/08/protobuf/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"linghutf"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/05/06/TCP传输文件和对象序列化/" title="下一篇: TCP传输文件和对象序列化">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/08/protobuf/">Protobuf使用手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/06/TCP传输文件和对象序列化/">TCP传输文件和对象序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/HashTable/">HashTable实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/C++11多线程同步互斥初探/">C++11多线程同步互斥初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/C++位图排序解决亿级数量问题/">位图解决海量数据排序问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/STL的有序和无序哈希容器/">STL的有序和无序哈希容器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/Linux下C-C-动态库的生成和加载/">Linux下C/C++动态库的生成和加载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/C++四种转型cast/">C++四种转型cast</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/25/secretsys-md/">个人密码存储在线服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/20160222/">在外的元宵节</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/springsemister/">进展汇总,新阶段计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/winter-vacation/">写在放假之前</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/leetcode319/">leetcode-319的算法思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/firstsnow/">2016年第一场雪想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/golangserv/">图片服务器的Nodejs和Go版本性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/staticfileserv/">静态文件服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/schedule/">最近及假期之间的个人计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/bloghelp/">Hexo静态博客建立指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/languages/">关于合适语言的一点看法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/factor/">大数阶乘截断</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/first_20160108/">我的个人博客终于搭建成功啦!</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/latex-20160109/">latex使用小结</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 linghutf
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 21;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+  </div>
+</body>
+</html>

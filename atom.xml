@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.gitcafe.io/"/>
-  <updated>2016-03-20T08:15:47.000Z</updated>
+  <updated>2016-06-08T14:15:08.506Z</updated>
   <id>http://linghutf.gitcafe.io/</id>
   
   <author>
@@ -13,6 +13,342 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Protobuf使用手册]]></title>
+    <link href="http://linghutf.gitcafe.io/2016/06/08/protobuf/"/>
+    <id>http://linghutf.gitcafe.io/2016/06/08/protobuf/</id>
+    <published>2016-06-08T14:14:18.000Z</published>
+    <updated>2016-06-08T14:15:08.506Z</updated>
+    <content type="html"><![CDATA[<h2 id="Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49"><a href="#Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49" class="headerlink" title="Protobuf协议文件定义"></a>Protobuf协议文件定义</h2><h3 id="u9009_u62E9_u7248_u672C"><a href="#u9009_u62E9_u7248_u672C" class="headerlink" title="选择版本"></a>选择版本</h3><ul>
+<li><code>syntax</code> 声明可以选择protobuf的编译器版本(v2和v3)<ul>
+<li><code>syntax=&quot;proto2&quot;;</code>选择2版本，各个字段必须明确标注编号以确定序列化后二进制数据字段的位置</li>
+<li><code>syntax=&quot;proto3&quot;;</code>选择3版本,没有强制使用字段编号</li>
+</ul>
+</li>
+</ul>
+<h3 id="u5B57_u6BB5_u4FEE_u9970_u7B26"><a href="#u5B57_u6BB5_u4FEE_u9970_u7B26" class="headerlink" title="字段修饰符"></a>字段修饰符</h3><ul>
+<li><code>required</code> <ul>
+<li>对于required的字段而言，编号初值是必须要提供的，否则字段的便是未初始化的</li>
+<li>对于修饰符为required的字段，序列化的时候必须给予初始化,否则程序运行会异常</li>
+</ul>
+</li>
+<li><code>optional</code><ul>
+<li>对于optional的字段而言，如果未进行初始化，那么一个默认值将赋予该字段编号</li>
+<li>也可以指定默认值,如示例所示.</li>
+</ul>
+</li>
+<li><code>repeated</code><ul>
+<li>对于repeated的字段而言，该字段可以重复多个，即每个编码单元可能有多个该字段</li>
+<li>在高级语言里面，我们可以通过数组来实现，而在proto定义文件中可以使用repeated来修饰，从而达到相同目的。</li>
+<li>当然，出现0次也是包含在内的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="u5B57_u6BB5_u7C7B_u578B"><a href="#u5B57_u6BB5_u7C7B_u578B" class="headerlink" title="字段类型"></a>字段类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">proto Type</th>
+<th style="text-align:center">C++ Type</th>
+<th style="text-align:center">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">有符号32位整型数,非固定长度编码,编码效率比sint32低</td>
+</tr>
+<tr>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">有符号64位整型数,非固定长度编码</td>
+</tr>
+<tr>
+<td style="text-align:center">uint32</td>
+<td style="text-align:center">uint32</td>
+<td style="text-align:center">无符号32位整型数,非固定长度编码</td>
+</tr>
+<tr>
+<td style="text-align:center">uint64</td>
+<td style="text-align:center">uint64</td>
+<td style="text-align:center">无符号64位整型数,非固定长度编码</td>
+</tr>
+<tr>
+<td style="text-align:center">sint32</td>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">有符号32位整型数,非固定长度编码,效率较高</td>
+</tr>
+<tr>
+<td style="text-align:center">sint64</td>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">有符号64位整型数,非固定长度编码,效率较高</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed32</td>
+<td style="text-align:center">uint32</td>
+<td style="text-align:center">无符号,固定4字节编码,数据大于2^28时,效率比uint32高</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed64</td>
+<td style="text-align:center">uint64</td>
+<td style="text-align:center">无符号,固定8字节编码,数据大于2^56时,效率比uint32高</td>
+</tr>
+<tr>
+<td style="text-align:center">sfixed32</td>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">有符号,固定4字节编码</td>
+</tr>
+<tr>
+<td style="text-align:center">sfixed64</td>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">有符号,固定8字节编码</td>
+</tr>
+<tr>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">布尔值</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">float</td>
+<td style="text-align:center">浮点数</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">浮点数</td>
+</tr>
+<tr>
+<td style="text-align:center">string</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">必须为UTF-8编码或者7bit ASCII字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">bytes</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">字节数组</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u5B57_u6BB5_u7C7B_u578B_u5BF9_u5E94_u4E8C_u8FDB_u5236_u7C7B_u578B"><a href="#u5B57_u6BB5_u7C7B_u578B_u5BF9_u5E94_u4E8C_u8FDB_u5236_u7C7B_u578B" class="headerlink" title="字段类型对应二进制类型"></a>字段类型对应二进制类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">字段类型</th>
+<th style="text-align:center">二进制类型</th>
+<th style="text-align:center">二进制编码值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">int32,int64,uint32,uint64,sint32,sint64,bool,enum</td>
+<td style="text-align:center">Varint(可变长度int)</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed64,sfixed64,double</td>
+<td style="text-align:center">64bit固定长度</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">string,bytes,inner messages(内部嵌套),packaed repeated fields(repeated字段)</td>
+<td style="text-align:center">Length-delimited</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">groups(deprecated)</td>
+<td style="text-align:center">Start group</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">groups(deprecated)</td>
+<td style="text-align:center">Endd group</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">fixed32,sfixed32,float</td>
+<td style="text-align:center">32bit固定长度</td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u6570_u636E_u7F16_u7801_u539F_u5219"><a href="#u6570_u636E_u7F16_u7801_u539F_u5219" class="headerlink" title="数据编码原则"></a>数据编码原则</h3><h4 id="1-Varints_u7F16_u7801_u89C4_u5219"><a href="#1-Varints_u7F16_u7801_u89C4_u5219" class="headerlink" title="1.Varints编码规则"></a>1.Varints编码规则</h4><ul>
+<li>protobuf编码基础是Varints,Varints是将一个整数序列化为一个或多个Bytes的方法,越小的整数，使用的Bytes越少<ul>
+<li>每个byte最高位(msb)是标志位,0表示是最后一个byte,1表示该字段值还有后续byte</li>
+<li>每个byte低7位存放数值</li>
+<li>Varints使用Little Endian(小端)字节序</li>
+</ul>
+</li>
+<li>转换示例</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dec(<span class="number">300</span>) </span><br><span class="line">=&gt; bin(<span class="number">00000001</span> <span class="number">00101100</span>) </span><br><span class="line">=&gt; Little(<span class="number">00101100</span> <span class="number">00000001</span>) </span><br><span class="line">=&gt; Encode(<span class="number">10101100</span> <span class="number">00000010</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2-_u6D88_u606F_u7F16_u7801_u89C4_u5219"><a href="#2-_u6D88_u606F_u7F16_u7801_u89C4_u5219" class="headerlink" title="2.消息编码规则"></a>2.消息编码规则</h4><ul>
+<li>message都是以一组或多组key-value对组成,key和value分别采用不同的编码方式</li>
+<li>序列化时，将message中所有key-value序列化成二进制字节流。反序列化时，解析出所有key-value对，<br>如果遇到无法识别的类型，则直接跳过。这种机制保证了旧有的编/解码在协议添加新的字段时，依旧可以正常工作</li>
+<li>key由两部分组成，一部分是在定义消息时对字段的编号（field_num），另一部分是字段类型（wire_type）</li>
+<li>key编码方式<code>filed_num&lt;&lt;3|wire_type</code>，编码后的二进制长度是<code>变长</code>的</li>
+<li>varint(wire_type=0)编码规则:<ul>
+<li>int32,int64直接按照varint方法来编码,因此-1,-2这种负数由于补码数表示有很多1,所占的byte也比较多</li>
+<li>sint32,sint64采用<code>Zigzag</code>方法来避免上述问题</li>
+<li>首先采用Zigzag方法，将正数、0和负数映射到无符号数上</li>
+<li>再采用varint编码方法</li>
+<li><code>Zigzag</code>映射规则</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Zigzag(n) = (n&lt;&lt;<span class="number">1</span>)^(n&gt;&gt;<span class="number">31</span>) ,n为sint32时</span><br><span class="line">Zigzag(n) = (n&lt;&lt;<span class="number">1</span>)^(n&gt;&gt;<span class="number">63</span>) ,n为sint64时</span><br></pre></td></tr></table></figure>
+<ul>
+<li>映射值表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Original(原始值)</th>
+<th style="text-align:center">(编码后的值)EncodeAs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">-2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">-3</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">2147483647</td>
+<td style="text-align:center">4294967294</td>
+</tr>
+<tr>
+<td style="text-align:center">-2147483648</td>
+<td style="text-align:center">4294967295</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>64bit(wire_type=1)和32bit(wire_type=5)编码是在key后更上Little Endian字节的数值</li>
+<li><p>length-delimited(wire_type=2)的编码方式：key+length+content</p>
+<ul>
+<li>key的编码方式是统一的</li>
+<li>length采用varints编码方式</li>
+<li>content就是由length指定的长度的Bytes</li>
+</ul>
+</li>
+<li><p>完整示例</p>
+<ul>
+<li><p>info.proto</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">message Test&#123;</span><br><span class="line">    required int32 uid = <span class="number">1</span>;</span><br><span class="line">    optional sint32 gid = <span class="number">2</span>;</span><br><span class="line">    repeated int32 rid = <span class="number">3</span>;</span><br><span class="line">    optional sint32 neg = <span class="number">4</span>;</span><br><span class="line">    optional int64 uuid = <span class="number">5</span>;</span><br><span class="line">    optional sint64 ttid = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Test t;</span><br><span class="line">t.set_uid(<span class="number">300</span>);<span class="comment">// int32 1</span></span><br><span class="line"></span><br><span class="line">t.set_gid(<span class="number">1</span>); <span class="comment">//sint32 2</span></span><br><span class="line"></span><br><span class="line">t.add_rid(<span class="number">1</span>); <span class="comment">//int32 3</span></span><br><span class="line">t.add_rid(<span class="number">2</span>);</span><br><span class="line">t.add_rid(<span class="number">3</span>);</span><br><span class="line">t.add_rid(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">t.set_neg(-<span class="number">1</span>);<span class="comment">//sint32 4</span></span><br><span class="line">t.set_uuid()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>二进制表示</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">      00001000 10101100 00000010       //uid , 8|0 = 00001000 , 300 = 10101100 00000010 (int32 Encode)</span><br><span class="line">      00010000 00000010                //gid , 16|0= 00010000 ,  1  = 00000010          (sint32 Encode)</span><br><span class="line">      00011000 00000001                //rid , 48|0= 00011000 ,  1  = 00000001          (int32 Encode)</span><br><span class="line">      00011000 00000010                //rid ,       -        ,  2</span><br><span class="line">      00011000 00000011                //rid ,       -        ,  3</span><br><span class="line">      00011000 11111111(9次)  00000001 //rid ,       -        ,  -1 = varint编码</span><br><span class="line">      00100000 00000001                //neg , 64|0= 00100000 ,  -1 = 1 = 00000001,     (sin32,Zigzag编码)</span><br><span class="line">      00101000 11111111(9次)  00000001 //uuid, 80|0=00101000  ,  -1 = varint编码,不定长 (int64 Encode)</span><br><span class="line">      00110000 11111110 11111111(3次) 00001111  //ttid, 128</span><br><span class="line">      </span><br><span class="line">    ``` </span><br><span class="line">#### 3.编解码字段顺序</span><br><span class="line">- 编解码与字段顺序无关,由key-value机制就能保证</span><br><span class="line">- 对于未知的字段，编码的时候会把它写在序列化完的已知字段后面</span><br><span class="line"></span><br><span class="line">### 嵌套与引用</span><br><span class="line"></span><br><span class="line">#### 1.嵌套定义</span><br><span class="line">- `message`定义中可以嵌套定义`message`,`enum`</span><br><span class="line">- 嵌套定义的单元外部可见，引用路径由外到内逐层引用</span><br><span class="line"></span><br><span class="line">#### 2.引用</span><br><span class="line">- 定义`package`相当于C++的`namespace`,外部引用时需要package名</span><br><span class="line">- 引用外部message定义，只需要`import`外部proto文件即可使用</span><br><span class="line">- 引用使用相对路径,生成文件时protobuf可以自动处理</span><br><span class="line"></span><br><span class="line">### 完整示例</span><br><span class="line"></span><br><span class="line">- user.proto</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">//user.proto</span><br><span class="line"></span><br><span class="line">syntax="proto2“;</span><br><span class="line">package user;</span><br><span class="line"></span><br><span class="line">message User&#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    </span><br><span class="line">    enum PhoneType&#123;</span><br><span class="line">        NONE = 1;</span><br><span class="line">        HOME = 2;</span><br><span class="line">        MOBILE = 3;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    message PhoneNumber &#123;</span><br><span class="line">        required string number = 1;</span><br><span class="line">        optional PhoneType type = 2 [default = MOBILE];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    repeated PhoneNumber phone = 2;</span><br><span class="line">    </span><br><span class="line">    optional sfixed32 age = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message Admin &#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    optional User.PhoneNumber phone = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>room.proto</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//room.proto</span></span><br><span class="line"></span><br><span class="line">syntax=<span class="string">"proto2"</span>;</span><br><span class="line">package room;</span><br><span class="line"></span><br><span class="line">import <span class="string">"relative_dir/user.proto"</span>;</span><br><span class="line"></span><br><span class="line">message Room &#123;</span><br><span class="line">    repeated sfixed64 rid = <span class="number">1</span>;</span><br><span class="line">    repeated user.User user = <span class="number">2</span>;</span><br><span class="line">    optional <span class="keyword">double</span> profit = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Protobuf_u7F16_u8BD1_u4F7F_u7528"><a href="#Protobuf_u7F16_u8BD1_u4F7F_u7528" class="headerlink" title="Protobuf编译使用"></a>Protobuf编译使用</h2><ul>
+<li>由协议生成C++文件:<code>protoc --cpp_out=${DIR} proto-file...</code></li>
+<li>多个协议文件依赖关系:<code>protoc --cpp_out=${DIR} base-proto-file deliver-proto-file...</code></li>
+<li>依赖问题按相对路径处理import即可解决</li>
+</ul>
+<h2 id="Protobuf_u5E8F_u5217_u5316_u4E0E_u53CD_u5E8F_u5217_u5316"><a href="#Protobuf_u5E8F_u5217_u5316_u4E0E_u53CD_u5E8F_u5217_u5316" class="headerlink" title="Protobuf序列化与反序列化"></a>Protobuf序列化与反序列化</h2><h3 id="1-_u521D_u59CB_u5316"><a href="#1-_u521D_u59CB_u5316" class="headerlink" title="1.初始化"></a>1.初始化</h3><ul>
+<li><code>set_xxx()</code>设置<code>required</code>,<code>optional</code>字段值</li>
+<li><code>add_xxx()</code>添加<code>repeated</code>字段值</li>
+<li><code>set_xxx(int,x)</code>设置<code>repeated</code>中元素的值</li>
+</ul>
+<h3 id="2-_u5E8F_u5217_u5316"><a href="#2-_u5E8F_u5217_u5316" class="headerlink" title="2.序列化"></a>2.序列化</h3><ul>
+<li><code>required</code>字段需要初始化,可以通过<code>IsInitialized</code>来检查是否完成message对象的初始化</li>
+<li><code>SerializedAsString()</code>,<code>SerializedToString(std::string*)</code>序列化为std::string</li>
+<li><code>SerializedToArray(void*,int)</code>序列化为byte数组</li>
+<li><code>SerializedToOstream(ostream*)</code>序列化到输出流</li>
+<li><code>ByteSize()</code>获取二进制字节序的大小，可用于初始化存放容器</li>
+</ul>
+<h3 id="3-_u53CD_u5E8F_u5217_u5316"><a href="#3-_u53CD_u5E8F_u5217_u5316" class="headerlink" title="3.反序列化"></a>3.反序列化</h3><ul>
+<li><code>ParseFromString(std::string&amp; data)</code>从字符串中反序列化</li>
+<li><code>ParseFromArray(const void *,int)</code>从字节序中反序列化</li>
+<li><code>ParseFromIstream(istream*)</code>从输入流中反序列化</li>
+<li><code>has_xxx()</code>用于检查相应字段是否存在数据</li>
+<li><code>xxx_size()</code>用于确定<code>repeated</code>字段是否存在，0表示未序列化</li>
+</ul>
+<h3 id="4-_u83B7_u53D6_u5BF9_u8C61"><a href="#4-_u83B7_u53D6_u5BF9_u8C61" class="headerlink" title="4.获取对象"></a>4.获取对象</h3><ul>
+<li><code>xxx()</code>返回<code>required/optional</code>字段的<code>const</code>值,只读模式，返回<code>repeated</code>列表的指针,用于修改</li>
+<li><code>mutable_xxx()</code>返回字段指针,用于修改</li>
+<li><code>xxx(int)</code>返回<code>repeated</code>字段列表的元素,只读</li>
+</ul>
+<h2 id="protobuf_u5B9E_u73B0_u539F_u7406"><a href="#protobuf_u5B9E_u73B0_u539F_u7406" class="headerlink" title="protobuf实现原理"></a>protobuf实现原理</h2><h3 id="1-protobuf_u7684cache_u673A_u5236"><a href="#1-protobuf_u7684cache_u673A_u5236" class="headerlink" title="1.protobuf的cache机制"></a>1.protobuf的cache机制</h3><ul>
+<li>protobuf message的clear()操作是存在cache机制的，它并不会释放申请的空间，这导致占用的空间越来越大。</li>
+<li>如果程序中protobuf message占用的空间变化很大，那么最好每次或定期进行清理。这样可以避免内存不断的上涨。</li>
+</ul>
+<h2 id="u6CE8_u610F_u4E8B_u9879"><a href="#u6CE8_u610F_u4E8B_u9879" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>嵌套定义时，被嵌套的结构体被解析成A_B形式,需要获取<code>mutable_b()</code>指针来初始化该字段,使用栈上的对象会导致程序异常</li>
+<li>应用程序中使用protobuf,需要在退出程序时调用<code>google::protobuf::ShutdownProtobufLibrary()</code>以清理内存,否则会造成内存泄漏</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49"><a href="#Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49" class="headerlink" title="Prot]]>
+    </summary>
+    
+      <category term="c++" scheme="http://linghutf.gitcafe.io/tags/c/"/>
+    
+      <category term="cmake" scheme="http://linghutf.gitcafe.io/tags/cmake/"/>
+    
+      <category term="protobuf" scheme="http://linghutf.gitcafe.io/tags/protobuf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TCP传输文件和对象序列化]]></title>
+    <link href="http://linghutf.gitcafe.io/2016/05/06/TCP%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%E5%92%8C%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    <id>http://linghutf.gitcafe.io/2016/05/06/TCP传输文件和对象序列化/</id>
+    <published>2016-05-06T02:48:09.000Z</published>
+    <updated>2016-05-06T02:48:40.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="TCP" scheme="http://linghutf.gitcafe.io/tags/TCP/"/>
+    
+      <category term="golang" scheme="http://linghutf.gitcafe.io/tags/golang/"/>
+    
+      <category term="serialization" scheme="http://linghutf.gitcafe.io/tags/serialization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HashTable实现]]></title>
+    <link href="http://linghutf.gitcafe.io/2016/04/21/HashTable/"/>
+    <id>http://linghutf.gitcafe.io/2016/04/21/HashTable/</id>
+    <published>2016-04-21T08:19:30.000Z</published>
+    <updated>2016-04-21T08:20:21.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[C++11多线程同步互斥初探]]></title>
@@ -40,7 +376,7 @@
     <link href="http://linghutf.gitcafe.io/2016/03/10/C++%E4%BD%8D%E5%9B%BE%E6%8E%92%E5%BA%8F%E8%A7%A3%E5%86%B3%E4%BA%BF%E7%BA%A7%E6%95%B0%E9%87%8F%E9%97%AE%E9%A2%98/"/>
     <id>http://linghutf.gitcafe.io/2016/03/10/C++位图排序解决亿级数量问题/</id>
     <published>2016-03-10T03:12:43.000Z</published>
-    <updated>2016-04-11T03:49:34.724Z</updated>
+    <updated>2016-04-11T03:49:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u95EE_u9898_u6765_u6E90"><a href="#u95EE_u9898_u6765_u6E90" class="headerlink" title="问题来源"></a><strong>问题来源</strong></h2><p>  在实际运用场景里，经常会遇到把大量数据有序输出，文件的排序等等问题。一般的排序算法针对数据量不大的情况下，二叉树排序和快速排序针对现实中的随机数据时间复杂度为O(NlgN),性能表现已经很不错了，因此这两种方法被广泛使用。<br>  但是，在企业级数据量情况下，这两种排序耗费的时间就会显著增长，以至需要非常长的时间才能得到结果，而且在排序的过程中，由于插入和选择结点的操作会使得CPU满负荷工作，这对于长期工作的服务器来说是不利的。<br>  因此，在这种海量数据排序的需求刺激下，产生了一种简易的”哈希”方法，那就是位图排序。</p>
 <h2 id="u6392_u5E8F_u601D_u60F3"><a href="#u6392_u5E8F_u601D_u60F3" class="headerlink" title="排序思想"></a><strong>排序思想</strong></h2><p>  位图排序的思想非常简单，那就是将一个个数据映射到它在有序的数轴上的一点，这个数轴可以是一个数组，数字的大小就是哈希因子，所以在遍历一遍数据集，设置好这些数字的点表示之后，我们就可以根据相应位置的状态，反过来来确定数据集中是否有这个数字，由于我们是有序的遍历的，因此查找出来的数字也是有序的，这样间接地达到了我们的目的。<br>  位图很像数学中的数轴的概念，有哪些数字，就会在相应的位置标记它们，最后数据都是有序的。而且这种方法，一个数字占用的位置只有一个bit,对于0~2&lt;&lt;32的4字节非负整数范围来说，最大的数为42亿，在实际应用场景下基本足够，而所需要的空间占用大概只需要2&lt;&lt;32/8/1024^2=512M的内存，在内存占用上和效率上都有着无可比拟的优势。</p>
 <h2 id="u5B9E_u9645_u6D4B_u8BD5"><a href="#u5B9E_u9645_u6D4B_u8BD5" class="headerlink" title="实际测试"></a><strong>实际测试</strong></h2><p>说了这么多，当然需要实际测试一番，才能证明位图排序真的在海量数据排序上具有优势。<br>例如在我的服务器上，随机生成1000W个整数，现在需要将它们排序。那么对于快速排序，二叉树排序和位图排序，分别需要多少时间呢？</p>
@@ -248,7 +584,7 @@
     <link href="http://linghutf.gitcafe.io/2016/01/21/leetcode319/"/>
     <id>http://linghutf.gitcafe.io/2016/01/21/leetcode319/</id>
     <published>2016-01-21T06:49:47.000Z</published>
-    <updated>2016-04-11T07:39:09.466Z</updated>
+    <updated>2016-04-11T07:39:09.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u9898_u76EE"><a href="#u9898_u76EE" class="headerlink" title="题目"></a>题目</h2><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
 <p>Example:</p>
 <p>Given n = 3. </p>
@@ -662,64 +998,6 @@
       <category term="go" scheme="http://linghutf.gitcafe.io/tags/go/"/>
     
       <category term="python" scheme="http://linghutf.gitcafe.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[我的个人博客终于搭建成功啦!]]></title>
-    <link href="http://linghutf.gitcafe.io/2016/01/08/first_20160108/"/>
-    <id>http://linghutf.gitcafe.io/2016/01/08/first_20160108/</id>
-    <published>2016-01-08T06:56:16.000Z</published>
-    <updated>2016-01-11T12:21:09.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a href="https://github.com/linghutf" target="_blank" rel="external">github</a><br>也比较活跃，因此就想着弄一个个人博客，这样以后可以记下一些东西，而不是像现在这样，桌面或者文件夹里有很多记事的md文件了。</p>
-<h1 id="u76F8_u5173_u6280_u672F"><a href="#u76F8_u5173_u6280_u672F" class="headerlink" title="相关技术"></a>相关技术</h1><p>   最近在用golang写web程序，本来计划是自己搭建动态博客然后解析上传的md文件的，但是将近放假事情很很多，很久没有在blog项目上<br>写一行代码了，然后就想着做一个静态博客放在github上好了，今天看到别人推荐的hexo,马上在云上下载安装了。配置几步没想到就轻松地<br>成功了，看来真的是<em>Technology makes life easier</em>!就这样先跑着吧，反正云也是免费的。</p>
-<h1 id="u540E_u7EED_u5B8C_u5584"><a href="#u540E_u7EED_u5B8C_u5584" class="headerlink" title="后续完善"></a>后续完善</h1><ul>
-<li>首先页面的布局和一些细节还得完善，毕竟要好看才行。天天面对着它要是不好看我都会关了。。。</li>
-<li>国内的托管服务也得注册一个以防github访问不了。</li>
-<li>关键点是我还是比较懒的，写博客打这么多字好累，就看坚持了。</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="u8D77_u6E90"><a href="#u8D77_u6E90" class="headerlink" title="起源"></a>起源</h1><p>   不久之前学习了markdown写法之后，完全被这种简洁又富有表现力的写法吸引了，正好最近在<a h]]>
-    </summary>
-    
-      <category term="todo" scheme="http://linghutf.gitcafe.io/tags/todo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[latex使用小结]]></title>
-    <link href="http://linghutf.gitcafe.io/2016/01/08/latex-20160109/"/>
-    <id>http://linghutf.gitcafe.io/2016/01/08/latex-20160109/</id>
-    <published>2016-01-08T06:56:16.000Z</published>
-    <updated>2016-01-09T03:54:36.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex"><a href="#u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex" class="headerlink" title="为什么选择高冷的Latex"></a>为什么选择高冷的Latex</h1><p>最近要写报告，老师指定要用Latex生成，从本科起就看过王垠推荐过用Latex做这种报告类型<br>的东西，既简洁又好看，但是也有语法，还要熟悉宏，因此一直没有使用。Word里面的格式比<br>较繁琐，排版又容易出现问题，也只有将就用了。</p>
-
-<h1 id="Latex_u7684_u4F18_u52BF"><a href="#Latex_u7684_u4F18_u52BF" class="headerlink" title="Latex的优势"></a>Latex的优势</h1><ul>
-<li>有丰富的模板可选，有模板直接填进内容即可生成格式完全一致的文档，使用迅速。</li>
-<li>Latex说起来很Markdown有点类似，都是标记类型，但远比Markdown强大。</li>
-<li>它针对的是学术性的文章写作，公式写出来都很漂亮，不会出现Word那样不见了的尴尬。</li>
-<li>自己用标记控制排版对IT人士来说也是很不错的。</li>
-<li>文件都是可读的文本文件，什么编辑器都可以编辑，不像doc那样先要装一个字处理软件。</li>
-</ul>
-<h1 id="Latex_u7684_u5B89_u88C5"><a href="#Latex_u7684_u5B89_u88C5" class="headerlink" title="Latex的安装"></a>Latex的安装</h1><p>Mac下可以安装MacTex,windows下有CTex和TexLive可选，之前用的是Ctex,打开模板时经常乱码，<br>外国人发明这东西是肯定只要支持ANSI就可以了，就和早期的C语言一样，英语世界的人自己用，<br>没有想得那么长远。因此中文字库点阵需要自己添加设置，还要在文档上标记为utf-8类型才能正常<br>编辑，但是这样生成的PDF也是乱码的，总之是很繁琐。</p>
-
-<p>之后了解到latex有进化到了xelatex，中文语言已经可以处理而不需要声明包含CJK这些东西，类似<br>Next操作了，实验之后就抛弃了CTex,转而使用TextLive。来看看我写报告的效率吧!</p>
-
-<h1 id="u6587_u6863_u7684_u5236_u4F5C_u4E0E_u751F_u6210"><a href="#u6587_u6863_u7684_u5236_u4F5C_u4E0E_u751F_u6210" class="headerlink" title="文档的制作与生成"></a>文档的制作与生成</h1><ol>
-<li>TextLive自带编辑器打开模板tex文件，将标题、作者、内容等按照范例填到对应区域。</li>
-<li>使用xelatex 编译对应的tex文件，目录下即生成了同名的pdf。</li>
-</ol>
-<p>就是这么简单!对于需要插入引用和参考文献:</p><br>3. 在google学术上找到文献的bibtex引用，复制进bib文件中。<br>4. 在需要引用的文档中添加<code>\citep{bib文件中相应文献的标题}</code>。<br>5. 在tex文档应该写参考文献的部分添加<code>\bibliography{bib文件名}</code>。<br><br><p>然后重新编译tex文件一次，再使用bibtex编译一次，最后使用xelatex编译文件两次，<br>带引用的PDF文档就完成了。引用部分自动排好了引用标注。</p>
-
-<p>总的来说，就是三步:<strong>填写内容;添加引用;编译文档</strong>。也没有想象中的那种像写天书<br>语言一样的困难嘛，很多时候都是吓自己了。</p>
-
-<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>由于很多人都对标记语言有畏难情绪，认为这种东西是计算机爱好者才会有耐心去弄的东西，<br>其实一件新鲜的事情出现没有尝试我们就有了先入为主的偏见。静下心来，看一下范例，自然<br>就会了，不断地使用，我们就掌握了80%,基本可以日常使用，提高了自己的工作效率。</p><br><p>我的初步计划是放假期间熟练latex的标记，能够自己定义模板，到下半年写毕业论文就使用<br>Latex来写。Latex的图表，公式部分我都没有用到，交完作业是该好好熟悉了，比起本科时后期<br>按照学校文档规范来改的经历来说，效率要高得多，一天足够完成这些，还不会出现疏忽格式而<br>被打回修改的意外。</p>]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex"><a href="#u4E3A_u4EC0_u4E48_u9009_u62E9_u9AD8_u51B7_u7684Latex" class="headerl]]>
-    </summary>
-    
-      <category term="tools" scheme="http://linghutf.gitcafe.io/tags/tools/"/>
     
   </entry>
   

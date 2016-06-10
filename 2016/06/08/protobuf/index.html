@@ -29,7 +29,7 @@ syntax=&amp;quot;proto3&amp;quot;;选择3版本,没有强制使用字段编号
 字段修饰符
 required 
 对于required的字段而言，编号初值是必">
-<meta property="og:updated_time" content="2016-06-08T14:15:08.506Z">
+<meta property="og:updated_time" content="2016-06-10T06:04:55.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Protobuf使用手册">
 <meta name="twitter:description" content="Protobuf协议文件定义选择版本
@@ -46,10 +46,10 @@ required
     <link rel="alternative" href="/atom.xml" title="欢迎来到linghutf的博客!" type="application/atom+xml">
   
   
-    <link rel="icon" href="//img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
   
   
-      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -63,7 +63,6 @@ required
     <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
       var yiliaConfig = {
-          rootUrl: '/',
           fancybox: true,
           animate: true,
           isHome: false,
@@ -83,7 +82,7 @@ required
     <header id="header" class="inner">
         <a href="/" class="profilepic">
             
-            <img lazy-src="//img/Ricciportrait.jpg" class="js-avatar">
+            <img lazy-src="/img/Ricciportrait.jpg" class="js-avatar">
             
         </a>
 
@@ -203,7 +202,7 @@ required
         <header id="header" class="inner">
             <a href="/" class="profilepic">
                 
-                    <img lazy-src="//img/Ricciportrait.jpg" class="js-avatar">
+                    <img lazy-src="/img/Ricciportrait.jpg" class="js-avatar">
                 
             </a>
             <hgroup>
@@ -513,8 +512,8 @@ required
 </tbody>
 </table>
 <ul>
-<li>64bit(wire_type=1)和32bit(wire_type=5)编码是在key后更上Little Endian字节的数值</li>
-<li><p>length-delimited(wire_type=2)的编码方式：key+length+content</p>
+<li>64bit(wire_type=1)和32bit(wire_type=5)编码是在key后跟上Little Endian字节的数值</li>
+<li><p>string,bytes都属于length-delimited编码,length-delimited(wire_type=2)的编码方式：key+length+content</p>
 <ul>
 <li>key的编码方式是统一的</li>
 <li>length采用varints编码方式</li>
@@ -523,19 +522,39 @@ required
 </li>
 <li><p>完整示例</p>
 <ul>
-<li><p>info.proto</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">message Test&#123;</span><br><span class="line">    required int32 uid = <span class="number">1</span>;</span><br><span class="line">    optional sint32 gid = <span class="number">2</span>;</span><br><span class="line">    repeated int32 rid = <span class="number">3</span>;</span><br><span class="line">    optional sint32 neg = <span class="number">4</span>;</span><br><span class="line">    optional int64 uuid = <span class="number">5</span>;</span><br><span class="line">    optional sint64 ttid = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Test t;</span><br><span class="line">t.set_uid(<span class="number">300</span>);<span class="comment">// int32 1</span></span><br><span class="line"></span><br><span class="line">t.set_gid(<span class="number">1</span>); <span class="comment">//sint32 2</span></span><br><span class="line"></span><br><span class="line">t.add_rid(<span class="number">1</span>); <span class="comment">//int32 3</span></span><br><span class="line">t.add_rid(<span class="number">2</span>);</span><br><span class="line">t.add_rid(<span class="number">3</span>);</span><br><span class="line">t.add_rid(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">t.set_neg(-<span class="number">1</span>);<span class="comment">//sint32 4</span></span><br><span class="line">t.set_uuid()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>二进制表示</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">      00001000 10101100 00000010       //uid , 8|0 = 00001000 , 300 = 10101100 00000010 (int32 Encode)</span><br><span class="line">      00010000 00000010                //gid , 16|0= 00010000 ,  1  = 00000010          (sint32 Encode)</span><br><span class="line">      00011000 00000001                //rid , 48|0= 00011000 ,  1  = 00000001          (int32 Encode)</span><br><span class="line">      00011000 00000010                //rid ,       -        ,  2</span><br><span class="line">      00011000 00000011                //rid ,       -        ,  3</span><br><span class="line">      00011000 11111111(9次)  00000001 //rid ,       -        ,  -1 = varint编码</span><br><span class="line">      00100000 00000001                //neg , 64|0= 00100000 ,  -1 = 1 = 00000001,     (sin32,Zigzag编码)</span><br><span class="line">      00101000 11111111(9次)  00000001 //uuid, 80|0=00101000  ,  -1 = varint编码,不定长 (int64 Encode)</span><br><span class="line">      00110000 11111110 11111111(3次) 00001111  //ttid, 128</span><br><span class="line">      </span><br><span class="line">    ``` </span><br><span class="line">#### 3.编解码字段顺序</span><br><span class="line">- 编解码与字段顺序无关,由key-value机制就能保证</span><br><span class="line">- 对于未知的字段，编码的时候会把它写在序列化完的已知字段后面</span><br><span class="line"></span><br><span class="line">### 嵌套与引用</span><br><span class="line"></span><br><span class="line">#### 1.嵌套定义</span><br><span class="line">- `message`定义中可以嵌套定义`message`,`enum`</span><br><span class="line">- 嵌套定义的单元外部可见，引用路径由外到内逐层引用</span><br><span class="line"></span><br><span class="line">#### 2.引用</span><br><span class="line">- 定义`package`相当于C++的`namespace`,外部引用时需要package名</span><br><span class="line">- 引用外部message定义，只需要`import`外部proto文件即可使用</span><br><span class="line">- 引用使用相对路径,生成文件时protobuf可以自动处理</span><br><span class="line"></span><br><span class="line">### 完整示例</span><br><span class="line"></span><br><span class="line">- user.proto</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">//user.proto</span><br><span class="line"></span><br><span class="line">syntax="proto2“;</span><br><span class="line">package user;</span><br><span class="line"></span><br><span class="line">message User&#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    </span><br><span class="line">    enum PhoneType&#123;</span><br><span class="line">        NONE = 1;</span><br><span class="line">        HOME = 2;</span><br><span class="line">        MOBILE = 3;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    message PhoneNumber &#123;</span><br><span class="line">        required string number = 1;</span><br><span class="line">        optional PhoneType type = 2 [default = MOBILE];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    repeated PhoneNumber phone = 2;</span><br><span class="line">    </span><br><span class="line">    optional sfixed32 age = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message Admin &#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    optional User.PhoneNumber phone = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>type.proto</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">message IntType &#123;</span><br><span class="line">	optional int32 a_i32 = <span class="number">1</span>;</span><br><span class="line">	optional int64 b_i64 = <span class="number">2</span>;</span><br><span class="line">	optional sint32 c_s32 = <span class="number">3</span>;</span><br><span class="line">	optional sint64 d_s64 = <span class="number">4</span>;</span><br><span class="line">	optional sfixed32 e_sf32 = <span class="number">5</span>;</span><br><span class="line">	optional sfixed64 f_sf64 = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message UIntType &#123;</span><br><span class="line">	optional uint32 a_u32 = <span class="number">1</span>;</span><br><span class="line">	optional uint64 b_u64 = <span class="number">2</span>;</span><br><span class="line">	optional fixed32 c_f32 = <span class="number">3</span>;</span><br><span class="line">	optional fixed64 d_f64 = <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message FType&#123;</span><br><span class="line">	optional <span class="keyword">float</span> a_f = <span class="number">1</span>;</span><br><span class="line">	optional <span class="keyword">double</span> b_d = <span class="number">2</span>;</span><br><span class="line">	optional <span class="keyword">bool</span> c_b = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message BSType&#123;</span><br><span class="line">	optional <span class="built_in">string</span> a_s = <span class="number">1</span>;</span><br><span class="line">	repeated bytes b_bs = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>room.proto</p>
+</ul>
+<ul>
+<li><p>初始值</p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//int</span></span><br><span class="line">type::IntType it;</span><br><span class="line">it.set_a_i32(-<span class="number">1</span>);</span><br><span class="line">it.set_b_i64(-<span class="number">1</span>);</span><br><span class="line">it.set_c_s32(-<span class="number">1</span>);</span><br><span class="line">it.set_d_s64(-<span class="number">1</span>);</span><br><span class="line">it.set_e_sf32(-<span class="number">1</span>);</span><br><span class="line">it.set_f_sf64(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//uint</span></span><br><span class="line">type::UIntType ut;</span><br><span class="line">ut.set_a_u32(<span class="number">1</span>);</span><br><span class="line">ut.set_b_u64(<span class="number">2</span>);</span><br><span class="line">ut.set_c_f32(<span class="number">1</span>);</span><br><span class="line">ut.set_d_f64(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//float</span></span><br><span class="line">type::FType ft;</span><br><span class="line">ft.set_a_f(<span class="number">0.1</span>);</span><br><span class="line">ft.set_b_d(<span class="number">0.2</span>);</span><br><span class="line">ft.set_c_b(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//bytes</span></span><br><span class="line">type::BSType bt;</span><br><span class="line">bt.set_a_s(<span class="string">"hello,world."</span>);</span><br><span class="line">bt.add_b_bs(<span class="string">"h"</span>);</span><br><span class="line">bt.add_b_bs(<span class="string">"0x1"</span>);</span><br><span class="line">bt.add_b_bs(<span class="string">"d"</span>);</span><br><span class="line">bt.add_b_bs(<span class="string">"ILV"</span>);</span><br><span class="line">bt.add_b_bs(<span class="string">"0xf"</span>);</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<ul>
+<li>二进制表示<br> | 类型 |  key | EncodedAs key | value  | EncodedAs value | EncodedAs String | Notes |<br> | :–: | :–: | :————: | :—: | :————-: | :—: | :—: |<br> | int32 | 1   | 1&lt;&lt;3|0 = 00001000 |  -1  | 11111111(9 times) 00000001 | 00001000 11111111(9times) 00000001 | varints编码 |<br> | int64 | 2   | 2&lt;&lt;3|0 = 00010000 |  -1  | 11111111(9 times) 00000001 | 00010000 11111111(9times) 00000001 | varints编码 |<br> | sint32 | 3   | 3&lt;&lt;3|0 = 00011000 |  -1  | 00000001 | 00011000 00000001| 无符号变换 |<br> | sint32 | 4   | 4&lt;&lt;3|0 = 00100000 |  -1  | 00000001 | 00100000 00000001| 无符号变换 |<br> | sfixed32 | 5   | 5&lt;&lt;3|5 = 00101101 |  -1  | 11111111(4 times) | 00011000 11111111 11111111 11111111 11111111 | 固定4byte长度 |<br> | sfixed32 | 6   | 6&lt;&lt;3|1 = 00110001 |  -1  | 11111111(8 times) | 00011000 11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111 | 固定8byte长度 |<br> | :–: | :–: | :————: | :—: | :————-: | :—: | :—: |<br> | uint32 | 1   | 1&lt;&lt;3|0 = 00001000 |  1  | 00000001 | 00001000 00000001| 无符号 |<br> | uint64 | 2   | 2&lt;&lt;3|0 = 00010000 |  2  | 00000010 | 00010000 00000010| 无符号 |<br> | fixed32 | 3   | 3&lt;&lt;3|5 = 00011101 |  1  | 00000001 00000000(3 times) | 00011101 00000001 00000000(3 times) | 固定4byte长度 |<br> | fixed64 | 4   | 4&lt;&lt;3|1 = 00100001 |  2  | 00000010 00000000(7 times) | 00011101 00000001 00000000(7 times) | 固定8byte长度 |<br> | :–: | :–: | :————: | :—: | :————-: | :—: | :—: |<br> | float | 1   | 1&lt;&lt;3|5 = 00001101 |  0.1  | 11001101 11001100 11001100 00111101 | 00001101 11001101 11001100 11001100 00111101| IEEE浮点数,4byte |<br> | double | 2   | 2&lt;&lt;3|1 = 00010001 |  0.2  | 10011010 10011001 10011001 10011001 10011001 10011001 11001001 00111111 | 00010001 10011010 10011001 10011001 10011001 10011001 10011001 11001001 00111111| IEEE浮点数,8byte |<br> | :–: | :–: | :————: | :—: | :————-: | :—: | :—: |<br> | bool | 3 | 3&lt;&lt;3|0 = 00011000 | false | 00000000 | 00011000 00000000 | 固定1byte长度 |<br> | :–: | :–: | :————: | :—: | :————-: | :—: | :—: |<br> | string | 1 | 1&lt;&lt;3|2 = 00001010 | hello,world. | 00001100(length) 01101000 01100101 01101100 01101100 01101111 00101100 01110111 01101111 01110010 01101100 01100100 00101110(ASCII) | length+content编码 |<br> | bytes | 2 | 2&lt;&lt;3|2 = 00010010 | h,0x1,d,ILV,0xf | 00000001 01101000 00010010 00000011 00110000 01111000 00110001 00010010 00000001 01100100 00010010 00000011 01001001 01001100 01010110 00010010 00000011 00110000 01111000 01100110 | </li>
+</ul>
+<h4 id="3-_u7F16_u89E3_u7801_u5B57_u6BB5_u987A_u5E8F"><a href="#3-_u7F16_u89E3_u7801_u5B57_u6BB5_u987A_u5E8F" class="headerlink" title="3.编解码字段顺序"></a>3.编解码字段顺序</h4><ul>
+<li>编解码与字段顺序无关,由key-value机制就能保证</li>
+<li>对于未知的字段，编码的时候会把它写在序列化完的已知字段后面</li>
+</ul>
+<h3 id="u5D4C_u5957_u4E0E_u5F15_u7528"><a href="#u5D4C_u5957_u4E0E_u5F15_u7528" class="headerlink" title="嵌套与引用"></a>嵌套与引用</h3><h4 id="1-_u5D4C_u5957_u5B9A_u4E49"><a href="#1-_u5D4C_u5957_u5B9A_u4E49" class="headerlink" title="1.嵌套定义"></a>1.嵌套定义</h4><ul>
+<li><code>message</code>定义中可以嵌套定义<code>message</code>,<code>enum</code></li>
+<li>嵌套定义的单元外部可见，引用路径由外到内逐层引用</li>
+</ul>
+<h4 id="2-_u5F15_u7528"><a href="#2-_u5F15_u7528" class="headerlink" title="2.引用"></a>2.引用</h4><ul>
+<li>定义<code>package</code>相当于C++的<code>namespace</code>,外部引用时需要package名</li>
+<li>引用外部message定义，只需要<code>import</code>外部proto文件即可使用</li>
+<li>引用使用相对路径,生成文件时protobuf可以自动处理</li>
+</ul>
+<h3 id="u5B8C_u6574_u793A_u4F8B"><a href="#u5B8C_u6574_u793A_u4F8B" class="headerlink" title="完整示例"></a>完整示例</h3><ul>
+<li>user.proto</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//user.proto</span><br><span class="line"></span><br><span class="line">syntax="proto2“;</span><br><span class="line">package user;</span><br><span class="line"></span><br><span class="line">message User&#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    </span><br><span class="line">    enum PhoneType&#123;</span><br><span class="line">        NONE = 1;</span><br><span class="line">        HOME = 2;</span><br><span class="line">        MOBILE = 3;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    message PhoneNumber &#123;</span><br><span class="line">        required string number = 1;</span><br><span class="line">        optional PhoneType type = 2 [default = MOBILE];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    repeated PhoneNumber phone = 2;</span><br><span class="line">    </span><br><span class="line">    optional sfixed32 age = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message Admin &#123;</span><br><span class="line">    required sfixed64 uid = 1;</span><br><span class="line">    optional User.PhoneNumber phone = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>room.proto</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//room.proto</span></span><br><span class="line"></span><br><span class="line">syntax=<span class="string">"proto2"</span>;</span><br><span class="line">package room;</span><br><span class="line"></span><br><span class="line">import <span class="string">"relative_dir/user.proto"</span>;</span><br><span class="line"></span><br><span class="line">message Room &#123;</span><br><span class="line">    repeated sfixed64 rid = <span class="number">1</span>;</span><br><span class="line">    repeated user.User user = <span class="number">2</span>;</span><br><span class="line">    optional <span class="keyword">double</span> profit = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Protobuf_u7F16_u8BD1_u4F7F_u7528"><a href="#Protobuf_u7F16_u8BD1_u4F7F_u7528" class="headerlink" title="Protobuf编译使用"></a>Protobuf编译使用</h2><ul>
@@ -586,7 +605,7 @@ required
         <p><span>本文标题:</span><a href="/2016/06/08/protobuf/">Protobuf使用手册</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 linghutf 的个人博客">linghutf</a></p>
         <p><span>发布时间:</span>2016年06月08日 - 22时14分</p>
-        <p><span>最后更新:</span>2016年06月08日 - 22时15分</p>
+        <p><span>最后更新:</span>2016年06月10日 - 14时04分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/06/08/protobuf/" title="Protobuf使用手册">http://linghutf.gitcafe.io/2016/06/08/protobuf/</a>
             <span class="copy-path" data-clipboard-text="原文: http://linghutf.gitcafe.io/2016/06/08/protobuf/　　作者: linghutf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -615,17 +634,8 @@ required
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49"><span class="toc-number">1.</span> <span class="toc-text">Protobuf协议文件定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u9009_u62E9_u7248_u672C"><span class="toc-number">1.1.</span> <span class="toc-text">选择版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u4FEE_u9970_u7B26"><span class="toc-number">1.2.</span> <span class="toc-text">字段修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u7C7B_u578B"><span class="toc-number">1.3.</span> <span class="toc-text">字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u7C7B_u578B_u5BF9_u5E94_u4E8C_u8FDB_u5236_u7C7B_u578B"><span class="toc-number">1.4.</span> <span class="toc-text">字段类型对应二进制类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6570_u636E_u7F16_u7801_u539F_u5219"><span class="toc-number">1.5.</span> <span class="toc-text">数据编码原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Varints_u7F16_u7801_u89C4_u5219"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.Varints编码规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_u6D88_u606F_u7F16_u7801_u89C4_u5219"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.消息编码规则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u7F16_u8BD1_u4F7F_u7528"><span class="toc-number">2.</span> <span class="toc-text">Protobuf编译使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u5E8F_u5217_u5316_u4E0E_u53CD_u5E8F_u5217_u5316"><span class="toc-number">3.</span> <span class="toc-text">Protobuf序列化与反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_u521D_u59CB_u5316"><span class="toc-number">3.1.</span> <span class="toc-text">1.初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_u5E8F_u5217_u5316"><span class="toc-number">3.2.</span> <span class="toc-text">2.序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_u53CD_u5E8F_u5217_u5316"><span class="toc-number">3.3.</span> <span class="toc-text">3.反序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_u83B7_u53D6_u5BF9_u8C61"><span class="toc-number">3.4.</span> <span class="toc-text">4.获取对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#protobuf_u5B9E_u73B0_u539F_u7406"><span class="toc-number">4.</span> <span class="toc-text">protobuf实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-protobuf_u7684cache_u673A_u5236"><span class="toc-number">4.1.</span> <span class="toc-text">1.protobuf的cache机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6CE8_u610F_u4E8B_u9879"><span class="toc-number">5.</span> <span class="toc-text">注意事项</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49"><span class="toc-number">1.</span> <span class="toc-text">Protobuf协议文件定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u9009_u62E9_u7248_u672C"><span class="toc-number">1.1.</span> <span class="toc-text">选择版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u4FEE_u9970_u7B26"><span class="toc-number">1.2.</span> <span class="toc-text">字段修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u7C7B_u578B"><span class="toc-number">1.3.</span> <span class="toc-text">字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u6BB5_u7C7B_u578B_u5BF9_u5E94_u4E8C_u8FDB_u5236_u7C7B_u578B"><span class="toc-number">1.4.</span> <span class="toc-text">字段类型对应二进制类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6570_u636E_u7F16_u7801_u539F_u5219"><span class="toc-number">1.5.</span> <span class="toc-text">数据编码原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Varints_u7F16_u7801_u89C4_u5219"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.Varints编码规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_u6D88_u606F_u7F16_u7801_u89C4_u5219"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.消息编码规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-_u7F16_u89E3_u7801_u5B57_u6BB5_u987A_u5E8F"><span class="toc-number">1.5.3.</span> <span class="toc-text">3.编解码字段顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5D4C_u5957_u4E0E_u5F15_u7528"><span class="toc-number">1.6.</span> <span class="toc-text">嵌套与引用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-_u5D4C_u5957_u5B9A_u4E49"><span class="toc-number">1.6.1.</span> <span class="toc-text">1.嵌套定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_u5F15_u7528"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.引用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B8C_u6574_u793A_u4F8B"><span class="toc-number">1.7.</span> <span class="toc-text">完整示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u7F16_u8BD1_u4F7F_u7528"><span class="toc-number">2.</span> <span class="toc-text">Protobuf编译使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protobuf_u5E8F_u5217_u5316_u4E0E_u53CD_u5E8F_u5217_u5316"><span class="toc-number">3.</span> <span class="toc-text">Protobuf序列化与反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_u521D_u59CB_u5316"><span class="toc-number">3.1.</span> <span class="toc-text">1.初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_u5E8F_u5217_u5316"><span class="toc-number">3.2.</span> <span class="toc-text">2.序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_u53CD_u5E8F_u5217_u5316"><span class="toc-number">3.3.</span> <span class="toc-text">3.反序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_u83B7_u53D6_u5BF9_u8C61"><span class="toc-number">3.4.</span> <span class="toc-text">4.获取对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#protobuf_u5B9E_u73B0_u539F_u7406"><span class="toc-number">4.</span> <span class="toc-text">protobuf实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-protobuf_u7684cache_u673A_u5236"><span class="toc-number">4.1.</span> <span class="toc-text">1.protobuf的cache机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6CE8_u610F_u4E8B_u9879"><span class="toc-number">5.</span> <span class="toc-text">注意事项</span></a></li></ol>
 </div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -636,23 +646,18 @@ required
     if ($(".left-col").is(":hidden")) {
         $("#tocButton").attr("value", valueShow);
     }
-
     $("#tocButton").click(function() {
         if ($("#toc").is(":hidden")) {
             $("#tocButton").attr("value", valueHide);
             $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
         }
         else {
             $("#tocButton").attr("value", valueShow);
             $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
         }
     })
-
     if ($(".toc").length < 1) {
         $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
     }
 </script>
 
@@ -685,7 +690,7 @@ required
     (function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.src = '/js/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0] 
          || document.getElementsByTagName('body')[0]).appendChild(ds);
@@ -720,13 +725,11 @@ required
             if ($(".toc").length > 0) {
                 $("#toc, #tocButton").toggle(200, function() {
                     if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
                         $("#tocButton").attr("value", valueHide);
                         }
                     })
             }
             else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
             }
         })
     </script>
@@ -850,6 +853,7 @@ MathJax.Hub.Queue(function() {
         });
     });
 </script>
+
 
   </div>
 </body>

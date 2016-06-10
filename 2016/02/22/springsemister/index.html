@@ -31,10 +31,10 @@
     <link rel="alternative" href="/atom.xml" title="欢迎来到linghutf的博客!" type="application/atom+xml">
   
   
-    <link rel="icon" href="//img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
   
   
-      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -48,7 +48,6 @@
     <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
       var yiliaConfig = {
-          rootUrl: '/',
           fancybox: true,
           animate: true,
           isHome: false,
@@ -68,7 +67,7 @@
     <header id="header" class="inner">
         <a href="/" class="profilepic">
             
-            <img lazy-src="//img/Ricciportrait.jpg" class="js-avatar">
+            <img lazy-src="/img/Ricciportrait.jpg" class="js-avatar">
             
         </a>
 
@@ -188,7 +187,7 @@
         <header id="header" class="inner">
             <a href="/" class="profilepic">
                 
-                    <img lazy-src="//img/Ricciportrait.jpg" class="js-avatar">
+                    <img lazy-src="/img/Ricciportrait.jpg" class="js-avatar">
                 
             </a>
             <hgroup>
@@ -333,15 +332,6 @@
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u5E74_u524D_u7684_u81EA_u6211_u5B89_u6170"><span class="toc-number">1.</span> <span class="toc-text">年前的自我安慰</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u7B2C_u4E00_u6B21_u5F00_u4F1A_u4E4B_u524D_u7684_u8865_u6551"><span class="toc-number">2.</span> <span class="toc-text">第一次开会之前的补救</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u4E0B_u4E00_u6B65_u7684_u5DE5_u4F5C"><span class="toc-number">3.</span> <span class="toc-text">下一步的工作</span></a></li></ol>
 </div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -352,23 +342,18 @@
     if ($(".left-col").is(":hidden")) {
         $("#tocButton").attr("value", valueShow);
     }
-
     $("#tocButton").click(function() {
         if ($("#toc").is(":hidden")) {
             $("#tocButton").attr("value", valueHide);
             $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
         }
         else {
             $("#tocButton").attr("value", valueShow);
             $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
         }
     })
-
     if ($(".toc").length < 1) {
         $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
     }
 </script>
 
@@ -401,7 +386,7 @@
     (function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.src = '/js/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0] 
          || document.getElementsByTagName('body')[0]).appendChild(ds);
@@ -438,13 +423,11 @@
             if ($(".toc").length > 0) {
                 $("#toc, #tocButton").toggle(200, function() {
                     if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
                         $("#tocButton").attr("value", valueHide);
                         }
                     })
             }
             else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
             }
         })
     </script>
@@ -568,6 +551,7 @@ MathJax.Hub.Queue(function() {
         });
     });
 </script>
+
 
   </div>
 </body>

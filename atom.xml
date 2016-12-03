@@ -4,7 +4,7 @@
   <subtitle><![CDATA[林花谢了春红，太匆匆!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://linghutf.gitcafe.io/"/>
-  <updated>2016-06-16T10:54:49.958Z</updated>
+  <updated>2016-06-16T10:54:49.000Z</updated>
   <id>http://linghutf.gitcafe.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://linghutf.gitcafe.io/2016/06/16/cmake/"/>
     <id>http://linghutf.gitcafe.io/2016/06/16/cmake/</id>
     <published>2016-06-16T09:58:06.000Z</published>
-    <updated>2016-06-16T10:54:49.958Z</updated>
+    <updated>2016-06-16T10:54:49.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u4E3A_u4EC0_u4E48_u4F7F_u7528CMake"><a href="#u4E3A_u4EC0_u4E48_u4F7F_u7528CMake" class="headerlink" title="为什么使用CMake"></a>为什么使用CMake</h1><p>CMake是跨平台的构建工具，公司主要使用这个工具生成，掌握了CMake用法觉得自动化构建还是很容易的</p>
 <h1 id="cmake_u4F7F_u7528_u65B9_u6CD5"><a href="#cmake_u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="cmake使用方法"></a>cmake使用方法</h1><h2 id="1-_u57FA_u672C_u7ED3_u6784"><a href="#1-_u57FA_u672C_u7ED3_u6784" class="headerlink" title="1.基本结构"></a>1.基本结构</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> project</span><br><span class="line"></span> -<span class="ruby"> includes</span><br><span class="line"></span>   -<span class="ruby"> <span class="constant">CMakeLists</span>.txt</span><br><span class="line"></span>   -<span class="ruby"> *.h</span><br><span class="line"></span> -<span class="ruby"> src</span><br><span class="line"></span>   -<span class="ruby"> <span class="constant">CMakeLists</span>.txt</span><br><span class="line"></span>   -<span class="ruby"> *.cc</span><br><span class="line"></span> -<span class="ruby"> <span class="constant">CMakeLists</span>.txt</span></span><br></pre></td></tr></table></figure>
 <ol>
@@ -131,7 +131,7 @@
     <link href="http://linghutf.gitcafe.io/2016/06/08/protobuf/"/>
     <id>http://linghutf.gitcafe.io/2016/06/08/protobuf/</id>
     <published>2016-06-08T14:14:18.000Z</published>
-    <updated>2016-06-12T01:34:50.522Z</updated>
+    <updated>2016-06-12T01:34:50.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49"><a href="#Protobuf_u534F_u8BAE_u6587_u4EF6_u5B9A_u4E49" class="headerlink" title="Protobuf协议文件定义"></a>Protobuf协议文件定义</h2><h3 id="u9009_u62E9_u7248_u672C"><a href="#u9009_u62E9_u7248_u672C" class="headerlink" title="选择版本"></a>选择版本</h3><ul>
 <li><code>syntax</code> 声明可以选择protobuf的编译器版本(v2和v3)<ul>
 <li><code>syntax=&quot;proto2&quot;;</code>选择2版本，各个字段必须明确标注编号以确定序列化后二进制数据字段的位置</li>

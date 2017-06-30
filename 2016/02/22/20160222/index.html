@@ -128,7 +128,7 @@
                             
                                 <a class="fl github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
                             
-                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/alephcx" title="zhihu">zhihu</a>
                             
                                 <a class="fl weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
                             
@@ -210,7 +210,7 @@
                     
                         <a class="github" target="_blank" href="https://github.com/linghutf" title="github">github</a>
                     
-                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/linghutf" title="zhihu">zhihu</a>
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/alephcx" title="zhihu">zhihu</a>
                     
                         <a class="weibo" target="_blank" href="http://weibo.com/linghutf" title="weibo">weibo</a>
                     
@@ -269,6 +269,53 @@
           
         <p>　　春节假期转眼就过去了，感觉是过得最快的一个春节。马上又面临新的挑战，正处在一个学习<br>和工作的过渡期，莫名的烦心事和压力随之而来。开学时间很早，之前所有相聚的年轻人一股脑儿<br>全离开了，为了明年的春节聚首又回到城市奋斗，看得让人心慌，想到未来我在哪里，是否也像他<br>们一般匆匆来去?现在的娱乐方式多不胜数，但是人的情绪来源越来越少，仿佛只有通往金钱的道路<br>才能让人心旷神怡，只有人人羡慕的生活才是成功的人生。在这种环境下，假期像是一场鸵鸟的避风<br>动作，暂时没有烦恼，心却没有安宁下来。于是，剩下的日子，终于像风一样迅速消失在心灵的沙漠<br>中。<br>　　元宵节之前的几天，我就已经来到了实验室，开始了日复一日的工作，和同年人继续没有交流却<br>保持默契地竞争。突然发现，原来节日本为人带来欢乐的意义就是这样丢失的。你还有很多工作，前方<br>还有许多美好的憧憬在你到达之后才能实现，于是你忽略了路边的景色，着急地向目标走去。然后终于<br>到了这个目的地，但是你却发现，抑或是有人告诉你，前方有更漂亮的风景，你如果到达那里，人生会有<br>更精彩的不同……如此这般循环几个光景，你的人生就这样匆匆而去而鲜有发自内心的愉悦。<br>　　春节期间看到了一个讽刺的帖子，其中最主要的内容是:”真正好的办法是巧妙引导，控制节奏，让<br>臣民们始终保持一种奋斗的状态。20出头，头十年，让他们去为房子，车子，娶妻生子忙，第二个十年，<br>让他们为房贷，车贷，子女教育经费去忙，等到了第三个十年，就得为老来医保，儿女成人等做准备而继<br>续忙。如此一来，人生最黄金的三十年不经意间弹指而过。在臣民们为自己所谓生活而忙碌时，就不太会<br>有人能静下心来质疑苏丹统治的正当性，合法性等等命题。”<br>　　这其中，有多少人不是我们自己给自己定义的成功标准，或者在外在的氛围和期望的影响下，进行自我<br>审查和个性阉割，从而成为“成功”这条路上的一个急匆匆的行者的呢？</p>
 
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
     </div>
     
@@ -363,25 +410,20 @@
 
 
     
-      <div class="duoshuo" id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/02/22/20160222/" data-title="在外的元宵节" data-url="http://linghutf.gitcafe.io/2016/02/22/20160222/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"linghutf"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = '/js/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-    <!-- 多说公共JS代码 end -->
-</div>
-
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: 'null',
+        client_secret: 'null',
+      },
+    })
+    gitment.render('gitments')
+</script>
     
 
 
@@ -429,7 +471,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2016 linghutf
+                &copy; 2017 linghutf
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
